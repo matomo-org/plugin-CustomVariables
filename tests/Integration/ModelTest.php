@@ -7,9 +7,7 @@
  */
 
 namespace Piwik\Plugins\CustomVariables\tests;
-use Piwik\Common;
 use Piwik\Db;
-use Piwik\DbHelper;
 use Piwik\Plugins\CustomVariables\Model;
 
 /**
