@@ -7,18 +7,17 @@
  */
 
 namespace Piwik\Plugins\CustomVariables\tests;
-use Piwik\Common;
 use Piwik\Db;
-use Piwik\DbHelper;
 use Piwik\Plugins\CustomVariables\Model;
+use Piwik\Tests\Impl\IntegrationTestCase;
 
 /**
  * @group CustomVariables
  * @group ModelTest
- * @group Database
+ * @group Plugins
  * @group CustomVariables_ModelTest
  */
-class ModelTest extends \DatabaseTestCase
+class ModelTest extends IntegrationTestCase
 {
     private static $cvarScopes = array('log_link_visit_action', 'log_visit', 'log_conversion');
 

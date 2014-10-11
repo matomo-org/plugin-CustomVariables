@@ -8,14 +8,14 @@
 
 namespace Piwik\Plugins\CustomVariables\tests;
 
-use Piwik\Tests\IntegrationTestCase;
+use Piwik\Tests\Impl\SystemTestCase;
 
 /**
  * @group CustomVariables
- * @group CustomVariablesIntegrationTest
- * @group Database
+ * @group CustomVariablesSystemTest
+ * @group Plugins
  */
-class CustomVariablesIntegrationTest extends IntegrationTestCase
+class CustomVariablesSystemTest extends SystemTestCase
 {
     /**
      * @var Fixtures\VisitWithManyCustomVariables
@@ -24,12 +24,11 @@ class CustomVariablesIntegrationTest extends IntegrationTestCase
 
     public static function getOutputPrefix()
     {
-        return 'CustomVariablesIntegrationTest';
+        return 'CustomVariablesSystemTest';
     }
 
     /**
      * @dataProvider getApiForTesting
-     * @group        Integration
      */
     public function testApi($api, $params)
     {
@@ -58,4 +57,4 @@ class CustomVariablesIntegrationTest extends IntegrationTestCase
     }
 }
 
-CustomVariablesIntegrationTest::$fixture = new Fixtures\VisitWithManyCustomVariables();
+CustomVariablesSystemTest::$fixture = new Fixtures\VisitWithManyCustomVariables();
