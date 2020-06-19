@@ -54,18 +54,12 @@ class AutoSuggestAPITest extends SystemTestCase
             $apiForTesting[] = $this->getApiForTestingForSegment($idSite, $segment);
         }
 
-        if (self::isMysqli()) {
-            // Skip the test on Mysqli as it fails due to rounding Float errors on latitude/longitude
-            // then the test started failing after bc19503 and I cannot understand why
-            echo "Skipped test \n";
-        } else {
-            $apiForTesting[] = array('Live.getLastVisitsDetails',
-                                     array('idSite' => $idSite,
-                                           'date' => '1998-07-12,today',
-                                           'period' => 'range',
-                                           'otherRequestParameters' => array('filter_limit' => 1000)));
+        $apiForTesting[] = array('Live.getLastVisitsDetails',
+                                 array('idSite' => $idSite,
+                                       'date' => '1998-07-12,today',
+                                       'period' => 'range',
+                                       'otherRequestParameters' => array('filter_limit' => 1000)));
 
-        }
         return $apiForTesting;
     }
 
@@ -136,8 +130,8 @@ class AutoSuggestAPITest extends SystemTestCase
         $this->assertApiResponseHasNoError($response);
         $topSegmentValue = @$response[0];
 
-        if (is_numeric($topSegmentValue) || is_float($topSegmentValue) || preg_match('/^\d*?,\d*$/', $topSegmentValue)) {
-            $topSegmentValue = Common::forceDotAsSeparatorForDecimalPoint($topSegmentValue);
+        if (empty($topSegmentValue)) {
+            $this->markTestIncomplete('No segment value available for ' . $params['segmentToComplete']);
         }
 
         // Now build the segment request
