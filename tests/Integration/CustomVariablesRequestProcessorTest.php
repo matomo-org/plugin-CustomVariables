@@ -1,6 +1,6 @@
 <?php
 
-namespace Piwik\Plugins\CustomVariables\Tests;
+namespace Piwik\Plugins\CustomVariables\tests\Integration;
 
 use Piwik\Plugins\CustomVariables\CustomVariables;
 use Piwik\Plugins\CustomVariables\Tracker\CustomVariablesRequestProcessor;

@@ -23,6 +23,7 @@ use Piwik\Tracker\Cache;
 /**
  * testing a the auto suggest API for all known segments
  *
+ * @group CustomVariables
  * @group AutoSuggestAPITest
  * @group Plugins
  */
