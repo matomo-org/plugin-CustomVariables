@@ -37,6 +37,7 @@
 				<icon />
 				<iconSVG>plugins/Morpheus/images/action.svg</iconSVG>
 				
+				<bandwidth_pretty>0 M</bandwidth_pretty>
 				<customVariables>
 					<row>
 						<customVariablePageName1>Name_PAGE_1</customVariablePageName1>
@@ -71,7 +72,6 @@
 						<customVariablePageValue8>Val_PAGE8</customVariablePageValue8>
 					</row>
 				</customVariables>
-				<bandwidth_pretty>0 M</bandwidth_pretty>
 			</row>
 		</actionDetails>
 		<goalConversions>1</goalConversions>
@@ -152,6 +152,22 @@
 		<visitLocalTime>12:34:06</visitLocalTime>
 		<visitLocalHour>12</visitLocalHour>
 		<daysSinceLastVisit>0</daysSinceLastVisit>
+		<resolution>1024x768</resolution>
+		<plugins>cookie, flash, java</plugins>
+		<pluginsIcons>
+			<row>
+				<pluginIcon>plugins/Morpheus/icons/dist/plugins/cookie.png</pluginIcon>
+				<pluginName>cookie</pluginName>
+			</row>
+			<row>
+				<pluginIcon>plugins/Morpheus/icons/dist/plugins/flash.png</pluginIcon>
+				<pluginName>flash</pluginName>
+			</row>
+			<row>
+				<pluginIcon>plugins/Morpheus/icons/dist/plugins/java.png</pluginIcon>
+				<pluginName>java</pluginName>
+			</row>
+		</pluginsIcons>
 		<customVariables>
 			<row>
 				<customVariableName1>Name_VISIT_1</customVariableName1>
@@ -186,21 +202,5 @@
 				<customVariableValue8>Val_VISIT8</customVariableValue8>
 			</row>
 		</customVariables>
-		<resolution>1024x768</resolution>
-		<plugins>cookie, flash, java</plugins>
-		<pluginsIcons>
-			<row>
-				<pluginIcon>plugins/Morpheus/icons/dist/plugins/cookie.png</pluginIcon>
-				<pluginName>cookie</pluginName>
-			</row>
-			<row>
-				<pluginIcon>plugins/Morpheus/icons/dist/plugins/flash.png</pluginIcon>
-				<pluginName>flash</pluginName>
-			</row>
-			<row>
-				<pluginIcon>plugins/Morpheus/icons/dist/plugins/java.png</pluginIcon>
-				<pluginName>java</pluginName>
-			</row>
-		</pluginsIcons>
 	</row>
 </result>
