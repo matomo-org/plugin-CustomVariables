@@ -21,20 +21,6 @@ class Base extends VisitDimension
     {
         $numCustomVariables = CustomVariables::getNumUsableCustomVariables();
 
-        $segment = new Segment();
-        $segment->setType('dimension');
-        $segment->setSegment('customVariable' . $segmentNameSuffix);
-        $segment->setName($this->getName() . ' (' . Piwik::translate('CustomVariables_ScopeVisit') . ')');
-        $segment->setUnionOfSegments($this->getSegmentColumns('customVariable' . $segmentNameSuffix, $numCustomVariables));
-        $segmentsList->addSegment($dimensionSegmentFactory->createSegment($segment));
-
-        $segment = new Segment();
-        $segment->setType('dimension');
-        $segment->setSegment('customVariablePage' . $segmentNameSuffix);
-        $segment->setName($this->getName() . ' (' . Piwik::translate('CustomVariables_ScopePage') . ')');
-        $segment->setUnionOfSegments($this->getSegmentColumns('customVariablePage' . $segmentNameSuffix, $numCustomVariables));
-        $segmentsList->addSegment($dimensionSegmentFactory->createSegment($segment));
-
         $segmentSuffix = 'v';
         if (strtolower($segmentNameSuffix) === 'name') {
             $segmentSuffix = 'k';
@@ -55,6 +41,20 @@ class Base extends VisitDimension
                     . ' (' . Piwik::translate('CustomVariables_ScopePage') . ')');
             $segmentsList->addSegment($dimensionSegmentFactory->createSegment($segment));
         }
+
+        $segment = new Segment();
+        $segment->setType('dimension');
+        $segment->setSegment('customVariable' . $segmentNameSuffix);
+        $segment->setName($this->getName() . ' (' . Piwik::translate('CustomVariables_ScopeVisit') . ')');
+        $segment->setUnionOfSegments($this->getSegmentColumns('customVariable' . $segmentNameSuffix, $numCustomVariables));
+        $segmentsList->addSegment($dimensionSegmentFactory->createSegment($segment));
+
+        $segment = new Segment();
+        $segment->setType('dimension');
+        $segment->setSegment('customVariablePage' . $segmentNameSuffix);
+        $segment->setName($this->getName() . ' (' . Piwik::translate('CustomVariables_ScopePage') . ')');
+        $segment->setUnionOfSegments($this->getSegmentColumns('customVariablePage' . $segmentNameSuffix, $numCustomVariables));
+        $segmentsList->addSegment($dimensionSegmentFactory->createSegment($segment));
     }
 
     private function getSegmentColumns($column, $numCustomVariables)
