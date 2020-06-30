@@ -25,7 +25,8 @@ class CustomVariables extends \Piwik\Plugin
             'AssetManager.getStylesheetFiles'  => 'getStylesheetFiles',
             'Dimension.addDimensions' => 'addDimensions',
             'Actions.getCustomActionDimensionFieldsAndJoins' => 'provideActionDimensionFields',
-            'Tracker.setTrackerCacheGeneral' => 'getCacheGeneral'
+            'Tracker.setTrackerCacheGeneral' => 'getCacheGeneral',
+            'Tracker.getVisitFieldsToPersist' => 'getVisitFieldsToPersist'
         );
     }
 
@@ -153,6 +154,14 @@ class CustomVariables extends \Piwik\Plugin
         for ($i = 1; $i <= $maxCustomVariables; $i++) {
             $fields[] = 'custom_var_k' . $i;
             $fields[] = 'custom_var_v' . $i;
+        }
+    }
+
+    public function getVisitFieldsToPersist(&$fields)
+    {
+        for ($index = 1; $index <= CustomVariables::getNumUsableCustomVariables(); $index++) {
+            $fields[] = 'custom_var_k' . $index;
+            $fields[] = 'custom_var_v' . $index;
         }
     }
 }

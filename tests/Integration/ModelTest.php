@@ -6,7 +6,7 @@
  * @license http://www.gnu.org/licenses/gpl-3.0.html GPL v3 or later
  */
 
-namespace Piwik\Plugins\CustomVariables\tests;
+namespace Piwik\Plugins\CustomVariables\tests\Integration;
 use Piwik\Db;
 use Piwik\Plugins\CustomVariables\Model;
 use Piwik\Tests\Framework\TestCase\IntegrationTestCase;
