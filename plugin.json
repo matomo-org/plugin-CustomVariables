@@ -1,6 +1,6 @@
 {
     "name": "CustomVariables",
-    "description": "Custom Variables are (name, value) pairs that you can assign using the Javascript API to visitors or any of their action. Matomo will then report how many visits, pages, conversions for each of these custom names and values. View the detailed Custom Variables for each user and action in the Visitor Log.",
+    "description": "Categorise your visitors and actions with custom name-value pairs. Segment by these values and get more insights to draw the right conclusions.",
     "version": "4.0.0",
     "keywords": ["custom variables"],
     "license": "GPL v3+",
