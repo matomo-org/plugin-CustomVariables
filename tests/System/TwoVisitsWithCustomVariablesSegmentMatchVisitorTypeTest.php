@@ -95,7 +95,7 @@ class TwoVisitsWithCustomVariablesSegmentMatchVisitorTypeTest extends SystemTest
 
             // 2) CHECK 'week' archive stored in December (week starts the month before)
             // We expect 2 segments * (2 custom variable name + 2 ref metrics + 1 subtable chunk for the values of the name + 6 referrers blob (2 of them subtables))
-            'archive_blob_2009_12'    => 22,
+            'archive_blob_2009_12'    => 20,
             // 6 metrics,
             // 2 Referrer metrics (Referrers_distinctSearchEngines/Referrers_distinctKeywords),
             // 3 done flag (referrers, CustomVar, VisitsSummary), all for period = 2, day w/ visits is in new year, other days have no data
@@ -162,7 +162,7 @@ class TwoVisitsWithCustomVariablesSegmentMatchVisitorTypeTest extends SystemTest
         }
 
         // 6 _subtables entries + 6 _subtables entries for the segment + 1 other for CustomVariables_valueByName_chunk_0_99
-        $this->assertEquals(13, $numTests, "$numTests were executed but expected 12");
+        $this->assertEquals(12, $numTests, "$numTests were executed but expected 12");
     }
 
     public static function getOutputPrefix()
