@@ -27,6 +27,14 @@ class TwoVisitsWithCustomVariablesSegmentMatchVisitorTypeTest extends SystemTest
 {
     public static $fixture = null; // initialized below class definition
 
+    protected function setUp(): void
+    {
+        // the time of day appears to influence how many archives are created...
+        Date::$now = strtotime('2020-08-01 03:00:00');
+
+        parent::setUp();
+    }
+
     /**
      * @dataProvider getApiForTesting
      */
