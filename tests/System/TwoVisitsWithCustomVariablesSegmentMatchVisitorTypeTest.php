@@ -27,6 +27,14 @@ class TwoVisitsWithCustomVariablesSegmentMatchVisitorTypeTest extends SystemTest
 {
     public static $fixture = null; // initialized below class definition
 
+    protected function setUp(): void
+    {
+        // the time of day appears to influence how many archives are created...
+        Date::$now = strtotime('2020-08-01 03:00:00');
+
+        parent::setUp();
+    }
+
     /**
      * @dataProvider getApiForTesting
      */
@@ -94,7 +102,7 @@ class TwoVisitsWithCustomVariablesSegmentMatchVisitorTypeTest extends SystemTest
             'archive_numeric_2010_01' => 22,
 
             // 2) CHECK 'week' archive stored in December (week starts the month before)
-            // We expect 2 segments * (1 custom variable name + 2 ref metrics + 1 subtable chunk for the values of the name + 6 referrers blob (2 of them subtables))
+            // We expect 2 segments * (2 custom variable name + 2 ref metrics + 1 subtable chunk for the values of the name + 6 referrers blob (2 of them subtables))
             'archive_blob_2009_12'    => 20,
             // 6 metrics,
             // 2 Referrer metrics (Referrers_distinctSearchEngines/Referrers_distinctKeywords),
@@ -108,6 +116,12 @@ class TwoVisitsWithCustomVariablesSegmentMatchVisitorTypeTest extends SystemTest
 
             if($expectedRows != $countBlobs) {
                 $output = Db::get()->fetchAll("SELECT * FROM " . Common::prefixTable($table) . " ORDER BY name, idarchive ASC");
+                if (strpos($table, 'blob') !== false) {
+                    $output = array_map(function ($r) {
+                        unset($r['value']);
+                        return $r;
+                    }, $output);
+                }
                 var_export('This is debug output from ' . __CLASS__ . ' in case of an error: ');
                 var_export($output);
             }
@@ -155,7 +169,7 @@ class TwoVisitsWithCustomVariablesSegmentMatchVisitorTypeTest extends SystemTest
             }
         }
 
-        // 6 _subtables entries + 6 _subtables entries for the segment
+        // 6 _subtables entries + 6 _subtables entries for the segment + 1 other for CustomVariables_valueByName_chunk_0_99
         $this->assertEquals(12, $numTests, "$numTests were executed but expected 12");
     }
 
