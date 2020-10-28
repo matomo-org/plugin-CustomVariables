@@ -15,7 +15,7 @@ use Piwik\Plugins\CustomVariables\Segment;
 use Piwik\Plugins\CustomVariables\CustomVariables;
 use Piwik\Segment\SegmentsList;
 
-class Base extends VisitDimension
+abstract class Base extends VisitDimension
 {
     protected function configureSegmentsFor($segmentNameSuffix, SegmentsList $segmentsList, DimensionSegmentFactory $dimensionSegmentFactory)
     {
