@@ -1,6 +1,6 @@
 # Matomo Custom Variables Plugin
 
-[![Build Status](https://travis-ci.org/matomo-org/plugin-CustomVariables.svg?branch=4.x-dev)](https://travis-ci.org/matomo-org/plugin-CustomVariables)
+[![Build Status](https://travis-ci.com/matomo-org/plugin-CustomVariables.svg?branch=4.x-dev)](https://travis-ci.com/matomo-org/plugin-CustomVariables)
 
 ## Description
 
