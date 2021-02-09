@@ -20,8 +20,7 @@ class CustomVariablesSubcategory extends Subcategory
     public function getHelp()
     {
         return '<p>' . Piwik::translate('CustomVariables_CustomVariablesSubcategoryHelp1') . '</p>'
-            . '<p>' . Piwik::translate('CustomVariables_CustomVariablesSubcategoryHelp2', ['<a href="https://matomo.org/docs/custom-variables/" rel="noreferrer noopener" target="_blank">', '</a>'])
-            . '<p><a href="https://matomo.org/docs/custom-variables/" rel="noreferrer noopener" target="_blank">' . Piwik::translate('CustomVariables_CustomVariablesSubcategoryHelp3') . '</a></p>'
+            . '<p><a href="https://matomo.org/docs/custom-variables/" rel="noreferrer noopener" target="_blank">' . Piwik::translate('CustomVariables_CustomVariablesSubcategoryHelp2') . '</a></p>'
             ;
     }
 }

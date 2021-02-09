@@ -22,7 +22,6 @@
         "MetricsAreOnlyAvailableForVisitScope": "Note: %1$s metrics are available for Custom Variables of scope %2$s only.",
         "MetricsNotAvailableForPageScope": "For Custom Variables of scope %1$s, the column value for these metrics is %2$s",
         "CustomVariablesSubcategoryHelp1": "This report contains information about your Custom Variables. Click on a variable name to see the distribution of the values.",
-        "CustomVariablesSubcategoryHelp2": "For more information about Custom Variables in general, read the %1$sCustom Variables documentation on matomo.org.%2$s",
-        "CustomVariablesSubcategoryHelp3": "Read more about this topic in the online guide."
+        "CustomVariablesSubcategoryHelp2": "Read more about this topic in the online guide."
     }
 }
