@@ -1,9 +1,9 @@
 {
     "CustomVariables": {
-        "ColumnCustomVariableName": "Özel Değişken Adı",
-        "ColumnCustomVariableValue": "Özel Değişken Değeri",
-        "CustomVariables": "Özel Değişkenler",
-        "CustomVariablesReportDocumentation": "Bu rapor özel değişkenler hakkında bilgileri görüntüler. Değerlerinin dağılımını görüntülemek istediğiniz değişken adının üzerine tıklayın. %1$sGenel olarak özel değişkenlar hakkında ayrıntılı bilgi almak için %2$smatomo.org sitesindeki Özel Değişkenler belgesini okuyun%3$s",
+        "ColumnCustomVariableName": "Özel değişken adı",
+        "ColumnCustomVariableValue": "Özel değişken değeri",
+        "CustomVariables": "Özel değişkenler",
+        "CustomVariablesReportDocumentation": "Bu rapor özel değişkenler hakkında bilgileri görüntüler. Değerlerinin dağılımını görüntülemek istediğiniz değişken adının üzerine tıklayın. %1$sGenel olarak özel değişkenler hakkında ayrıntılı bilgi almak için %2$smatomo.org sitesindeki özel değişkenler belgesini okuyun%3$s",
         "PluginDescription": "Özel değişkenler çiftler şeklinde (ad, değer) bulunur ve JavaScript API kullanılarak ziyaretçiler ve ziyaretçi işlemlerine atanabilir. Matomo böylece her bir özel ad ve değer için ziyaret sayısını, tutturulan hedefleri raporlar. Ziyaretçi günlüğünde her kullanıcı ve işlem için özel değişkenlerin ayrıntıları görüntülenir. E-ticaret istatistikleri özelliği için bu uygulama ekinin kullanılması gereklidir!",
         "ScopePage": "aralık sayfası",
         "ScopeVisit": "aralık ziyareti",
@@ -13,14 +13,14 @@
         "Index": "Dizin",
         "Usages": "Kullanılan",
         "Unused": "Kullanılmayan",
-        "CreateNewSlot": "Kullanılabilecek Özel Değişken aralıklarının sayısını arttır",
+        "CreateNewSlot": "Kullanılabilecek özel değişken aralıklarının sayısını arttır",
         "UsageDetails": "Sitenin kuruluşundan beri %1$s ziyaret ve %2$s işlem.",
         "CreatingCustomVariableTakesTime": "Yeni bir özel değişken aralığının oluşturulması veritabanınızın boyutuna göre uzun zaman alabilir. Bu nedenle bu işlem yalnız komut satırından yürütülmesi gereken bir komut ile yapılabilir.",
-        "CurrentAvailableCustomVariables": "Şu anda her site için en çok %s Özel Değişken kullanabilirsiniz.",
+        "CurrentAvailableCustomVariables": "Şu anda her site için en çok %s özel değişken kullanabilirsiniz.",
         "ToCreateCustomVarExecute": "Yeni bir özel değişken aralığı eklemek için Matomo kopyanız üzerinde şu komutu yürütün:",
         "SlotsReportIsGeneratedOverTime": "Bu raporun verileri zaman içinde oluşacak. Raporda verilerin görüntülenmesi 1 - 2 gün, bilgilerin tam doğru görüntülenmesi bir kaç hafta sürebilir.",
-        "MetricsAreOnlyAvailableForVisitScope": "Not: %1$s ölçütmleri yalnız %2$s aralığındaki Özel Değişkenler için kullanılabilir.",
-        "MetricsNotAvailableForPageScope": "%1$s aralığındaki Özel Değişkenler için bu ölçümlerin sütun değeri %2$s",
+        "MetricsAreOnlyAvailableForVisitScope": "Not: %1$s ölçütmleri yalnız %2$s aralığındaki özel değişkenler için kullanılabilir.",
+        "MetricsNotAvailableForPageScope": "%1$s aralığındaki özel değişkenler için bu ölçümlerin sütun değeri %2$s",
         "CustomVariablesSubcategoryHelp1": "Bu rapor özel değişkenler hakkında bilgileri içerir. Değerlerinin dağılımını görüntülemek istediğiniz değişken adının üzerine tıklayın.",
         "CustomVariablesSubcategoryHelp2": "Bu konu hakkında ayrıntılı bilgi almak için çevrimiçi rehbere bakabilirsiniz."
     }
