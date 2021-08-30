@@ -8,7 +8,7 @@
         "ScopePage": "página escopo",
         "ScopeVisit": "visita escopo",
         "ScopeConversion": "conversão de escopo",
-        "ManageDescription": "Esta visão geral mostra todos os compartimentos personalizados de variáveis  e seus usos para o website '%s'. Os nomes dentro de cada compartimento são ordenados por quantas vezes foram utilizados no total.",
+        "ManageDescription": "Esta visão geral mostra todos os compartimentos personalizados de variáveis e seus usos para o website '%s'. Os nomes dentro de cada compartimento são ordenados por quantas vezes foram utilizados no total.",
         "ScopeX": "Escopo %s",
         "Index": "Índice",
         "Usages": "Utilizações",
