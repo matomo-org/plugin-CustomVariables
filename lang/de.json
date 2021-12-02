@@ -12,7 +12,7 @@
         "Index": "Index",
         "ManageDescription": "Diese Übersicht zeigt alle benutzerdefinierten Variablen und deren Gebrauch für Webseite %s. Die Namen auf jeder Position sind danach sortiert, wie oft sie insgesamt benützt wurden.",
         "MetricsAreOnlyAvailableForVisitScope": "Hinweis: Die Metriken %1$s sind nur für benutzerdefinierte Variablen mit Geltungsbereich %2$s verfügbar.",
-        "MetricsNotAvailableForPageScope": "Für benutzerdefinierte Variablen mit Geltungsbereich %1$s ist der Wert für diese Metriken %2$s.",
+        "MetricsNotAvailableForPageScope": "Für benutzerdefinierte Variablen mit Geltungsbereich %1$s ist der Wert für diese Metriken %2$s",
         "PluginDescription": "Benutzerdefinierte Variablen sind (Name, Wert)-Paare, welche Sie mit Hilfe der Javascript API Besuchern oder deren Aktionen zuweisen können. Matomo wird dann Besuche, Seiten, Konversionen für jede dieser benutzerdefinierten Namen und Werte protokollieren. Die detaillierten benutzerdefinierten Variablen lassen sich für jeden Benutzer und jede Aktion im Besucher Log anzeigen. Dieses Plugin wird benötigt für das Ecommerce Analytics Feature!",
         "ScopeConversion": "Anwendungsbereichkonversion",
         "ScopePage": "Anwendungsbereich Seite",
