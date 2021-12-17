@@ -8,10 +8,7 @@
  */
 namespace Piwik\Plugins\CustomVariables;
 
-use Piwik\Common;
-use Piwik\DataTable;
 use Piwik\Piwik;
-use Piwik\Site;
 
 class Controller extends \Piwik\Plugin\Controller
 {

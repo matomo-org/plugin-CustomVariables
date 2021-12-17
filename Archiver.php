@@ -11,11 +11,9 @@ namespace Piwik\Plugins\CustomVariables;
 use Piwik\Config;
 use Piwik\DataAccess\LogAggregator;
 use Piwik\DataArray;
-use Piwik\DataTable;
 use Piwik\DbHelper;
 use Piwik\Metrics;
 use Piwik\Tracker\GoalManager;
-use Piwik\Tracker;
 
 class Archiver extends \Piwik\Plugin\Archiver
 {

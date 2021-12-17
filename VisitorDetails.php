@@ -8,8 +8,6 @@
  */
 namespace Piwik\Plugins\CustomVariables;
 
-use Piwik\Piwik;
-use Piwik\Plugins\Actions\Actions\ActionSiteSearch;
 use Piwik\Plugins\Live\VisitorDetailsAbstract;
 use Piwik\View;
 

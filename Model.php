@@ -11,9 +11,7 @@ namespace Piwik\Plugins\CustomVariables;
 use Piwik\Common;
 use Piwik\Container\StaticContainer;
 use Piwik\DataAccess\TableMetadata;
-use Piwik\DataTable;
 use Piwik\Db;
-use Piwik\Log;
 use Piwik\Piwik;
 use Psr\Log\LoggerInterface;
 

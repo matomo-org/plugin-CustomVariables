@@ -11,7 +11,6 @@ namespace Piwik\Plugins\CustomVariables\tests\System;
 use Piwik\API\Request;
 use Piwik\ArchiveProcessor\Rules;
 use Piwik\Cache as PiwikCache;
-use Piwik\Common;
 use Piwik\Date;
 use Piwik\Option;
 use Piwik\Plugins\API\API;

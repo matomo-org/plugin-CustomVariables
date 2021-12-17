@@ -9,7 +9,6 @@
 
 namespace Piwik\Plugins\CustomVariables\ProfileSummary;
 
-use Piwik\Common;
 use Piwik\Piwik;
 use Piwik\Plugins\CustomVariables\Model;
 use Piwik\Plugins\Live\ProfileSummary\ProfileSummaryAbstract;

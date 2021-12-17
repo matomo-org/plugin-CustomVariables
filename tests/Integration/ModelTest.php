@@ -7,7 +7,6 @@
  */
 
 namespace Piwik\Plugins\CustomVariables\tests\Integration;
-use Piwik\Db;
 use Piwik\Plugins\CustomVariables\Model;
 use Piwik\Tests\Framework\TestCase\IntegrationTestCase;
 
