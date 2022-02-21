@@ -15,6 +15,7 @@
         "ScopeVisit": "gjelder besøk",
         "ScopeX": "Gjelder %s",
         "SlotsReportIsGeneratedOverTime": "Data for denne rapporten vil bli synlige over tid. Det kan ta en dag eller to før du kan se data, og noen uker før rapportene er helt nøyaktige.",
+        "ToCreateCustomVarExecute": "For å opprette en ny egendefinert variabelplass kan du kjøre følgende kommando i din Matomo-installasjon:",
         "Unused": "Ubrukt",
         "UsageDetails": "%1$s besøk og %2$s handlinger siden dette nettstedet ble laget.",
         "Usages": "Bruk"
