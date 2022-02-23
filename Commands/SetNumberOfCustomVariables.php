@@ -45,7 +45,7 @@ class SetNumberOfCustomVariables extends ConsoleCommand
             $this->writeSuccessMessage($output, array(
                 'Your Piwik is already configured for ' . $numVarsToSet . ' custom variables.'
             ));
-            return;
+            return 0;
         }
 
         $output->writeln('');
@@ -56,7 +56,7 @@ class SetNumberOfCustomVariables extends ConsoleCommand
         }
 
         if ($input->isInteractive() && !$this->confirmChange($output)) {
-            return;
+            return 0;
         }
 
         $output->writeln('');
@@ -75,6 +75,8 @@ class SetNumberOfCustomVariables extends ConsoleCommand
         $this->writeSuccessMessage($output, array(
             'Your Piwik is now configured for ' . $numVarsToSet . ' custom variables.'
         ));
+
+        return 0;
     }
 
     private function initProgress($numChangesToPerform, OutputInterface $output)
