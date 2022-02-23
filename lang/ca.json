@@ -2,9 +2,26 @@
     "CustomVariables": {
         "ColumnCustomVariableName": "Nom de la variable personalitzada",
         "ColumnCustomVariableValue": "Valor de la variable personalitzada",
+        "CreateNewSlot": "Augmenteu el nombre de ranures de variables personalitzades disponibles",
+        "CreatingCustomVariableTakesTime": "La creació d'una nova ranura de variable personalitzada pot trigar molt de temps en funció de la mida de la base de dades. Per tant només és possible fer-ho mitjançant una ordre que s'ha d'executar a la línia de comandes.",
+        "CurrentAvailableCustomVariables": "Actualment podeu utilitzar fins a %s variables personalitzades per lloc.",
         "CustomVariables": "Variables personalitzades",
         "CustomVariablesReportDocumentation": "Aquest informe conté informació sobre les variables personaltizades. Feu click al nom d'una variable per veure la distribució dels valors. %1$s Per més informació sobre les variables personalitzades, podeu llegir la %2$sdocumentació sobre variables peronalitzades a matomo.org%3$s",
+        "CustomVariablesSubcategoryHelp1": "Aquest informe conté informació sobre les vostres variables personalitzades. Feu clic al nom d'una variable per veure la distribució dels valors.",
+        "CustomVariablesSubcategoryHelp2": "Llegiu més sobre aquest tema a la guia en línia.",
+        "Index": "Índex",
+        "ManageDescription": "Aquesta visió general mostra totes les ranures de variables personalitzades i els seus usos per al lloc web '%s'. Els noms de cada ranura estan ordenats segons la freqüència amb què s'han utilitzat en total.",
+        "MetricsAreOnlyAvailableForVisitScope": "Nota: les mètriques %1$s només estan disponibles per a variables personalitzades de l'àmbit %2$s.",
+        "MetricsNotAvailableForPageScope": "Per a les variables personalitzades de l'àmbit %1$s, el valor de la columna d'aquestes mètriques és %2$s",
+        "PluginDescription": "Les variables personalitzades són parells (nom, valor) que podeu assignar mitjançant l'API de Javascript als visitants o a qualsevol de les seves accions. A continuació Matomo informarà de la quantitat de visites, pàgines i conversions per a cadascun d'aquests noms i valors personalitzats. Consulteu les variables personalitzades detallades per a cada usuari i acció al registre de visitants. Aquest connector és necessari per utilitzar la funció d'anàlisi de comerç electrònic!",
+        "ScopeConversion": "conversió d'abast",
         "ScopePage": "àmbit de la pàgina",
-        "ScopeVisit": "àmbit de la visita"
+        "ScopeVisit": "àmbit de la visita",
+        "ScopeX": "Abast %s",
+        "SlotsReportIsGeneratedOverTime": "Les dades d'aquest informe s'ompliran amb el temps. Pot trigar un dia o dos a mostrar dades i unes quantes setmanes fins que l'informe sigui completament precís.",
+        "ToCreateCustomVarExecute": "Per crear una nova ranura de variable personalitzada, executeu l'ordre següent a la vostra instal·lació de Matomo:",
+        "Unused": "Sense utilitzar",
+        "UsageDetails": "%1$s visites i %2$s accions des de la creació d'aquest lloc web.",
+        "Usages": "Usos"
     }
 }
