@@ -34,7 +34,7 @@ class Info extends ConsoleCommand
             $this->writeSuccessMessage($output, array(
                 'Your Piwik is configured for ' . $maxVars . ' custom variables.'
             ));
-            return;
+            return 0;
         }
 
         $output->writeln('<error>There is a problem with your custom variables configuration:</error>');
@@ -46,6 +46,8 @@ class Info extends ConsoleCommand
         foreach (Model::getScopes() as $scope) {
             $output->writeln(Common::prefixTable($scope));
         }
+
+        return 0;
     }
 
     private function hasEverywhereSameAmountOfVariables()
