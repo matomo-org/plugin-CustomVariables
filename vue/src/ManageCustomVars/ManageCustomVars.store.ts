@@ -5,37 +5,25 @@
  * @license http://www.gnu.org/licenses/gpl-3.0.html GPL v3 or later
  */
 
-// TODO:
-// - state property types
-// - method signatures
-// - method code
-
 import {
   reactive,
   computed,
   readonly,
 } from 'vue';
 import { AjaxHelper } from 'CoreHome';
+import { CustomVariableUsage } from '../types';
 
 interface CustomVarsStoreState {
-  customVariables: unknown[];
-  extractions: unknown[];
+  customVariables: CustomVariableUsage[];
   isLoading: boolean;
   hasCustomVariablesInGeneral: boolean;
   hasAtLeastOneUsage: boolean;
   numSlotsAvailable: number;
 }
 
-interface CustomVariableUsage {
-  index: number;
-  scope: string;
-  usages: unknown[];
-}
-
 class ManageCustomVarsStore {
   private privateState = reactive<CustomVarsStoreState>({
     customVariables: [],
-    extractions: [],
     isLoading: false,
     hasCustomVariablesInGeneral: false,
     hasAtLeastOneUsage: false,
@@ -44,11 +32,11 @@ class ManageCustomVarsStore {
 
   readonly state = computed(() => readonly(this.privateState));
 
-  init() {
+  init(): Promise<void> {
     return this.fetchUsages();
   }
 
-  fetchCustomVariables() {
+  fetchCustomVariables(): Promise<void> {
     return AjaxHelper.fetch<unknown[]>({
       method: 'CustomVariables.getCustomVariables',
       period: 'year',
@@ -59,9 +47,9 @@ class ManageCustomVarsStore {
     });
   }
 
-  fetchUsages() {
+  fetchUsages(): Promise<void> {
     this.privateState.isLoading = true;
-    Promise.all([
+    return Promise.all([
       this.fetchCustomVariables(),
       AjaxHelper.fetch<CustomVariableUsage[]>({
         method: 'CustomVariables.getUsagesOfSlots',
