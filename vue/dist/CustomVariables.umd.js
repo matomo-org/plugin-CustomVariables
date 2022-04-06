@@ -103,13 +103,6 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__19dc__;
 
 /***/ }),
 
-/***/ "65ae":
-/***/ (function(module, exports) {
-
-
-
-/***/ }),
-
 /***/ "8bbf":
 /***/ (function(module, exports) {
 
@@ -150,7 +143,7 @@ var external_CoreHome_ = __webpack_require__("19dc");
 // EXTERNAL MODULE: external {"commonjs":"vue","commonjs2":"vue","root":"Vue"}
 var external_commonjs_vue_commonjs2_vue_root_Vue_ = __webpack_require__("8bbf");
 
-// CONCATENATED MODULE: ./node_modules/@vue/cli-plugin-babel/node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/@vue/cli-plugin-babel/node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/@vue/cli-service/node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/@vue/cli-service/node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/@vue/cli-service/node_modules/vue-loader-v16/dist??ref--0-1!./plugins/CustomVariables/vue/src/ManageCustomVars/ManageCustomVars.vue?vue&type=template&id=0b948dfb
+// CONCATENATED MODULE: ./node_modules/@vue/cli-plugin-babel/node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/@vue/cli-plugin-babel/node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/@vue/cli-service/node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/@vue/cli-service/node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/@vue/cli-service/node_modules/vue-loader-v16/dist??ref--0-1!./plugins/CustomVariables/vue/src/ManageCustomVars/ManageCustomVars.vue?vue&type=template&id=ddf373e4
 
 var _hoisted_1 = {
   class: "manageCustomVars"
@@ -238,7 +231,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     _: 1
   }, 8, ["content-title"]), [[external_commonjs_vue_commonjs2_vue_root_Vue_["vShow"], !_ctx.isLoading]])]);
 }
-// CONCATENATED MODULE: ./plugins/CustomVariables/vue/src/ManageCustomVars/ManageCustomVars.vue?vue&type=template&id=0b948dfb
+// CONCATENATED MODULE: ./plugins/CustomVariables/vue/src/ManageCustomVars/ManageCustomVars.vue?vue&type=template&id=ddf373e4
 
 // CONCATENATED MODULE: ./plugins/CustomVariables/vue/src/ManageCustomVars/ManageCustomVars.store.ts
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
@@ -425,19 +418,11 @@ function ManageCustomVarsvue_type_script_lang_ts_arrayLikeToArray(arr, len) { if
 }));
 // CONCATENATED MODULE: ./plugins/CustomVariables/vue/src/ManageCustomVars/ManageCustomVars.vue?vue&type=script&lang=ts
  
-// EXTERNAL MODULE: ./plugins/CustomVariables/vue/src/ManageCustomVars/ManageCustomVars.vue?vue&type=custom&index=0&blockType=todo
-var ManageCustomVarsvue_type_custom_index_0_blockType_todo = __webpack_require__("65ae");
-var ManageCustomVarsvue_type_custom_index_0_blockType_todo_default = /*#__PURE__*/__webpack_require__.n(ManageCustomVarsvue_type_custom_index_0_blockType_todo);
-
 // CONCATENATED MODULE: ./plugins/CustomVariables/vue/src/ManageCustomVars/ManageCustomVars.vue
 
 
 
 ManageCustomVarsvue_type_script_lang_ts.render = render
-/* custom blocks */
-
-if (typeof ManageCustomVarsvue_type_custom_index_0_blockType_todo_default.a === 'function') ManageCustomVarsvue_type_custom_index_0_blockType_todo_default()(ManageCustomVarsvue_type_script_lang_ts)
-
 
 /* harmony default export */ var ManageCustomVars = (ManageCustomVarsvue_type_script_lang_ts);
 // CONCATENATED MODULE: ./plugins/CustomVariables/vue/src/ManageCustomVars/ManageCustomVars.adapter.ts
