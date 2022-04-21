@@ -135,6 +135,6 @@ class CustomVariablesRequestProcessor extends RequestProcessor
 
     public static function truncateCustomVariable($input)
     {
-        return substr(trim($input), 0, CustomVariables::getMaxLengthCustomVariables());
+        return mb_substr(trim($input), 0, CustomVariables::getMaxLengthCustomVariables());
     }
 }
