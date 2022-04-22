@@ -110,6 +110,10 @@ class CustomVariablesRequestProcessor extends RequestProcessor
         foreach ($customVar as $id => $keyValue) {
             $id = (int)$id;
 
+            if (!is_array($keyValue)) {
+                continue;
+            }
+            
             if ($id < 1
                 || $id > $maxCustomVars
                 || count($keyValue) != 2
