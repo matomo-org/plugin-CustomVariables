@@ -129,7 +129,7 @@ class Archiver extends \Piwik\Plugin\Archiver
 
     protected function cleanCustomVarValue($value)
     {
-        if (strlen($value)) {
+        if ($value !== null && strlen($value)) {
             return $value;
         }
         return self::LABEL_CUSTOM_VALUE_NOT_DEFINED;
