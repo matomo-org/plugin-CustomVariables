@@ -110,6 +110,10 @@ class CustomVariablesRequestProcessor extends RequestProcessor
         foreach ($customVar as $id => $keyValue) {
             $id = (int)$id;
 
+            if (!is_array($keyValue)) {
+                continue;
+            }
+            
             if ($id < 1
                 || $id > $maxCustomVars
                 || count($keyValue) != 2
@@ -135,6 +139,6 @@ class CustomVariablesRequestProcessor extends RequestProcessor
 
     public static function truncateCustomVariable($input)
     {
-        return substr(trim($input), 0, CustomVariables::getMaxLengthCustomVariables());
+        return mb_substr(trim($input), 0, CustomVariables::getMaxLengthCustomVariables());
     }
 }

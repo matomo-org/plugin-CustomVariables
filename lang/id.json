@@ -1,13 +1,27 @@
 {
     "CustomVariables": {
-        "ColumnCustomVariableName": "Nama Variabel Kustom",
-        "ColumnCustomVariableValue": "Nilai Variabel Kustom",
-        "CustomVariables": "Variabel Kustom",
-        "CustomVariablesReportDocumentation": "Laporan ini mengandung informasi tentang Variabel Kustom Anda. Klik di nama variabel untuk melihat distribusi nilai. %1$s Informasi lebih lengkap tentang Vabiabel Kustom, baca %2$sdokumentasi Vabiabel Kustom di matomo.org%3$s",
+        "ColumnCustomVariableName": "Nama Variabel Khusus",
+        "ColumnCustomVariableValue": "Nilai Variabel Khusus",
+        "CreateNewSlot": "Tingkatkan jumlah slot Variabel Khusus yang tersedia",
+        "CreatingCustomVariableTakesTime": "Membuat slot variabel khusus baru dapat memakan waktu lama tergantung dari ukuran basis data Anda. Oleh karena itu, ini hanya mungkin dilakukan melalui perintah yang perlu dijalankan pada baris perintah.",
+        "CurrentAvailableCustomVariables": "Saat ini Anda dapat menggunakan hingga %s Variabel Khusus per situs.",
+        "CustomVariables": "Variabel Khusus",
+        "CustomVariablesReportDocumentation": "Laporan ini berisi informasi tentang Variabel Khusus Anda. Klik pada nama variabel untuk melihat distribusi nilai. %1$s Untuk informasi lebih lanjut tentang Variabel Khusus secara umum, baca %2$sdokumentasi Variabel Khusus di matomo.org%3$s",
+        "CustomVariablesSubcategoryHelp1": "Laporan ini berisi informasi tentang Variabel Khusus Anda. Klik pada nama variabel untuk melihat distribusi nilai.",
+        "CustomVariablesSubcategoryHelp2": "Baca lebih lanjut tentang topik ini di panduan daring.",
+        "Index": "Indeks",
+        "ManageDescription": "Ikhtisar ini menunjukkan semua slot variabel khusus dan penggunaannya untuk situs web '%s'. Nama-nama dalam setiap slot diurutkan berdasarkan seberapa sering mereka digunakan secara total.",
+        "MetricsAreOnlyAvailableForVisitScope": "Catatan: Metrik %1$s hanya tersedia untuk Variabel Khusus dengan cakupan %2$s.",
+        "MetricsNotAvailableForPageScope": "Untuk cakupan Variabel Khusus %1$s, nilai kolom untuk metrik ini adalah %2$s",
+        "PluginDescription": "Variabel Khusus adalah pasangan (nama, nilai) yang dapat Anda tetapkan menggunakan Javascript API kepada pengunjung atau tindakan mereka. Matomo kemudian akan melaporkan berapa banyak kunjungan, halaman, konversi untuk setiap nama dan nilai khusus ini. Lihat Variabel Khusus secara terperinci untuk setiap pengguna dan tindakan di Log Pengunjung. Plugin ini diperlukan untuk menggunakan fitur Ecommerce Analytics!",
+        "ScopeConversion": "cakupan konversi",
         "ScopePage": "cakupan halaman",
         "ScopeVisit": "cakupan kunjungan",
-        "Index": "Indeks",
-        "Usages": "Penggunaan",
-        "Unused": "Tidak digunakan"
+        "ScopeX": "Cakupan %s",
+        "SlotsReportIsGeneratedOverTime": "Data untuk laporan ini akan diisi dari waktu ke waktu. Mungkin perlu satu atau dua hari untuk melihat data apa pun dan beberapa minggu hingga laporan benar-benar akurat.",
+        "ToCreateCustomVarExecute": "Untuk membuat slot variabel khusus yang baru, jalankan perintah berikut ini dalam instalasi Matomo Anda:",
+        "Unused": "Tidak terpakai",
+        "UsageDetails": "%1$s kunjungan dan %2$s tindakan sejak pembuatan situs web ini.",
+        "Usages": "Penggunaan"
     }
 }

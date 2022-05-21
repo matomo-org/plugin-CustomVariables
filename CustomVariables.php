@@ -20,7 +20,6 @@ class CustomVariables extends \Piwik\Plugin
     public function registerEvents()
     {
         return array(
-            'AssetManager.getJavaScriptFiles' => 'getJsFiles',
             'Translate.getClientSideTranslationKeys' => 'getClientSideTranslationKeys',
             'AssetManager.getStylesheetFiles'  => 'getStylesheetFiles',
             'Dimension.addDimensions' => 'addDimensions',
@@ -137,14 +136,7 @@ class CustomVariables extends \Piwik\Plugin
 
     public function getStylesheetFiles(&$stylesheets)
     {
-        $stylesheets[] = "plugins/CustomVariables/angularjs/manage-custom-vars/manage-custom-vars.directive.less";
-    }
-
-    public function getJsFiles(&$jsFiles)
-    {
-        $jsFiles[] = "plugins/CustomVariables/angularjs/manage-custom-vars/manage-custom-vars.model.js";
-        $jsFiles[] = "plugins/CustomVariables/angularjs/manage-custom-vars/manage-custom-vars.controller.js";
-        $jsFiles[] = "plugins/CustomVariables/angularjs/manage-custom-vars/manage-custom-vars.directive.js";
+        $stylesheets[] = "plugins/CustomVariables/vue/src/ManageCustomVars/ManageCustomVars.less";
     }
 
     public function provideActionDimensionFields(&$fields, &$joins)
