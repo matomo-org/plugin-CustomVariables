@@ -13,7 +13,7 @@
         "ManageDescription": "Ikhtisar ini menunjukkan semua slot variabel khusus dan penggunaannya untuk situs web '%s'. Nama-nama dalam setiap slot diurutkan berdasarkan seberapa sering mereka digunakan secara total.",
         "MetricsAreOnlyAvailableForVisitScope": "Catatan: Metrik %1$s hanya tersedia untuk Variabel Khusus dengan cakupan %2$s.",
         "MetricsNotAvailableForPageScope": "Untuk cakupan Variabel Khusus %1$s, nilai kolom untuk metrik ini adalah %2$s",
-        "PluginDescription": "Variabel Khusus adalah pasangan (nama, nilai) yang dapat Anda tetapkan menggunakan Javascript API kepada pengunjung atau tindakan mereka. Matomo kemudian akan melaporkan berapa banyak kunjungan, halaman, konversi untuk setiap nama dan nilai khusus ini. Lihat Variabel Khusus secara terperinci untuk setiap pengguna dan tindakan di Log Pengunjung. Plugin ini diperlukan untuk menggunakan fitur Ecommerce Analytics!",
+        "PluginDescription": "Variabel Khusus adalah pasangan (nama, nilai) yang dapat Anda tetapkan menggunakan Javascript API kepada pengunjung atau tindakan mereka. Matomo kemudian akan melaporkan berapa banyak kunjungan, halaman, konversi untuk setiap nama dan nilai khusus ini. Lihat Variabel Khusus secara terperinci untuk setiap pengguna dan tindakan di Log Pengunjung. Pengaya ini diperlukan untuk menggunakan fitur Ecommerce Analytics!",
         "ScopeConversion": "cakupan konversi",
         "ScopePage": "cakupan halaman",
         "ScopeVisit": "cakupan kunjungan",
