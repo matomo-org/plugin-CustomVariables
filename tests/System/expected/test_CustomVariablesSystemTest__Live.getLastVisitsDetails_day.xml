@@ -16,6 +16,9 @@
 				<goalPageId />
 				
 				<url>http://localhost</url>
+				<referrerType>search</referrerType>
+				<referrerName>Google</referrerName>
+				<referrerKeyword>piwik</referrerKeyword>
 				<icon>plugins/Morpheus/images/goal.png</icon>
 				<iconSVG>plugins/Morpheus/images/goal.svg</iconSVG>
 				<title>Goal conversion</title>
