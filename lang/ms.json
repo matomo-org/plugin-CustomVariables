@@ -1,5 +1,11 @@
 {
     "CustomVariables": {
-        "ColumnCustomVariableName": "Nama Pembolehubah Tersuai"
+        "ColumnCustomVariableName": "Nama Pembolehubah Tersuai",
+        "ColumnCustomVariableValue": "Nilai Pembolehubah Tersuai",
+        "CustomVariables": "Pembolehubah Tersuai",
+        "CustomVariablesReportDocumentation": "Laporan ini mengandungi maklumat tentang Pembolehubah Tersuai anda. Klik pada nama pembolehubah untuk melihat taburan nilai. %1$s Untuk mendapatkan maklumat lanjut tentang Pembolehubah Tersuai secara umum, baca dokumentasi %2$sPembolehubah Tersuai di matomo.org%3$s",
+        "PluginDescription": "Pembolehubah Tersuai ialah pasangan (nama, nilai) yang boleh anda tetapkan menggunakan API Javascript kepada pelawat atau mana-mana tindakan mereka. Matomo kemudiannya akan melaporkan bilangan lawatan, halaman, penukaran untuk setiap nama dan nilai tersuai ini. Lihat Pembolehubah Tersuai terperinci untuk setiap pengguna dan tindakan dalam Log Pelawat. Pemalam ini diperlukan untuk menggunakan ciri Ecommerce Analytics!",
+        "ScopePage": "halaman skop",
+        "ScopeVisit": "lawatan skop"
     }
 }
