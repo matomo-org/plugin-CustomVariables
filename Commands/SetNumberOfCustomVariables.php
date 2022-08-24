@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Matomo - free/libre analytics platform
  *
@@ -44,9 +45,9 @@ class SetNumberOfCustomVariables extends ConsoleCommand
         $numChangesToPerform = $this->getNumberOfChangesToPerform($numVarsToSet);
 
         if (0 === $numChangesToPerform) {
-            $this->writeSuccessMessage($output, array(
+            $this->writeSuccessMessage($output, [
                 'Your Matomo is already configured for ' . $numVarsToSet . ' custom variables.'
-            ));
+            ]);
             return 0;
         }
 
@@ -74,9 +75,9 @@ class SetNumberOfCustomVariables extends ConsoleCommand
         Cache::clearCacheGeneral();
         $this->progress->finish();
 
-        $this->writeSuccessMessage($output, array(
+        $this->writeSuccessMessage($output, [
             'Your Matomo is now configured for ' . $numVarsToSet . ' custom variables.'
-        ));
+        ]);
 
         return 0;
     }
@@ -122,7 +123,10 @@ class SetNumberOfCustomVariables extends ConsoleCommand
         $output->writeln('');
 
         $helper   = $this->getHelper('question');
-        $question = new ConfirmationQuestion('<question>Are you sure you want to perform these actions? (y/N)</question>', false);
+        $question = new ConfirmationQuestion(
+            '<question>Are you sure you want to perform these actions? (y/N)</question>',
+            false
+        );
 
         return $helper->ask($input, $output, $question);
     }
@@ -139,7 +143,6 @@ class SetNumberOfCustomVariables extends ConsoleCommand
         $output->writeln(sprintf('Scope "%s"', $scopeName));
 
         if ($numVarsToSet > $numCurrentCustomVars) {
-
             $indexes = $highestIndex + 1;
             if (1 !== $numVarsDifference) {
                 $indexes .= ' - ' . ($highestIndex + $numVarsDifference);
@@ -148,9 +151,7 @@ class SetNumberOfCustomVariables extends ConsoleCommand
             $output->writeln(
                 sprintf('%s new custom variables having the index(es) %s will be ADDED', $numVarsDifference, $indexes)
             );
-
         } elseif ($numVarsToSet < $numCurrentCustomVars) {
-
             $indexes = $highestIndex - $numVarsDifference + 1;
 
             if (1 !== $numVarsDifference) {

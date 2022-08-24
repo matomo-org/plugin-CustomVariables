@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Matomo - free/libre analytics platform
  *
@@ -23,7 +24,7 @@ use Piwik\Tests\Framework\TestCase\IntegrationTestCase;
  */
 class SetNumberOfCustomVariablesTest extends IntegrationTestCase
 {
-    public function testExecute_ShouldThrowException_IfArgumentIsMissing()
+    public function testExecuteShouldThrowExceptionIfArgumentIsMissing()
     {
         $this->expectException(\RuntimeException::class);
         $this->expectExceptionMessage('Not enough arguments');
@@ -31,7 +32,7 @@ class SetNumberOfCustomVariablesTest extends IntegrationTestCase
         $this->executeCommand(null);
     }
 
-    public function testExecute_ShouldThrowException_HasToBeANumber()
+    public function testExecuteShouldThrowExceptionHasToBeANumber()
     {
         $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('The number of available custom variables has to be a number');
@@ -39,7 +40,7 @@ class SetNumberOfCustomVariablesTest extends IntegrationTestCase
         $this->executeCommand('a');
     }
 
-    public function testExecute_ShouldThrowException_Minimum2CustomVarsRequired()
+    public function testExecuteShouldThrowExceptionMinimum2CustomVarsRequired()
     {
         $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('There has to be at least five custom variables');
@@ -47,20 +48,20 @@ class SetNumberOfCustomVariablesTest extends IntegrationTestCase
         $this->executeCommand(4);
     }
 
-    public function testExecute_ShouldThrowException_IfUserCancelsConfirmation()
+    public function testExecuteShouldThrowExceptionIfUserCancelsConfirmation()
     {
         $result = $this->executeCommand(7, false);
         $this->assertStringEndsWith('Are you sure you want to perform these actions? (y/N)', $result);
     }
 
-    public function testExecute_ShouldDoNothingIfExpectedResult_IsAlreadyTheCase()
+    public function testExecuteShouldDoNothingIfExpectedResultIsAlreadyTheCase()
     {
         $result = $this->executeCommand(5);
 
         self::assertStringContainsString('Your Matomo is already configured for 5 custom variables', $result);
     }
 
-    public function testExecute_ShouldAddMaxCustomVars_IfNumberIsHigherThanActual()
+    public function testExecuteShouldAddMaxCustomVarsIfNumberIsHigherThanActual()
     {
         $this->assertEquals(5, CustomVariables::getNumUsableCustomVariables());
 
@@ -77,7 +78,7 @@ class SetNumberOfCustomVariablesTest extends IntegrationTestCase
         $this->assertEquals(6, CustomVariables::getNumUsableCustomVariables());
     }
 
-    public function testExecute_ShouldRemoveMaxCustomVars_IfNumberIsLessThanActual()
+    public function testExecuteShouldRemoveMaxCustomVarsIfNumberIsLessThanActual()
     {
         $this->executeCommand(6, true);
         $this->assertEquals(6, CustomVariables::getNumUsableCustomVariables());
@@ -95,7 +96,7 @@ class SetNumberOfCustomVariablesTest extends IntegrationTestCase
         $this->assertEquals(5, CustomVariables::getNumUsableCustomVariables());
     }
 
-    public function testExecute_AddMultiple_RemoveMultiple()
+    public function testExecuteAddMultipleRemoveMultiple()
     {
         $this->assertEquals(5, CustomVariables::getNumUsableCustomVariables());
 
@@ -123,9 +124,9 @@ class SetNumberOfCustomVariablesTest extends IntegrationTestCase
         $commandTester->setInputs([($confirm ? 'yes' : 'no') . '\n']);
 
         if (is_null($maxCustomVars)) {
-            $params = array();
+            $params = [];
         } else {
-            $params = array('maxCustomVars' => $maxCustomVars);
+            $params = ['maxCustomVars' => $maxCustomVars];
         }
 
         $params['command'] = $setNumberCmd->getName();
