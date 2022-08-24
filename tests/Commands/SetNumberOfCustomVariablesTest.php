@@ -57,7 +57,7 @@ class SetNumberOfCustomVariablesTest extends IntegrationTestCase
     {
         $result = $this->executeCommand(5);
 
-        self::assertStringContainsString('Your Piwik is already configured for 5 custom variables', $result);
+        self::assertStringContainsString('Your Matomo is already configured for 5 custom variables', $result);
     }
 
     public function testExecute_ShouldAddMaxCustomVars_IfNumberIsHigherThanActual()
@@ -66,13 +66,13 @@ class SetNumberOfCustomVariablesTest extends IntegrationTestCase
 
         $result = $this->executeCommand(6);
 
-        self::assertStringContainsString('Configuring Piwik for 6 custom variables', $result);
+        self::assertStringContainsString('Configuring Matomo for 6 custom variables', $result);
         self::assertStringContainsString('1 new custom variables having the index(es) 6 will be ADDED', $result);
         self::assertStringContainsString('Starting to apply changes', $result);
         self::assertStringContainsString('Added a variable in scope "Page" having the index 6', $result);
         self::assertStringContainsString('Added a variable in scope "Visit" having the index 6', $result);
         self::assertStringContainsString('Added a variable in scope "Conversion" having the index 6', $result);
-        self::assertStringContainsString('Your Piwik is now configured for 6 custom variables.', $result);
+        self::assertStringContainsString('Your Matomo is now configured for 6 custom variables.', $result);
 
         $this->assertEquals(6, CustomVariables::getNumUsableCustomVariables());
     }
@@ -84,13 +84,13 @@ class SetNumberOfCustomVariablesTest extends IntegrationTestCase
 
         $result = $this->executeCommand(5);
 
-        self::assertStringContainsString('Configuring Piwik for 5 custom variables', $result);
+        self::assertStringContainsString('Configuring Matomo for 5 custom variables', $result);
         self::assertStringContainsString('1 existing custom variables having the index(es) 6 will be REMOVED.', $result);
         self::assertStringContainsString('Starting to apply changes', $result);
         self::assertStringContainsString('Removed a variable in scope "Page" having the index 6', $result);
         self::assertStringContainsString('Removed a variable in scope "Visit" having the index 6', $result);
         self::assertStringContainsString('Removed a variable in scope "Conversion" having the index 6', $result);
-        self::assertStringContainsString('Your Piwik is now configured for 5 custom variables.', $result);
+        self::assertStringContainsString('Your Matomo is now configured for 5 custom variables.', $result);
 
         $this->assertEquals(5, CustomVariables::getNumUsableCustomVariables());
     }
@@ -120,9 +120,7 @@ class SetNumberOfCustomVariablesTest extends IntegrationTestCase
         $application->add($setNumberCmd);
 
         $commandTester = new CommandTester($setNumberCmd);
-
-        $dialog = $setNumberCmd->getHelper('dialog');
-        $dialog->setInputStream($this->getInputStream($confirm ? 'yes' : 'no' . '\n'));
+        $commandTester->setInputs([($confirm ? 'yes' : 'no') . '\n']);
 
         if (is_null($maxCustomVars)) {
             $params = array();
