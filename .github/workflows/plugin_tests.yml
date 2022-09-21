@@ -42,10 +42,10 @@ jobs:
 
     steps:
       - name: run tests
-          uses: matomo-org/github-action-tests@v1
-          with:
-            plugin-name: 'CustomVariables'
-            php-version: ${{ matrix.php-versions }}
-            test-type: ${{ matrix.type }}
-            git-head: ${{ github.head_ref }}
+        uses: matomo-org/github-action-tests@v1
+        with:
+          plugin-name: 'CustomVariables'
+          php-version: ${{ matrix.php-versions }}
+          test-type: ${{ matrix.type }}
+          git-head: ${{ github.head_ref }}
 
