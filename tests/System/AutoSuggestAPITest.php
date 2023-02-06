@@ -18,9 +18,10 @@ use Piwik\Plugins\CustomVariables\Model;
 use Piwik\Tests\Fixtures\ManyVisitsWithGeoIPAndEcommerce;
 use Piwik\Tests\Framework\TestCase\SystemTestCase;
 use Piwik\Tracker\Cache;
+use Piwik\Version;
 
 /**
- * testing a the auto suggest API for all known segments
+ * testing the auto suggest API for all known segments
  *
  * @group CustomVariables
  * @group AutoSuggestAPITest
@@ -48,16 +49,32 @@ class AutoSuggestAPITest extends SystemTestCase
         $idSite = self::$fixture->idSite;
         $segments = self::getSegmentsMetadata();
 
-        $apiForTesting = array();
+        $apiForTesting = [];
         foreach ($segments as $segment) {
             $apiForTesting[] = $this->getApiForTestingForSegment($idSite, $segment);
         }
 
-        $apiForTesting[] = array('Live.getLastVisitsDetails',
-                                 array('idSite' => $idSite,
-                                       'date' => '1998-07-12,today',
-                                       'period' => 'range',
-                                       'otherRequestParameters' => array('filter_limit' => 1000)));
+        $xmlFieldsToRemove = [];
+
+        if (version_compare(Version::VERSION, '4.12.0-rc1', '<')) {
+            // those fields have been added to goal details
+            $xmlFieldsToRemove = [
+                'referrerType',
+                'referrerName',
+                'referrerKeyword',
+            ];
+        }
+
+        $apiForTesting[] = [
+            'Live.getLastVisitsDetails',
+            [
+                'idSite'                 => $idSite,
+                'date'                   => '1998-07-12,today',
+                'period'                 => 'range',
+                'otherRequestParameters' => ['filter_limit' => 1000],
+                'xmlFieldsToRemove'      => $xmlFieldsToRemove,
+            ]
+        ];
 
         return $apiForTesting;
     }
@@ -70,10 +87,10 @@ class AutoSuggestAPITest extends SystemTestCase
         if (!self::$hasArchivedData) {
             self::$hasArchivedData = true;
             // need to make sure data is archived before disabling the archiving
-            Request::processRequest('API.get', array(
+            Request::processRequest('API.get', [
                 'date' => '2018-01-10', 'period' => 'year', 'idSite' => $params['idSite'],
                 'trigger' => 'archivephp'
-            ));
+            ]);
         }
 
         // Refresh cache for CustomVariables\Model
@@ -91,7 +108,7 @@ class AutoSuggestAPITest extends SystemTestCase
         $idSite = self::$fixture->idSite;
         $segments = self::getSegmentsMetadata();
 
-        $apiForTesting = array();
+        $apiForTesting = [];
         foreach ($segments as $segment) {
             $apiForTesting[] = $this->getApiForTestingForSegment($idSite, $segment);
         }
@@ -106,10 +123,14 @@ class AutoSuggestAPITest extends SystemTestCase
      */
     protected function getApiForTestingForSegment($idSite, $segment)
     {
-        return array('API.getSuggestedValuesForSegment',
-                     array('idSite' => $idSite,
-                           'testSuffix' => '_' . $segment,
-                           'otherRequestParameters' => array('segmentName' => $segment)));
+        return [
+            'API.getSuggestedValuesForSegment',
+            [
+                'idSite'                 => $idSite,
+                'testSuffix'             => '_' . $segment,
+                'otherRequestParameters' => ['segmentName' => $segment]
+            ]
+        ];
     }
 
     /**
@@ -120,10 +141,11 @@ class AutoSuggestAPITest extends SystemTestCase
     {
         // Get the top segment value
         $request = new Request(
-            'method=API.getSuggestedValuesForSegment'
-            . '&segmentName=' . $params['segmentToComplete']
-            . '&idSite=' . $params['idSite']
-            . '&format=json'
+            sprintf(
+                'method=API.getSuggestedValuesForSegment&segmentName=%s&idSite=%s&format=json',
+                $params['segmentToComplete'],
+                $params['idSite']
+            )
         );
         $response = json_decode($request->process(), true);
         $this->assertApiResponseHasNoError($response);
@@ -144,14 +166,14 @@ class AutoSuggestAPITest extends SystemTestCase
     {
         $segments = self::getSegmentsMetadata();
 
-        $apiForTesting = array();
+        $apiForTesting = [];
         foreach ($segments as $segment) {
-            $apiForTesting[] = array('VisitsSummary.get',
-                                     array('idSite' => self::$fixture->idSite,
+            $apiForTesting[] = ['VisitsSummary.get',
+                                     ['idSite' => self::$fixture->idSite,
                                            'date' => date("Y-m-d", strtotime(self::$fixture->dateTime)) . ',today',
                                            'period' => 'range',
                                            'testSuffix' => '_' . $segment,
-                                           'segmentToComplete' => $segment));
+                                           'segmentToComplete' => $segment]];
         }
         return $apiForTesting;
     }
@@ -162,7 +184,7 @@ class AutoSuggestAPITest extends SystemTestCase
         Cache::clearCacheGeneral();
         PiwikCache::getTransientCache()->flushAll();
 
-        $segments = array();
+        $segments = [];
 
         // add CustomVariables manually since the data provider may not have access to the DB
         for ($i = 1; $i != Model::DEFAULT_CUSTOM_VAR_COUNT + 1; ++$i) {
@@ -175,12 +197,12 @@ class AutoSuggestAPITest extends SystemTestCase
 
     private static function getCustomVariableSegments($columnIndex = null)
     {
-        $result = array(
+        $result = [
             'customVariableName',
             'customVariableValue',
             'customVariablePageName',
             'customVariablePageValue',
-        );
+        ];
 
         if ($columnIndex !== null) {
             foreach ($result as &$name) {
