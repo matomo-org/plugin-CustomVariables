@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Matomo - free/libre analytics platform
  *
@@ -12,16 +13,18 @@ namespace Piwik\Plugins\CustomVariables\Commands;
 use Piwik\Plugin\ConsoleCommand;
 use Piwik\Plugins\CustomVariables\Model;
 use Piwik\Tracker\Cache;
+use Symfony\Component\Console\Helper\ProgressBar;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\Question\ConfirmationQuestion;
 
 /**
  */
 class SetNumberOfCustomVariables extends ConsoleCommand
 {
     /**
-     * @var \Symfony\Component\Console\Helper\ProgressHelper
+     * @var \Symfony\Component\Console\Helper\ProgressBar
      */
     private $progress;
 
@@ -42,20 +45,20 @@ class SetNumberOfCustomVariables extends ConsoleCommand
         $numChangesToPerform = $this->getNumberOfChangesToPerform($numVarsToSet);
 
         if (0 === $numChangesToPerform) {
-            $this->writeSuccessMessage($output, array(
-                'Your Piwik is already configured for ' . $numVarsToSet . ' custom variables.'
-            ));
+            $this->writeSuccessMessage($output, [
+                'Your Matomo is already configured for ' . $numVarsToSet . ' custom variables.'
+            ]);
             return 0;
         }
 
         $output->writeln('');
-        $output->writeln(sprintf('Configuring Piwik for %d custom variables', $numVarsToSet));
+        $output->writeln(sprintf('Configuring Matomo for %d custom variables', $numVarsToSet));
 
         foreach (Model::getScopes() as $scope) {
             $this->printChanges($scope, $numVarsToSet, $output);
         }
 
-        if ($input->isInteractive() && !$this->confirmChange($output)) {
+        if ($input->isInteractive() && !$this->confirmChange($input, $output)) {
             return 0;
         }
 
@@ -72,20 +75,16 @@ class SetNumberOfCustomVariables extends ConsoleCommand
         Cache::clearCacheGeneral();
         $this->progress->finish();
 
-        $this->writeSuccessMessage($output, array(
-            'Your Piwik is now configured for ' . $numVarsToSet . ' custom variables.'
-        ));
+        $this->writeSuccessMessage($output, [
+            'Your Matomo is now configured for ' . $numVarsToSet . ' custom variables.'
+        ]);
 
         return 0;
     }
 
     private function initProgress($numChangesToPerform, OutputInterface $output)
     {
-        /** @var \Symfony\Component\Console\Helper\ProgressHelper $progress */
-        $progress = $this->getHelperSet()->get('progress');
-        $progress->start($output, $numChangesToPerform);
-
-        return $progress;
+        return new ProgressBar($output, $numChangesToPerform);
     }
 
     private function performChange($scope, $numVarsToSet, OutputInterface $output)
@@ -119,16 +118,17 @@ class SetNumberOfCustomVariables extends ConsoleCommand
         return $maxCustomVars;
     }
 
-    private function confirmChange(OutputInterface $output)
+    private function confirmChange(InputInterface $input, OutputInterface $output)
     {
         $output->writeln('');
 
-        $dialog = $this->getHelperSet()->get('dialog');
-        return $dialog->askConfirmation(
-            $output,
+        $helper   = $this->getHelper('question');
+        $question = new ConfirmationQuestion(
             '<question>Are you sure you want to perform these actions? (y/N)</question>',
             false
         );
+
+        return $helper->ask($input, $output, $question);
     }
 
     private function printChanges($scope, $numVarsToSet, OutputInterface $output)
@@ -143,7 +143,6 @@ class SetNumberOfCustomVariables extends ConsoleCommand
         $output->writeln(sprintf('Scope "%s"', $scopeName));
 
         if ($numVarsToSet > $numCurrentCustomVars) {
-
             $indexes = $highestIndex + 1;
             if (1 !== $numVarsDifference) {
                 $indexes .= ' - ' . ($highestIndex + $numVarsDifference);
@@ -152,9 +151,7 @@ class SetNumberOfCustomVariables extends ConsoleCommand
             $output->writeln(
                 sprintf('%s new custom variables having the index(es) %s will be ADDED', $numVarsDifference, $indexes)
             );
-
         } elseif ($numVarsToSet < $numCurrentCustomVars) {
-
             $indexes = $highestIndex - $numVarsDifference + 1;
 
             if (1 !== $numVarsDifference) {

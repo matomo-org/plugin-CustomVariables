@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Matomo - free/libre analytics platform
  *
@@ -23,12 +24,12 @@ use Piwik\Tests\Framework\TestCase\IntegrationTestCase;
  */
 class InfoTest extends IntegrationTestCase
 {
-    public function testExecute_ShouldOutputInfoSuccess_IfEverythingIsOk()
+    public function testExecuteShouldOutputInfoSuccessIfEverythingIsOk()
     {
-        self::assertStringContainsString('Your Piwik is configured for 5 custom variables.', $this->executeCommand());
+        self::assertStringContainsString('Your Matomo is configured for 5 custom variables.', $this->executeCommand());
     }
 
-    public function testExecute_ShouldOutputErrorMessage_IfColumnsDoNotMatch()
+    public function testExecuteShouldOutputErrorMessageIfColumnsDoNotMatch()
     {
         $model = new Model(Model::SCOPE_PAGE);
         $model->removeCustomVariable();
@@ -44,9 +45,7 @@ class InfoTest extends IntegrationTestCase
         $application->add($infoCmd);
         $commandTester = new CommandTester($infoCmd);
 
-        $commandTester->execute(array('command' => $infoCmd->getName()));
-        $result = $commandTester->getDisplay();
-
-        return $result;
+        $commandTester->execute(['command' => $infoCmd->getName()]);
+        return $commandTester->getDisplay();
     }
 }

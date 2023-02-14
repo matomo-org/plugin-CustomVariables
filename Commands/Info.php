@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Matomo - free/libre analytics platform
  *
@@ -31,23 +32,23 @@ class Info extends ConsoleCommand
         $maxVars = CustomVariables::getNumUsableCustomVariables();
 
         if ($this->hasEverywhereSameAmountOfVariables()) {
-            $this->writeSuccessMessage($output, array(
-                'Your Piwik is configured for ' . $maxVars . ' custom variables.'
-            ));
-            return 0;
+            $this->writeSuccessMessage($output, [
+                'Your Matomo is configured for ' . $maxVars . ' custom variables.'
+            ]);
+            return self::SUCCESS;
         }
 
         $output->writeln('<error>There is a problem with your custom variables configuration:</error>');
         $output->writeln('<error>Some database tables miss custom variables columns.</error>');
         $output->writeln('');
-        $output->writeln('Your Piwik seems to be configured for ' . $maxVars . ' custom variables.');
+        $output->writeln('Your Matomo seems to be configured for ' . $maxVars . ' custom variables.');
         $output->writeln('Executing "<comment>./console customvariables:set-max-custom-variables ' . $maxVars . '</comment>" might fix this issue.');
         $output->writeln('If not check the following tables whether they have the same columns starting with <comment>custom_var_</comment>: ');
         foreach (Model::getScopes() as $scope) {
             $output->writeln(Common::prefixTable($scope));
         }
 
-        return 0;
+        return self::SUCCESS;
     }
 
     private function hasEverywhereSameAmountOfVariables()
