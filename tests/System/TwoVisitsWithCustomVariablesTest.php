@@ -9,6 +9,7 @@ namespace Piwik\Plugins\CustomVariables\tests\System;
 
 use Piwik\Tests\Framework\TestCase\SystemTestCase;
 use Piwik\Tests\Fixtures\TwoVisitsWithCustomVariables;
+use Piwik\Version;
 
 /**
  * Tests w/ two visits & custom variables.
@@ -37,15 +38,6 @@ class TwoVisitsWithCustomVariablesTest extends SystemTestCase
                                     'periods'      => array('day', 'week'),
                                     'setDateLastN' => true)),
 
-            // test getProcessedReport w/ custom variables subtable
-            array('API.getProcessedReport', array('idSite'        => $idSite,
-                                                  'date'          => $dateTime,
-                                                  'periods'       => 'day',
-                                                  'apiModule'     => 'CustomVariables',
-                                                  'apiAction'     => 'getCustomVariablesValuesFromNameId',
-                                                  'supertableApi' => 'CustomVariables.getCustomVariables',
-                                                  'testSuffix'    => '__subtable')),
-
             // test w/ custom variable segments
             array('VisitsSummary.get', array(
                 'idSite' => self::$fixture->idSite,
@@ -70,8 +62,21 @@ class TwoVisitsWithCustomVariablesTest extends SystemTestCase
                 'testSuffix' => '_segmentAll',
                 'segment' => 'customVariableName=@Othercustom,customVariablePageValue=@abcdefghi',
             )),
-
         );
+
+        if (version_compare(Version::VERSION, '4.13.3', '>')) {
+            // test getProcessedReport w/ custom variables subtable
+            $return[] = array('API.getProcessedReport', array(
+                'idSite'        => $idSite,
+                'date'          => $dateTime,
+                'periods'       => 'day',
+                'apiModule'     => 'CustomVariables',
+                'apiAction'     => 'getCustomVariablesValuesFromNameId',
+                'supertableApi' => 'CustomVariables.getCustomVariables',
+                'testSuffix'    => '__subtable')
+            );
+
+        }
 
         return $return;
     }
