@@ -14,8 +14,8 @@ use Piwik\Common;
 use Piwik\Plugin\ConsoleCommand;
 use Piwik\Plugins\CustomVariables\CustomVariables;
 use Piwik\Plugins\CustomVariables\Model;
-use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Output\OutputInterface;
+use Matomo\Dependencies\Symfony\Component\Console\Input\InputInterface;
+use Matomo\Dependencies\Symfony\Component\Console\Output\OutputInterface;
 
 /**
  */

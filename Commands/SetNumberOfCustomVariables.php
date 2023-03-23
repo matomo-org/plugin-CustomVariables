@@ -13,11 +13,11 @@ namespace Piwik\Plugins\CustomVariables\Commands;
 use Piwik\Plugin\ConsoleCommand;
 use Piwik\Plugins\CustomVariables\Model;
 use Piwik\Tracker\Cache;
-use Symfony\Component\Console\Helper\ProgressBar;
-use Symfony\Component\Console\Input\InputArgument;
-use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Console\Question\ConfirmationQuestion;
+use Matomo\Dependencies\Symfony\Component\Console\Helper\ProgressBar;
+use Matomo\Dependencies\Symfony\Component\Console\Input\InputArgument;
+use Matomo\Dependencies\Symfony\Component\Console\Input\InputInterface;
+use Matomo\Dependencies\Symfony\Component\Console\Output\OutputInterface;
+use Matomo\Dependencies\Symfony\Component\Console\Question\ConfirmationQuestion;
 
 /**
  */
