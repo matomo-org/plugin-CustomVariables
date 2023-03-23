@@ -35,16 +35,26 @@ All of the fields are limited to a total of 200 characters.
 ## Example Custom Variables
 To help you understand the different elements we have provided an example Variable for each of the potential scopes below.
 
-**Visit Scope Dimensions: User Role**
+### Visit Scope Dimensions: User Role
 
 This is useful because in many cases users can have multiple roles on a website. For example somebody who is both Staff and a Moderator.
 
 **Sample Values:**
 
-* Index: **1**
-* Name: **Tags**
-* Value: **Marketing**
-* Scope: **action**
+* Index: <strong><i>1</i></strong>
+* Name: <strong><i>User Role</i></strong>
+* Value: <strong><i>Staff</i></strong>
+* Scope: <strong><i>visit</i></strong>
+
+### Action Scope Dimension: Tags
+A common design pattern for websites on platforms like WordPress is filing content under a single “Category” while adding several “Tags” to add more specific definitions to the content. For example an article might be found in the “Marketing” category while also holding tags for “Analytics” “Matomo” and “Plugins”.
+
+**Sample Values:**
+
+* Index: <strong><i>1</i></strong>
+* Name: <strong><i>Tags</i></strong>
+* Value: <strong><i>Marketing</i></strong>
+* Scope: <strong><i>action</i></strong>
 
 ## How to Get Started with Custom Variables
 While Custom Variables are available by default in [Matomo Cloud](https://matomo.org/matomo-cloud/), they are no longer installed by default in [Matomo On-Premise](https://matomo.org/matomo-on-premise/). Therefore if you do want to use them, the first thing that you need to do is install the [Custom Variables plugin](https://plugins.matomo.org/CustomVariables). You can find instructions on how to do that below.
