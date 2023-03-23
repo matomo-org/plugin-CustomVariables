@@ -14,15 +14,15 @@ We therefore highly recommend using [Custom Dimensions](https://matomo.org/docs/
 
 # Custom Variables User Guide
 
-## What is the value of Custom Variables?
+### What is the value of Custom Variables?
 Matomo offers a Custom Variables feature for collecting custom metrics related to your page views and visits. For example, if you want to track things such as the Tags associated with a certain page that is viewed or the user role of somebody navigating through your website. This kind of data is typically managed through your CMS (Content Management System) and is likely to be different for each site so it needs a little configuration to get started.
 
-## Custom Variables vs Custom Dimensions
+### Custom Variables vs Custom Dimensions
 **Custom Variables serve a similar purpose to Custom Dimensions, however, [Custom Dimensions](https://matomo.org/docs/custom-dimensions/) have many [advantages over Custom Variables](https://matomo.org/faq/general/faq_21117/) so in most cases you should use Custom Dimensions.**
 
 In fact, we generally recommend that the only time that you should use Custom Variables is when you need to store more than one value for the same dimension. For example in blogging and social media systems it is common to associate multiple tags with a post. In this case you could collect all of the tags within your analytics for analysis which wouldn’t be possible with Custom Dimensions.
 
-## The Anatomy of a Custom Variable
+### The Anatomy of a Custom Variable
 Custom Variables consist of four different elements, all of which are required.
 
 * **Index** - This is a unique numeric ID which is typically between 1-5 that references the data. You can hold up to 5 custom variables for each scope by default, however if you are using Matomo On-Premise, it is possible to configure it to [add more than 5 custom variables](https://matomo.org/faq/how-to/faq_17931/) for each scope.
@@ -32,10 +32,10 @@ Custom Variables consist of four different elements, all of which are required.
 
 All of the fields are limited to a total of 200 characters.
 
-## Example Custom Variables
+### Example Custom Variables
 To help you understand the different elements we have provided an example Variable for each of the potential scopes below.
 
-### Visit Scope Dimensions: User Role
+#### Visit Scope Dimensions: User Role
 
 This is useful because in many cases users can have multiple roles on a website. For example somebody who is both Staff and a Moderator.
 
@@ -46,7 +46,7 @@ This is useful because in many cases users can have multiple roles on a website.
 * Value: <strong><i>Staff</i></strong>
 * Scope: <strong><i>visit</i></strong>
 
-### Action Scope Dimension: Tags
+#### Action Scope Dimension: Tags
 A common design pattern for websites on platforms like WordPress is filing content under a single “Category” while adding several “Tags” to add more specific definitions to the content. For example an article might be found in the “Marketing” category while also holding tags for “Analytics” “Matomo” and “Plugins”.
 
 **Sample Values:**
@@ -56,11 +56,11 @@ A common design pattern for websites on platforms like WordPress is filing conte
 * Value: <strong><i>Marketing</i></strong>
 * Scope: <strong><i>action</i></strong>
 
-## How to Get Started with Custom Variables
+### How to Get Started with Custom Variables
 While Custom Variables are available by default in [Matomo Cloud](https://matomo.org/matomo-cloud/), they are no longer installed by default in [Matomo On-Premise](https://matomo.org/matomo-on-premise/). Therefore if you do want to use them, the first thing that you need to do is install the [Custom Variables plugin](https://plugins.matomo.org/CustomVariables). You can find instructions on how to do that below.
 
-### How to install the Custom Variables Plugin
-#### How to install the Custom Variables Plugin for Matomo On-Premise
+#### How to install the Custom Variables Plugin
+##### How to install the Custom Variables Plugin for Matomo On-Premise
 
 1. Log in to your Matomo Dashboard with a **Super User** account.
 2. Click the **Cog Icon** in the Top Menu to visit your Matomo settings.
@@ -68,7 +68,7 @@ While Custom Variables are available by default in [Matomo Cloud](https://matomo
 4. Find the **Custom Variables** plugin and click the big green **Install** button. (You may need to confirm your password at this stage.)
 5. The plugin will be downloaded to your Matomo instance and you can click the big green **Activate Plugin** button to start using it. Note: It is also possible to activate it via the command line by using the following command: ./console plugin:activate CustomDimensions
 
-#### How to install the Custom Variables Plugin for WordPress
+##### How to install the Custom Variables Plugin for WordPress
 
 1. Log in to your WordPress dashboard.
 2. Go to the **Marketplace** section of the **Matomo Analytics** menu.
@@ -77,10 +77,10 @@ While Custom Variables are available by default in [Matomo Cloud](https://matomo
 5. Click **Upload Plugin** and follow the prompts to upload the Custom Variables plugin zip that you just downloaded.
 6. Click **Activate** to enable the plugin with Matomo.
 
-### How to add Custom Variables to your Web pages
+#### How to add Custom Variables to your Web pages
 Setting up Custom Variables will generally require that you are comfortable editing code or have access to a developer who can configure them for you. If you are already creating custom code to pull data from a content management system then it likely makes sense to set up your tracking within that custom code at the same time. However, in some cases it is possible to extract data using Matomo Tag Manager and there are details on that process below.
 
-#### How to set up the HTTP Tracking API with Tag Manager
+##### How to set up the HTTP Tracking API with Tag Manager
 
 The actual code for setting Custom Variables is fairly simple. It starts by wrapping the function with a `_paq.push([   ]);` which sends it to Matomo. Next, the `setCustomVariable()` is set and within that are the four elements: index, name, value and scope.
 
@@ -110,7 +110,7 @@ _paq.push([setCustomVariable, 2, "Tag", "Videos", scope = "page"]);
 
 When using the [HTTP tracking API](https://developer.matomo.org/api-reference/tracking-api) you must make sure that you set your custom variables before `trackPageview` is called. You can find more information on doing this via Matomo Tag Manager further down the page.
 
-#### Tracking/Capturing Custom Variables via Matomo Tag Manager
+##### Tracking/Capturing Custom Variables via Matomo Tag Manager
 
 While it may not always be the easiest way to pull data from your existing content management system, it is also possible to set up Custom Variables with [Matomo Tag Manager](https://matomo.org/docs/tag-manager/). The specific method for collecting data will vary depending on what you would like to collect but the general configuration is detailed below.
 
@@ -144,11 +144,11 @@ You can combine several variables in a single tag if it makes sense, but you wil
 </li>
 </ol>
 
-#### Advanced: Output custom variables in your CMS dynamic code with the PHP API
+##### Advanced: Output custom variables in your CMS dynamic code with the PHP API
 
 If you are a developer then you may also want to look at our case study where we show how one website integrated dynamic custom Variables with WordPress CMS using the [PHP Tracking API](https://developer.matomo.org/api-reference/PHP-Matomo-Tracker). You can also find full documentation on how to set custom variables this way in the [official PHP tracking development documentation](https://developer.matomo.org/api-reference/PHP-Matomo-Tracker#setcustomvariable) here.
 
-## How to Analyse Custom Variables
+### How to Analyse Custom Variables
 
 You can find the **Custom Variables** report within the **Visitors** section of main navigation down the left hand side of the page. Custom Variable reports are shown in [Table format](https://matomo.org/docs/matomo-tour/#tables-5) by default, however, like most tables in Matomo there are [alternative visualisations available](https://matomo.org/docs/matomo-tour/#alternative-visualisations-of-table-data).
 
@@ -162,7 +162,7 @@ When reviewing Action scoped results, these values are simply blank and replaced
 
 <img src="https://matomo.org/wp-content/uploads/2023/03/Custom_Variable_Actions.png" alt="" width="933" height="598" class="alignnone size-full wp-image-62440" />
 
-### Hierarchical vs Flat Analysis
+#### Hierarchical vs Flat Analysis
 
 By default variable data is displayed in hierarchical format. This means you can click on the plus icon for any of the top level names to reveal the values stored against that specific Name for easy comparison. Below is an example comparing different page type on a dive review website:
 
@@ -176,7 +176,7 @@ You can switch between these modes by hovering your mouse over the table to reve
 
 <img src="https://matomo.org/wp-content/uploads/2023/03/Custom_Variables_Flat_Actions.png" alt="" width="933" height="529" class="alignnone size-full wp-image-62470" />
 
-## Resources
+### Resources
 * [Developer JavaScript Tracking Guide for Custom Variables](https://developer.matomo.org/guides/tracking-javascript-guide#custom-variables)
 * [Developer Hooks for Custom Variables in the Reporting API](https://developer.matomo.org/api-reference/reporting-api#CustomVariables)
 * [How to Extend Custom Variable Limits for Matomo On-Premise](https://matomo.org/faq/how-to/faq_17931/)
