@@ -1,5 +1,8 @@
 # CHANGELOG
 
+4.1.3
+- Update documentation
+
 4.1.2
 - Update documentation
 - Translation updates
