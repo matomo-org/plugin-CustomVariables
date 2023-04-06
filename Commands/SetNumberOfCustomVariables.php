@@ -17,7 +17,6 @@ use Symfony\Component\Console\Helper\ProgressBar;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Console\Question\ConfirmationQuestion;
 
 /**
  */
@@ -121,14 +120,7 @@ class SetNumberOfCustomVariables extends ConsoleCommand
     private function confirmChange(InputInterface $input, OutputInterface $output)
     {
         $output->writeln('');
-
-        $helper   = $this->getHelper('question');
-        $question = new ConfirmationQuestion(
-            '<question>Are you sure you want to perform these actions? (y/N)</question>',
-            false
-        );
-
-        return $helper->ask($input, $output, $question);
+        return $this->askForConfirmation($input, $output, '<question>Are you sure you want to perform these actions? (y/N)</question>', false);
     }
 
     private function printChanges($scope, $numVarsToSet, OutputInterface $output)
