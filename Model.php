@@ -84,7 +84,7 @@ class Model
      * @see getHighestCustomVarIndex()
      * @return int
      */
-    public function getCurrentNumCustomVars()
+    public function getCurrentNumCustomVars(): int
     {
         $indexes = $this->getCustomVarIndexes();
 
