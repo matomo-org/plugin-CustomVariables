@@ -14,8 +14,6 @@ use Piwik\Common;
 use Piwik\Plugin\ConsoleCommand;
 use Piwik\Plugins\CustomVariables\CustomVariables;
 use Piwik\Plugins\CustomVariables\Model;
-use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Output\OutputInterface;
 
 /**
  */
@@ -27,12 +25,13 @@ class Info extends ConsoleCommand
         $this->setDescription('Get info about configured custom variables');
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function doExecute(): int
     {
+        $output = $this->getOutput();
         $maxVars = CustomVariables::getNumUsableCustomVariables();
 
         if ($this->hasEverywhereSameAmountOfVariables()) {
-            $this->writeSuccessMessage($output, [
+            $this->writeSuccessMessage([
                 'Your Matomo is configured for ' . $maxVars . ' custom variables.'
             ]);
             return self::SUCCESS;
