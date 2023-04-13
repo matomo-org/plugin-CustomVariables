@@ -13,7 +13,6 @@ namespace Piwik\Plugins\CustomVariables\Commands;
 use Piwik\Plugin\ConsoleCommand;
 use Piwik\Plugins\CustomVariables\Model;
 use Piwik\Tracker\Cache;
-use Symfony\Component\Console\Input\InputArgument;
 
 /**
  */
@@ -27,7 +26,7 @@ class SetNumberOfCustomVariables extends ConsoleCommand
 ./console customvariables:set-max-custom-variables 10
 => 10 custom variables will be available in total
 ");
-        $this->addArgument('maxCustomVars', InputArgument::REQUIRED, 'Set the number of max available custom variables');
+        $this->addRequiredArgument('maxCustomVars', 'Set the number of max available custom variables');
     }
 
     protected function doExecute(): int
