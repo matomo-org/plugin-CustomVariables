@@ -3,6 +3,13 @@
 5.0.0
 - Compatibility with Matomo 5
 
+4.1.3
+- Update documentation
+
+4.1.2
+- Update documentation
+- Translation updates
+
 4.1.1
 - Translation updates
 
