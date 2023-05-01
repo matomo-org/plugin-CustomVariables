@@ -66,7 +66,7 @@ While Custom Variables are available by default in [Matomo Cloud](https://matomo
 2. Click the **Cog Icon** in the Top Menu to visit your Matomo settings.
 3. Go to the **Marketplace** page within the **Platform** settings.
 4. Find the **Custom Variables** plugin and click the big green **Install** button. (You may need to confirm your password at this stage.)
-5. The plugin will be downloaded to your Matomo instance and you can click the big green **Activate Plugin** button to start using it. Note: It is also possible to activate it via the command line by using the following command: ./console plugin:activate CustomDimensions
+5. The plugin will be downloaded to your Matomo instance and you can click the big green **Activate Plugin** button to start using it. Note: It is also possible to activate it via the command line by using the following command: ./console plugin:activate CustomVariables
 
 ##### How to install the Custom Variables Plugin for WordPress
 
