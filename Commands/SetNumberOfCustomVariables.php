@@ -13,21 +13,11 @@ namespace Piwik\Plugins\CustomVariables\Commands;
 use Piwik\Plugin\ConsoleCommand;
 use Piwik\Plugins\CustomVariables\Model;
 use Piwik\Tracker\Cache;
-use Symfony\Component\Console\Helper\ProgressBar;
-use Symfony\Component\Console\Input\InputArgument;
-use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Console\Question\ConfirmationQuestion;
 
 /**
  */
 class SetNumberOfCustomVariables extends ConsoleCommand
 {
-    /**
-     * @var \Symfony\Component\Console\Helper\ProgressBar
-     */
-    private $progress;
-
     protected function configure()
     {
         $this->setName('customvariables:set-max-custom-variables');
@@ -36,16 +26,18 @@ class SetNumberOfCustomVariables extends ConsoleCommand
 ./console customvariables:set-max-custom-variables 10
 => 10 custom variables will be available in total
 ");
-        $this->addArgument('maxCustomVars', InputArgument::REQUIRED, 'Set the number of max available custom variables');
+        $this->addRequiredArgument('maxCustomVars', 'Set the number of max available custom variables');
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function doExecute(): int
     {
-        $numVarsToSet = $this->getNumVariablesToSet($input);
+        $input = $this->getInput();
+        $output = $this->getOutput();
+        $numVarsToSet = $this->getNumVariablesToSet();
         $numChangesToPerform = $this->getNumberOfChangesToPerform($numVarsToSet);
 
         if (0 === $numChangesToPerform) {
-            $this->writeSuccessMessage($output, [
+            $this->writeSuccessMessage([
                 'Your Matomo is already configured for ' . $numVarsToSet . ' custom variables.'
             ]);
             return 0;
@@ -55,10 +47,10 @@ class SetNumberOfCustomVariables extends ConsoleCommand
         $output->writeln(sprintf('Configuring Matomo for %d custom variables', $numVarsToSet));
 
         foreach (Model::getScopes() as $scope) {
-            $this->printChanges($scope, $numVarsToSet, $output);
+            $this->printChanges($scope, $numVarsToSet);
         }
 
-        if ($input->isInteractive() && !$this->confirmChange($input, $output)) {
+        if ($input->isInteractive() && !$this->confirmChange()) {
             return 0;
         }
 
@@ -66,44 +58,39 @@ class SetNumberOfCustomVariables extends ConsoleCommand
         $output->writeln('Starting to apply changes');
         $output->writeln('');
 
-        $this->progress = $this->initProgress($numChangesToPerform, $output);
+        $this->initProgressBar($numChangesToPerform);
 
         foreach (Model::getScopes() as $scope) {
-            $this->performChange($scope, $numVarsToSet, $output);
+            $this->performChange($scope, $numVarsToSet);
         }
 
         Cache::clearCacheGeneral();
-        $this->progress->finish();
+        $this->finishProgressBar();
 
-        $this->writeSuccessMessage($output, [
+        $this->writeSuccessMessage([
             'Your Matomo is now configured for ' . $numVarsToSet . ' custom variables.'
         ]);
 
         return 0;
     }
 
-    private function initProgress($numChangesToPerform, OutputInterface $output)
-    {
-        return new ProgressBar($output, $numChangesToPerform);
-    }
-
-    private function performChange($scope, $numVarsToSet, OutputInterface $output)
+    private function performChange($scope, $numVarsToSet)
     {
         $model = new Model($scope);
         $numCurrentVars = $model->getCurrentNumCustomVars();
         $numDifference  = $this->getAbsoluteDifference($numCurrentVars, $numVarsToSet);
 
         if ($numVarsToSet > $numCurrentVars) {
-            $this->addCustomVariables($model, $numDifference, $output);
+            $this->addCustomVariables($model, $numDifference);
             return;
         }
 
-        $this->removeCustomVariables($model, $numDifference, $output);
+        $this->removeCustomVariables($model, $numDifference);
     }
 
-    private function getNumVariablesToSet(InputInterface $input)
+    private function getNumVariablesToSet(): int
     {
-        $maxCustomVars = $input->getArgument('maxCustomVars');
+        $maxCustomVars = $this->getInput()->getArgument('maxCustomVars');
 
         if (!is_numeric($maxCustomVars)) {
             throw new \InvalidArgumentException('The number of available custom variables has to be a number');
@@ -118,21 +105,18 @@ class SetNumberOfCustomVariables extends ConsoleCommand
         return $maxCustomVars;
     }
 
-    private function confirmChange(InputInterface $input, OutputInterface $output)
+    private function confirmChange()
     {
-        $output->writeln('');
-
-        $helper   = $this->getHelper('question');
-        $question = new ConfirmationQuestion(
+        $this->getOutput()->writeln('');
+        return $this->askForConfirmation(
             '<question>Are you sure you want to perform these actions? (y/N)</question>',
             false
         );
-
-        return $helper->ask($input, $output, $question);
     }
 
-    private function printChanges($scope, $numVarsToSet, OutputInterface $output)
+    private function printChanges($scope, $numVarsToSet)
     {
+        $output               = $this->getOutput();
         $model                = new Model($scope);
         $scopeName            = $model->getScopeName();
         $highestIndex         = $model->getHighestCustomVarIndex();
@@ -165,30 +149,30 @@ class SetNumberOfCustomVariables extends ConsoleCommand
         }
     }
 
-    private function getAbsoluteDifference($currentNumber, $numberToSet)
+    private function getAbsoluteDifference(int $currentNumber, int $numberToSet): int
     {
         return abs($numberToSet - $currentNumber);
     }
 
-    private function removeCustomVariables(Model $model, $numberOfVarsToRemove, OutputInterface $output)
+    private function removeCustomVariables(Model $model, $numberOfVarsToRemove)
     {
         for ($index = 0; $index < $numberOfVarsToRemove; $index++) {
             $indexRemoved = $model->removeCustomVariable();
-            $this->progress->advance();
-            $output->writeln('  <info>Removed a variable in scope "' . $model->getScopeName() .  '" having the index ' . $indexRemoved . '</info>');
+            $this->advanceProgressBar();
+            $this->getOutput()->writeln('  <info>Removed a variable in scope "' . $model->getScopeName() .  '" having the index ' . $indexRemoved . '</info>');
         }
     }
 
-    private function addCustomVariables(Model $model, $numberOfVarsToAdd, OutputInterface $output)
+    private function addCustomVariables(Model $model, $numberOfVarsToAdd)
     {
         for ($index = 0; $index < $numberOfVarsToAdd; $index++) {
             $indexAdded = $model->addCustomVariable();
-            $this->progress->advance();
-            $output->writeln('  <info>Added a variable in scope "' . $model->getScopeName() .  '" having the index ' . $indexAdded . '</info>');
+            $this->advanceProgressBar();
+            $this->getOutput()->writeln('  <info>Added a variable in scope "' . $model->getScopeName() .  '" having the index ' . $indexAdded . '</info>');
         }
     }
 
-    private function getNumberOfChangesToPerform($numVarsToSet)
+    private function getNumberOfChangesToPerform(int $numVarsToSet): int
     {
         $numChangesToPerform = 0;
 

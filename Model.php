@@ -13,7 +13,7 @@ use Piwik\Container\StaticContainer;
 use Piwik\DataAccess\TableMetadata;
 use Piwik\Db;
 use Piwik\Piwik;
-use Psr\Log\LoggerInterface;
+use Piwik\Log\LoggerInterface;
 
 class Model
 {
@@ -84,7 +84,7 @@ class Model
      * @see getHighestCustomVarIndex()
      * @return int
      */
-    public function getCurrentNumCustomVars()
+    public function getCurrentNumCustomVars(): int
     {
         $indexes = $this->getCustomVarIndexes();
 
