@@ -25,7 +25,7 @@ class SegmentTest extends IntegrationTestCase
         return [
             // test multiple column segments
             ['customVariableName==abc;customVariableValue==def', [
-                'where' => ' (log_visit.custom_var_k1 = ? OR log_visit.custom_var_k2 = ? OR log_visit.custom_var_k3 = ? OR log_visit.custom_var_k4 = ? OR log_visit.custom_var_k5 = ?) AND (log_visit.custom_var_v1 = ? OR log_visit.custom_var_v2 = ? OR log_visit.custom_var_v3 = ? OR log_visit.custom_var_v4 = ? OR log_visit.custom_var_v5 = ? )',
+                'where' => ' ( log_visit.custom_var_k1 = ? OR log_visit.custom_var_k2 = ? OR log_visit.custom_var_k3 = ? OR log_visit.custom_var_k4 = ? OR log_visit.custom_var_k5 = ?) AND ( log_visit.custom_var_v1 = ? OR log_visit.custom_var_v2 = ? OR log_visit.custom_var_v3 = ? OR log_visit.custom_var_v4 = ? OR log_visit.custom_var_v5 = ?)',
                 'bind' => [
                     'abc', 'abc', 'abc', 'abc', 'abc',
                     'def', 'def', 'def', 'def', 'def',
