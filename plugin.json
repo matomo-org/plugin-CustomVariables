@@ -1,7 +1,7 @@
 {
     "name": "CustomVariables",
     "description": "Categorise your visitors and actions with custom name-value pairs. Segment by these values and get more insights to draw the right conclusions.",
-    "version": "5.0.0",
+    "version": "5.0.1",
     "keywords": ["custom variables"],
     "license": "GPL v3+",
     "homepage": "https://matomo.org",
