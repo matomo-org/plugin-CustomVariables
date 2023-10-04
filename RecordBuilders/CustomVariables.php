@@ -283,7 +283,7 @@ class CustomVariables extends RecordBuilder
 
             $value = $this->cleanCustomVarValue($row[$valueField]);
 
-            $idGoal = $row['idgoal'];
+            $idGoal = (int) $row['idgoal'];
             $columns = [
                 Metrics::INDEX_GOALS => [
                     $idGoal => Metrics::makeGoalColumnsRow($idGoal, $row),
