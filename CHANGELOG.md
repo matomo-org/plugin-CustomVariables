@@ -1,5 +1,8 @@
 # CHANGELOG
 
+5.0.2
+- Archiving: Ensure parameter is provided in correct type
+
 5.0.1
 - Compatibility with Matomo 5.0.0-b4
 
