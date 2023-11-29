@@ -13,7 +13,7 @@
         "ManageDescription": "這個總覽顯示「%s」的所有自訂變數和它們的用途。每個欄位中的名稱將以總使用次數來排序。",
         "MetricsAreOnlyAvailableForVisitScope": "注意：%1$s只有自訂變數的範圍有數據%2$s。",
         "MetricsNotAvailableForPageScope": "自訂變數範圍 %1$s 中，欄位數據的值為 %2$s。",
-        "PluginDescription": "自訂變數是透過 Javascript API 為訪客或他們的活動以 [名稱 => 值] 來配對。Matomo 接著會產生這些自訂名稱與值有多少訪問、頁面及轉換的報表。可以在訪客紀錄中查看每位使用者和活動的自定變數詳情。這個外掛必須要使用電子商務分析功能！",
+        "PluginDescription": "自訂變數是透過 Javascript API 為訪客或他們的活動以 [名稱 → 值] 來配對。Matomo 接著會產生這些自訂名稱與值有多少訪問、頁面及轉換的報表。可以在訪客紀錄中查看每位使用者和活動的自定變數詳情。這個外掛必須要使用電子商務分析功能！",
         "ScopeConversion": "範圍轉換",
         "ScopePage": "網頁範圍",
         "ScopeVisit": "訪客範圍",
