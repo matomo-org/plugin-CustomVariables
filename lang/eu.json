@@ -1,1 +1,10 @@
-{}
+{
+    "CustomVariables": {
+        "ColumnCustomVariableName": "Aldagai pertsonalizatuaren izena",
+        "ColumnCustomVariableValue": "Aldagai pertsonalizatuaren balioa",
+        "CustomVariables": "Aldagai pertsonalizatuak",
+        "Index": "Indizea",
+        "Unused": "Erabili gabea",
+        "Usages": "Erabilerak"
+    }
+}
