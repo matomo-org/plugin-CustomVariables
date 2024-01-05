@@ -80,7 +80,7 @@ class SegmentTest extends IntegrationTestCase
             }
             return $valueToFilter;
         } else {
-            return preg_replace('/[\s]+/', ' ', $valueToFilter);
+            return str_replace(['? )', '( '], ['?)', '('], preg_replace('/[\s]+/', ' ', $valueToFilter));
         }
     }
 }
