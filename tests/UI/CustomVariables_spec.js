@@ -17,16 +17,10 @@ describe("CustomVariables", function () {
         await page.waitForNetworkIdle();
 
         pageWrap = await page.$('.pageWrap');
-        await page.evaluate(function () {
-          $('#secondNavBar').css('visibility', 'hidden'); // hide navbar so shadow isn't shown on screenshot
-        });
         expect(await pageWrap.screenshot()).to.matchImage('manage');
     });
 
     it('should be visible in the menu', async function() {
-        await page.evaluate(function () {
-          $('#secondNavBar').css('visibility', 'visible'); // show navbar again
-        });
         expect(await page.screenshotSelector('li:contains(Diagnostic)')).to.matchImage('link_in_menu');
     });
 });
