@@ -73,6 +73,7 @@ class AutoSuggestAPITest extends SystemTestCase
                 'period'                 => 'range',
                 'otherRequestParameters' => ['filter_limit' => 1000],
                 'xmlFieldsToRemove'      => $xmlFieldsToRemove,
+                'testSuffix'             => version_compare(Version::VERSION, '5.1.0-b4', '<') ? '_old' : '',
             ]
         ];
 
