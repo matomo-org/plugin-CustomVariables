@@ -56,15 +56,6 @@ class AutoSuggestAPITest extends SystemTestCase
 
         $xmlFieldsToRemove = [];
 
-        if (version_compare(Version::VERSION, '4.12.0-rc1', '<')) {
-            // those fields have been added to goal details
-            $xmlFieldsToRemove = [
-                'referrerType',
-                'referrerName',
-                'referrerKeyword',
-            ];
-        }
-
         $apiForTesting[] = [
             'Live.getLastVisitsDetails',
             [
