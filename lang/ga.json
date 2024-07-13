@@ -1,1 +1,27 @@
-{}
+{
+    "CustomVariables": {
+        "ColumnCustomVariableName": "Ainm Athróg Saincheaptha",
+        "ColumnCustomVariableValue": "Luach Athróg an Chustaim",
+        "CreateNewSlot": "Méadú ar líon na sliotán Athróga Saincheaptha atá ar fáil",
+        "CreatingCustomVariableTakesTime": "Is féidir go dtógfaidh sé go leor ama sliotán nua inathraithe saincheaptha a chruthú ag brath ar mhéid do bhunachar sonraí. Mar sin, ní féidir é seo a dhéanamh ach trí ordú a chaithfear a fhorghníomhú ar an líne ordaithe.",
+        "CurrentAvailableCustomVariables": "Faoi láthair is féidir leat suas le %s Athróga Saincheaptha a úsáid in aghaidh an tsuímh.",
+        "CustomVariables": "Athróga Saincheaptha",
+        "CustomVariablesReportDocumentation": "Tá faisnéis sa tuarascáil seo faoi d’Athróga Saincheaptha. Cliceáil ar ainm athróg chun dáileadh na luachanna a fheiceáil. %1$s Le haghaidh tuilleadh eolais faoi Athróga Saincheaptha go ginearálta, léigh an doiciméadú %2$s Athróga Custaim ar matomo.org %3$s",
+        "CustomVariablesSubcategoryHelp1": "Tá faisnéis sa tuarascáil seo faoi d’Athróga Saincheaptha. Cliceáil ar ainm athróg chun dáileadh na luachanna a fheiceáil.",
+        "CustomVariablesSubcategoryHelp2": "Léigh tuilleadh faoin ábhar seo sa treoir ar líne.",
+        "Index": "Innéacs",
+        "ManageDescription": "Taispeánann an forbhreathnú seo gach sliotán inathraithe saincheaptha agus a n-úsáidí do shuíomh Gréasáin '%s'. Ordaítear na hainmneacha laistigh de gach sliotán de réir cé chomh minic a úsáideadh iad san iomlán.",
+        "MetricsAreOnlyAvailableForVisitScope": "Nóta: Tá méadracht %1$s ar fáil d'Athróga Saincheaptha de raon feidhme %2$s amháin.",
+        "MetricsNotAvailableForPageScope": "Maidir le hAthróga Saincheaptha de raon feidhme %1$s, is é %2$s luach colún na méadrachta seo",
+        "PluginDescription": "Is péirí (ainm, luach) iad Athróga Saincheaptha ar féidir leat a shannadh ag baint úsáide as an Javascript API do chuairteoirí nó aon cheann dá ngníomh. Tuairisceoidh Matomo ansin cé mhéad cuairt, leathanach, agus comhshó do gach ceann de na hainmneacha agus na luachanna saincheaptha seo. Féach ar na hAthróga Saincheaptha mionsonraithe do gach úsáideoir agus gníomh i Loga na gCuairteoirí. Tá an breiseán seo ag teastáil chun gné Ríomhthráchtáil Analytics a úsáid!",
+        "ScopeConversion": "comhshó raon feidhme",
+        "ScopePage": "leathanach scóip",
+        "ScopeVisit": "cuairt scóip",
+        "ScopeX": "Scóip %s",
+        "SlotsReportIsGeneratedOverTime": "Déanfar sonraí don tuarascáil seo a líonadh thar am. Féadfaidh sé lá nó dhó a ghlacadh chun aon sonraí a fheiceáil agus cúpla seachtain go dtí go mbeidh an tuairisc iomlán cruinn.",
+        "ToCreateCustomVarExecute": "Chun sliotán athróg saincheaptha nua a chruthú, déan an t-ordú seo a leanas laistigh de do shuiteáil Matomo:",
+        "Unused": "Gan úsáid",
+        "UsageDetails": "%1$s cuairt agus %2$s gníomh ó cruthaíodh an suíomh Gréasáin seo.",
+        "Usages": "Úsáidí"
+    }
+}
