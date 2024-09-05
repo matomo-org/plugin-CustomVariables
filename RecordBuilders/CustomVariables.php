@@ -94,7 +94,7 @@ class CustomVariables extends RecordBuilder
         $query = $logAggregator->queryActionsByDimension($dimensions, $where, $additionalSelects);
         $this->aggregateFromActions($record, $metadata, $metadataFlat, $query, $keyField, $valueField);
 
-        $query = $logAggregator->queryConversionsByDimension($dimensions, $where);
+        $query = $logAggregator->queryConversionsByDimension($dimensions, $where, [], [], false, false, true);
         $this->aggregateFromConversions($record, $query, $keyField, $valueField);
     }
 
