@@ -18,6 +18,10 @@
 		</goals>
 		<nb_conversions>1</nb_conversions>
 		<revenue>0</revenue>
+		<nb_actions_per_visit>1</nb_actions_per_visit>
+		<avg_time_on_site>4</avg_time_on_site>
+		<bounce_rate>100%</bounce_rate>
+		<conversion_rate>100%</conversion_rate>
 		<slots>
 			<row>
 				<scope>visit</scope>
@@ -44,6 +48,10 @@
 				</goals>
 				<nb_conversions>1</nb_conversions>
 				<revenue>0</revenue>
+				<nb_actions_per_visit>1</nb_actions_per_visit>
+				<avg_time_on_site>4</avg_time_on_site>
+				<bounce_rate>100%</bounce_rate>
+				<conversion_rate>100%</conversion_rate>
 			</row>
 		</subtable>
 	</row>
@@ -65,6 +73,10 @@
 		</goals>
 		<nb_conversions>1</nb_conversions>
 		<revenue>0</revenue>
+		<nb_actions_per_visit>1</nb_actions_per_visit>
+		<avg_time_on_site>4</avg_time_on_site>
+		<bounce_rate>100%</bounce_rate>
+		<conversion_rate>100%</conversion_rate>
 		<slots>
 			<row>
 				<scope>visit</scope>
@@ -91,6 +103,10 @@
 				</goals>
 				<nb_conversions>1</nb_conversions>
 				<revenue>0</revenue>
+				<nb_actions_per_visit>1</nb_actions_per_visit>
+				<avg_time_on_site>4</avg_time_on_site>
+				<bounce_rate>100%</bounce_rate>
+				<conversion_rate>100%</conversion_rate>
 			</row>
 		</subtable>
 	</row>
@@ -112,6 +128,10 @@
 		</goals>
 		<nb_conversions>1</nb_conversions>
 		<revenue>0</revenue>
+		<nb_actions_per_visit>1</nb_actions_per_visit>
+		<avg_time_on_site>4</avg_time_on_site>
+		<bounce_rate>100%</bounce_rate>
+		<conversion_rate>100%</conversion_rate>
 		<slots>
 			<row>
 				<scope>visit</scope>
@@ -138,6 +158,10 @@
 				</goals>
 				<nb_conversions>1</nb_conversions>
 				<revenue>0</revenue>
+				<nb_actions_per_visit>1</nb_actions_per_visit>
+				<avg_time_on_site>4</avg_time_on_site>
+				<bounce_rate>100%</bounce_rate>
+				<conversion_rate>100%</conversion_rate>
 			</row>
 		</subtable>
 	</row>
@@ -159,6 +183,10 @@
 		</goals>
 		<nb_conversions>1</nb_conversions>
 		<revenue>0</revenue>
+		<nb_actions_per_visit>1</nb_actions_per_visit>
+		<avg_time_on_site>4</avg_time_on_site>
+		<bounce_rate>100%</bounce_rate>
+		<conversion_rate>100%</conversion_rate>
 		<slots>
 			<row>
 				<scope>visit</scope>
@@ -185,6 +213,10 @@
 				</goals>
 				<nb_conversions>1</nb_conversions>
 				<revenue>0</revenue>
+				<nb_actions_per_visit>1</nb_actions_per_visit>
+				<avg_time_on_site>4</avg_time_on_site>
+				<bounce_rate>100%</bounce_rate>
+				<conversion_rate>100%</conversion_rate>
 			</row>
 		</subtable>
 	</row>
@@ -206,6 +238,10 @@
 		</goals>
 		<nb_conversions>1</nb_conversions>
 		<revenue>0</revenue>
+		<nb_actions_per_visit>1</nb_actions_per_visit>
+		<avg_time_on_site>4</avg_time_on_site>
+		<bounce_rate>100%</bounce_rate>
+		<conversion_rate>100%</conversion_rate>
 		<slots>
 			<row>
 				<scope>visit</scope>
@@ -232,6 +268,10 @@
 				</goals>
 				<nb_conversions>1</nb_conversions>
 				<revenue>0</revenue>
+				<nb_actions_per_visit>1</nb_actions_per_visit>
+				<avg_time_on_site>4</avg_time_on_site>
+				<bounce_rate>100%</bounce_rate>
+				<conversion_rate>100%</conversion_rate>
 			</row>
 		</subtable>
 	</row>
@@ -253,6 +293,10 @@
 		</goals>
 		<nb_conversions>1</nb_conversions>
 		<revenue>0</revenue>
+		<nb_actions_per_visit>1</nb_actions_per_visit>
+		<avg_time_on_site>4</avg_time_on_site>
+		<bounce_rate>100%</bounce_rate>
+		<conversion_rate>100%</conversion_rate>
 		<slots>
 			<row>
 				<scope>visit</scope>
@@ -279,6 +323,10 @@
 				</goals>
 				<nb_conversions>1</nb_conversions>
 				<revenue>0</revenue>
+				<nb_actions_per_visit>1</nb_actions_per_visit>
+				<avg_time_on_site>4</avg_time_on_site>
+				<bounce_rate>100%</bounce_rate>
+				<conversion_rate>100%</conversion_rate>
 			</row>
 		</subtable>
 	</row>
@@ -300,6 +348,10 @@
 		</goals>
 		<nb_conversions>1</nb_conversions>
 		<revenue>0</revenue>
+		<nb_actions_per_visit>1</nb_actions_per_visit>
+		<avg_time_on_site>4</avg_time_on_site>
+		<bounce_rate>100%</bounce_rate>
+		<conversion_rate>100%</conversion_rate>
 		<slots>
 			<row>
 				<scope>visit</scope>
@@ -326,6 +378,10 @@
 				</goals>
 				<nb_conversions>1</nb_conversions>
 				<revenue>0</revenue>
+				<nb_actions_per_visit>1</nb_actions_per_visit>
+				<avg_time_on_site>4</avg_time_on_site>
+				<bounce_rate>100%</bounce_rate>
+				<conversion_rate>100%</conversion_rate>
 			</row>
 		</subtable>
 	</row>
@@ -347,6 +403,10 @@
 		</goals>
 		<nb_conversions>1</nb_conversions>
 		<revenue>0</revenue>
+		<nb_actions_per_visit>1</nb_actions_per_visit>
+		<avg_time_on_site>4</avg_time_on_site>
+		<bounce_rate>100%</bounce_rate>
+		<conversion_rate>100%</conversion_rate>
 		<slots>
 			<row>
 				<scope>visit</scope>
@@ -373,12 +433,20 @@
 				</goals>
 				<nb_conversions>1</nb_conversions>
 				<revenue>0</revenue>
+				<nb_actions_per_visit>1</nb_actions_per_visit>
+				<avg_time_on_site>4</avg_time_on_site>
+				<bounce_rate>100%</bounce_rate>
+				<conversion_rate>100%</conversion_rate>
 			</row>
 		</subtable>
 	</row>
 	<row>
 		<label>Name_PAGE_1</label>
 		<nb_actions>1</nb_actions>
+		<nb_actions_per_visit>0</nb_actions_per_visit>
+		<avg_time_on_site>0</avg_time_on_site>
+		<bounce_rate>0%</bounce_rate>
+		<conversion_rate>0%</conversion_rate>
 		<slots>
 			<row>
 				<scope>page</scope>
@@ -391,12 +459,20 @@
 				<label>Val_PAGE1</label>
 				<nb_visits>1</nb_visits>
 				<nb_actions>1</nb_actions>
+				<nb_actions_per_visit>1</nb_actions_per_visit>
+				<avg_time_on_site>0</avg_time_on_site>
+				<bounce_rate>0%</bounce_rate>
+				<conversion_rate>0%</conversion_rate>
 			</row>
 		</subtable>
 	</row>
 	<row>
 		<label>Name_PAGE_2</label>
 		<nb_actions>1</nb_actions>
+		<nb_actions_per_visit>0</nb_actions_per_visit>
+		<avg_time_on_site>0</avg_time_on_site>
+		<bounce_rate>0%</bounce_rate>
+		<conversion_rate>0%</conversion_rate>
 		<slots>
 			<row>
 				<scope>page</scope>
@@ -409,12 +485,20 @@
 				<label>Val_PAGE2</label>
 				<nb_visits>1</nb_visits>
 				<nb_actions>1</nb_actions>
+				<nb_actions_per_visit>1</nb_actions_per_visit>
+				<avg_time_on_site>0</avg_time_on_site>
+				<bounce_rate>0%</bounce_rate>
+				<conversion_rate>0%</conversion_rate>
 			</row>
 		</subtable>
 	</row>
 	<row>
 		<label>Name_PAGE_3</label>
 		<nb_actions>1</nb_actions>
+		<nb_actions_per_visit>0</nb_actions_per_visit>
+		<avg_time_on_site>0</avg_time_on_site>
+		<bounce_rate>0%</bounce_rate>
+		<conversion_rate>0%</conversion_rate>
 		<slots>
 			<row>
 				<scope>page</scope>
@@ -427,12 +511,20 @@
 				<label>Val_PAGE3</label>
 				<nb_visits>1</nb_visits>
 				<nb_actions>1</nb_actions>
+				<nb_actions_per_visit>1</nb_actions_per_visit>
+				<avg_time_on_site>0</avg_time_on_site>
+				<bounce_rate>0%</bounce_rate>
+				<conversion_rate>0%</conversion_rate>
 			</row>
 		</subtable>
 	</row>
 	<row>
 		<label>Name_PAGE_4</label>
 		<nb_actions>1</nb_actions>
+		<nb_actions_per_visit>0</nb_actions_per_visit>
+		<avg_time_on_site>0</avg_time_on_site>
+		<bounce_rate>0%</bounce_rate>
+		<conversion_rate>0%</conversion_rate>
 		<slots>
 			<row>
 				<scope>page</scope>
@@ -445,12 +537,20 @@
 				<label>Val_PAGE4</label>
 				<nb_visits>1</nb_visits>
 				<nb_actions>1</nb_actions>
+				<nb_actions_per_visit>1</nb_actions_per_visit>
+				<avg_time_on_site>0</avg_time_on_site>
+				<bounce_rate>0%</bounce_rate>
+				<conversion_rate>0%</conversion_rate>
 			</row>
 		</subtable>
 	</row>
 	<row>
 		<label>Name_PAGE_5</label>
 		<nb_actions>1</nb_actions>
+		<nb_actions_per_visit>0</nb_actions_per_visit>
+		<avg_time_on_site>0</avg_time_on_site>
+		<bounce_rate>0%</bounce_rate>
+		<conversion_rate>0%</conversion_rate>
 		<slots>
 			<row>
 				<scope>page</scope>
@@ -463,12 +563,20 @@
 				<label>Val_PAGE5</label>
 				<nb_visits>1</nb_visits>
 				<nb_actions>1</nb_actions>
+				<nb_actions_per_visit>1</nb_actions_per_visit>
+				<avg_time_on_site>0</avg_time_on_site>
+				<bounce_rate>0%</bounce_rate>
+				<conversion_rate>0%</conversion_rate>
 			</row>
 		</subtable>
 	</row>
 	<row>
 		<label>Name_PAGE_6</label>
 		<nb_actions>1</nb_actions>
+		<nb_actions_per_visit>0</nb_actions_per_visit>
+		<avg_time_on_site>0</avg_time_on_site>
+		<bounce_rate>0%</bounce_rate>
+		<conversion_rate>0%</conversion_rate>
 		<slots>
 			<row>
 				<scope>page</scope>
@@ -481,12 +589,20 @@
 				<label>Val_PAGE6</label>
 				<nb_visits>1</nb_visits>
 				<nb_actions>1</nb_actions>
+				<nb_actions_per_visit>1</nb_actions_per_visit>
+				<avg_time_on_site>0</avg_time_on_site>
+				<bounce_rate>0%</bounce_rate>
+				<conversion_rate>0%</conversion_rate>
 			</row>
 		</subtable>
 	</row>
 	<row>
 		<label>Name_PAGE_7</label>
 		<nb_actions>1</nb_actions>
+		<nb_actions_per_visit>0</nb_actions_per_visit>
+		<avg_time_on_site>0</avg_time_on_site>
+		<bounce_rate>0%</bounce_rate>
+		<conversion_rate>0%</conversion_rate>
 		<slots>
 			<row>
 				<scope>page</scope>
@@ -499,12 +615,20 @@
 				<label>Val_PAGE7</label>
 				<nb_visits>1</nb_visits>
 				<nb_actions>1</nb_actions>
+				<nb_actions_per_visit>1</nb_actions_per_visit>
+				<avg_time_on_site>0</avg_time_on_site>
+				<bounce_rate>0%</bounce_rate>
+				<conversion_rate>0%</conversion_rate>
 			</row>
 		</subtable>
 	</row>
 	<row>
 		<label>Name_PAGE_8</label>
 		<nb_actions>1</nb_actions>
+		<nb_actions_per_visit>0</nb_actions_per_visit>
+		<avg_time_on_site>0</avg_time_on_site>
+		<bounce_rate>0%</bounce_rate>
+		<conversion_rate>0%</conversion_rate>
 		<slots>
 			<row>
 				<scope>page</scope>
@@ -517,6 +641,10 @@
 				<label>Val_PAGE8</label>
 				<nb_visits>1</nb_visits>
 				<nb_actions>1</nb_actions>
+				<nb_actions_per_visit>1</nb_actions_per_visit>
+				<avg_time_on_site>0</avg_time_on_site>
+				<bounce_rate>0%</bounce_rate>
+				<conversion_rate>0%</conversion_rate>
 			</row>
 		</subtable>
 	</row>

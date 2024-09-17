@@ -12,6 +12,10 @@
 				<sum_visit_length>364</sum_visit_length>
 				<bounce_count>0</bounce_count>
 				<nb_visits_converted>1</nb_visits_converted>
+				<nb_actions_per_visit>3</nb_actions_per_visit>
+				<avg_time_on_site>364</avg_time_on_site>
+				<bounce_rate>0%</bounce_rate>
+				<conversion_rate>100%</conversion_rate>
 				<segment>referrerType==search;referrerKeyword==this+keyword+should+be+ranked</segment>
 				<subtable>
 					<row>
@@ -24,6 +28,10 @@
 						<sum_visit_length>364</sum_visit_length>
 						<bounce_count>0</bounce_count>
 						<nb_visits_converted>1</nb_visits_converted>
+						<nb_actions_per_visit>3</nb_actions_per_visit>
+						<avg_time_on_site>364</avg_time_on_site>
+						<bounce_rate>0%</bounce_rate>
+						<conversion_rate>100%</conversion_rate>
 					</row>
 				</subtable>
 			</row>
@@ -44,6 +52,10 @@
 				<nb_conversions>2</nb_conversions>
 				<revenue>0</revenue>
 				<nb_visits>0</nb_visits>
+				<nb_actions_per_visit>0</nb_actions_per_visit>
+				<avg_time_on_site>0</avg_time_on_site>
+				<bounce_rate>0%</bounce_rate>
+				<conversion_rate>0%</conversion_rate>
 				<segment>referrerType==search;referrerKeyword==piwik</segment>
 			</row>
 		</result>
