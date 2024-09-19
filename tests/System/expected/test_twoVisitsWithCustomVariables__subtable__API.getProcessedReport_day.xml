@@ -50,6 +50,20 @@
 		<imageGraphUrl>index.php?module=API&amp;method=ImageGraph.get&amp;idSite=1&amp;apiModule=CustomVariables&amp;apiAction=getCustomVariablesValuesFromNameId&amp;period=day&amp;date=2010-01-03&amp;idSubtable=1</imageGraphUrl>
 		<imageGraphEvolutionUrl>index.php?module=API&amp;method=ImageGraph.get&amp;idSite=1&amp;apiModule=CustomVariables&amp;apiAction=getCustomVariablesValuesFromNameId&amp;period=day&amp;date=2009-12-05,2010-01-03&amp;idSubtable=1</imageGraphEvolutionUrl>
 		<uniqueId>CustomVariables_getCustomVariablesValuesFromNameId</uniqueId>
+		<processedMetricFormulas>
+			<conversion_rate>$nb_visits_converted / $nb_visits</conversion_rate>
+			<nb_actions_per_visit>$nb_actions / $nb_visits</nb_actions_per_visit>
+			<avg_time_on_site>$sum_visit_length / $nb_visits</avg_time_on_site>
+			<bounce_rate>$bounce_count / $nb_visits</bounce_rate>
+		</processedMetricFormulas>
+		<temporaryMetricAggregationTypes>
+			<sum_visit_length>sum</sum_visit_length>
+			<bounce_count>sum</bounce_count>
+		</temporaryMetricAggregationTypes>
+		<temporaryMetricSemanticTypes>
+			<sum_visit_length>number</sum_visit_length>
+			<bounce_count>number</bounce_count>
+		</temporaryMetricSemanticTypes>
 	</metadata>
 	<columns>
 		<label>Custom Variable value</label>
