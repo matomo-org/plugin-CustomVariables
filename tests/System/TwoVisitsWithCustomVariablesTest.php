@@ -1,10 +1,12 @@
 <?php
+
 /**
  * Matomo - free/libre analytics platform
  *
  * @link https://matomo.org
  * @license http://www.gnu.org/licenses/gpl-3.0.html GPL v3 or later
  */
+
 namespace Piwik\Plugins\CustomVariables\tests\System;
 
 use Piwik\Tests\Framework\TestCase\SystemTestCase;
@@ -75,7 +77,6 @@ class TwoVisitsWithCustomVariablesTest extends SystemTestCase
                 'supertableApi' => 'CustomVariables.getCustomVariables',
                 'testSuffix'    => '__subtable')
             );
-
         }
 
         return $return;

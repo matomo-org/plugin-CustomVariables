@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Matomo - free/libre analytics platform
  *
@@ -7,6 +8,7 @@
  */
 
 namespace Piwik\Plugins\CustomVariables\tests\Integration;
+
 use Piwik\Plugins\CustomVariables\Model;
 use Piwik\Tests\Framework\TestCase\IntegrationTestCase;
 
@@ -212,5 +214,4 @@ class ModelTest extends IntegrationTestCase
     {
         return new Model(Model::SCOPE_CONVERSION);
     }
-
 }

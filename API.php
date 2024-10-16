@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Matomo - free/libre analytics platform
  *
@@ -6,6 +7,7 @@
  * @license http://www.gnu.org/licenses/gpl-3.0.html GPL v3 or later
  *
  */
+
 namespace Piwik\Plugins\CustomVariables;
 
 use Piwik\API\Request;
@@ -63,7 +65,8 @@ class API extends \Piwik\Plugin\API
 
         $dataTable = $this->getDataTable($idSite, $period, $date, $segment, $expanded, $flat, $idSubtable = null);
 
-        if ($dataTable instanceof DataTable
+        if (
+            $dataTable instanceof DataTable
             && !$_leavePiwikCoreVariables
         ) {
             $mapping = self::getReservedCustomVariableKeys();
@@ -144,7 +147,8 @@ class API extends \Piwik\Plugin\API
         /** @var DataTable $customVarUsages */
         $today = StaticContainer::get('CustomVariables.today');
         $date = '2008-12-12,' . $today;
-        $customVarUsages = Request::processRequest('CustomVariables.getCustomVariables',
+        $customVarUsages = Request::processRequest(
+            'CustomVariables.getCustomVariables',
             array('idSite' => $idSite, 'period' => 'range', 'date' => $date,
                   'format' => 'original')
         );
@@ -177,4 +181,3 @@ class API extends \Piwik\Plugin\API
         return $grouped;
     }
 }
-

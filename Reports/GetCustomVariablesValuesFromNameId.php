@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Matomo - free/libre analytics platform
  *
@@ -6,6 +7,7 @@
  * @license http://www.gnu.org/licenses/gpl-3.0.html GPL v3 or later
  *
  */
+
 namespace Piwik\Plugins\CustomVariables\Reports;
 
 use Piwik\Piwik;
@@ -19,8 +21,10 @@ class GetCustomVariablesValuesFromNameId extends Base
         parent::init();
         $this->dimension     = new CustomVariableValue();
         $this->name          = Piwik::translate('CustomVariables_CustomVariables');
-        $this->documentation = Piwik::translate('CustomVariables_CustomVariablesReportDocumentation',
-            array('<br />', '<a href="https://matomo.org/docs/custom-variables/" rel="noreferrer noopener" target="_blank">', '</a>'));
+        $this->documentation = Piwik::translate(
+            'CustomVariables_CustomVariablesReportDocumentation',
+            array('<br />', '<a href="https://matomo.org/docs/custom-variables/" rel="noreferrer noopener" target="_blank">', '</a>')
+        );
         $this->isSubtableReport = true;
         $this->order = 15;
     }
@@ -35,5 +39,4 @@ class GetCustomVariablesValuesFromNameId extends Base
         $view->requestConfig->filter_sort_column = 'nb_actions';
         $view->requestConfig->filter_sort_order  = 'desc';
     }
-
 }
