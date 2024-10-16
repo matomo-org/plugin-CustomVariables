@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Matomo - free/libre analytics platform
  *
@@ -113,8 +114,9 @@ class CustomVariablesRequestProcessor extends RequestProcessor
             if (!is_array($keyValue)) {
                 continue;
             }
-            
-            if ($id < 1
+
+            if (
+                $id < 1
                 || $id > $maxCustomVars
                 || count($keyValue) != 2
                 || (!is_string($keyValue[0]) && !is_numeric($keyValue[0])

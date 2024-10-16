@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Matomo - free/libre analytics platform
  *
@@ -194,8 +195,10 @@ class CustomVariablesRequestProcessorTest extends IntegrationTestCase
     {
         $this->assertEquals(array(), $this->buildExpectedCustomVars(array()));
 
-        $this->assertEquals(array('custom_var_k1' => 'key', 'custom_var_v1' => 'val'),
-            $this->buildExpectedCustomVars(array('key' => 'val')));
+        $this->assertEquals(
+            array('custom_var_k1' => 'key', 'custom_var_v1' => 'val'),
+            $this->buildExpectedCustomVars(array('key' => 'val'))
+        );
 
         $this->assertEquals(array(
             'custom_var_k1' => 'key', 'custom_var_v1' => 'val',
@@ -207,11 +210,15 @@ class CustomVariablesRequestProcessorTest extends IntegrationTestCase
     {
         $this->assertEquals('[]', $this->buildCustomVars(array()));
 
-        $this->assertEquals('{"1":["key","val"]}',
-            $this->buildCustomVars(array('key' => 'val')));
+        $this->assertEquals(
+            '{"1":["key","val"]}',
+            $this->buildCustomVars(array('key' => 'val'))
+        );
 
-        $this->assertEquals('{"1":["key","val"],"2":["key2","val2"]}',
-            $this->buildCustomVars(array('key' => 'val', 'key2' => 'val2')));
+        $this->assertEquals(
+            '{"1":["key","val"],"2":["key2","val2"]}',
+            $this->buildCustomVars(array('key' => 'val', 'key2' => 'val2'))
+        );
     }
 
     private function buildRequest($params)
@@ -257,5 +264,4 @@ class CustomVariablesRequestProcessorTest extends IntegrationTestCase
         $request = $this->buildRequest(array('cvar' => $cvarsJsonEncoded));
         $this->assertEquals($expectedCvars, CustomVariablesRequestProcessor::getCustomVariablesInPageScope($request));
     }
-
 }

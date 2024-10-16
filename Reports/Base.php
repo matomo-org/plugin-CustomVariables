@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Matomo - free/libre analytics platform
  *
@@ -6,6 +7,7 @@
  * @license http://www.gnu.org/licenses/gpl-3.0.html GPL v3 or later
  *
  */
+
 namespace Piwik\Plugins\CustomVariables\Reports;
 
 abstract class Base extends \Piwik\Plugin\Report
@@ -17,5 +19,4 @@ abstract class Base extends \Piwik\Plugin\Report
         $this->categoryId = 'General_Visitors';
         $this->onlineGuideUrl = 'https://matomo.org/docs/custom-variables/';
     }
-
 }

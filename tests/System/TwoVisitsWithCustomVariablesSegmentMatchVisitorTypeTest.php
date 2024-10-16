@@ -1,10 +1,12 @@
 <?php
+
 /**
  * Matomo - free/libre analytics platform
  *
  * @link    https://matomo.org
  * @license http://www.gnu.org/licenses/gpl-3.0.html GPL v3 or later
  */
+
 namespace Piwik\Plugins\CustomVariables\tests\System;
 
 use Piwik\Archive\ArchivePurger;
@@ -114,7 +116,7 @@ class TwoVisitsWithCustomVariablesSegmentMatchVisitorTypeTest extends SystemTest
             $sql = "SELECT count(*) FROM " . Common::prefixTable($table);
             $countBlobs = Db::get()->fetchOne($sql);
 
-            if($expectedRows != $countBlobs) {
+            if ($expectedRows != $countBlobs) {
                 $output = Db::get()->fetchAll("SELECT * FROM " . Common::prefixTable($table) . " ORDER BY name, idarchive ASC");
                 if (strpos($table, 'blob') !== false) {
                     $output = array_map(function ($r) {
