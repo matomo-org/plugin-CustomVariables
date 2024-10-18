@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Matomo - free/libre analytics platform
  *
@@ -6,6 +7,7 @@
  * @license http://www.gnu.org/licenses/gpl-3.0.html GPL v3 or later
  *
  */
+
 namespace Piwik\Plugins\CustomVariables;
 
 use Piwik\Plugins\Live\VisitorDetailsAbstract;
@@ -96,10 +98,9 @@ class VisitorDetails extends VisitorDetailsAbstract
         }
 
         foreach ($action['customVariables'] as $index => $customVariable) {
-
             $scope = Model::SCOPE_PAGE;
-            $name = $customVariable['customVariablePageName'.$index];
-            $value = $customVariable['customVariablePageValue'.$index];
+            $name = $customVariable['customVariablePageName' . $index];
+            $value = $customVariable['customVariablePageValue' . $index];
 
             if (empty($value)) {
                 continue;
@@ -124,10 +125,9 @@ class VisitorDetails extends VisitorDetailsAbstract
         }
 
         foreach ($visit['customVariables'] as $index => $customVariable) {
-
             $scope = Model::SCOPE_VISIT;
-            $name = $customVariable['customVariableName'.$index];
-            $value = $customVariable['customVariableValue'.$index];
+            $name = $customVariable['customVariableName' . $index];
+            $value = $customVariable['customVariableValue' . $index];
 
             if (empty($value)) {
                 continue;
@@ -149,18 +149,16 @@ class VisitorDetails extends VisitorDetailsAbstract
     {
         $customVariables = $this->customVariables;
         foreach ($customVariables as $scope => &$variables) {
-
             if (empty($variables)) {
                 unset($customVariables[$scope]);
                 continue;
             }
 
-            foreach ($variables AS $name => &$values) {
+            foreach ($variables as $name => &$values) {
                 arsort($values);
             }
         }
         if (!empty($customVariables)) {
-
             $profile['customVariables'] = $this->convertForProfile($customVariables);
         }
     }
@@ -170,11 +168,9 @@ class VisitorDetails extends VisitorDetailsAbstract
         $convertedVariables = [];
 
         foreach ($customVariables as $scope => $scopeVariables) {
-
             $convertedVariables[$scope] = [];
 
             foreach ($scopeVariables as $name => $values) {
-
                 $variable = [
                     'name' => $name,
                     'values' => []

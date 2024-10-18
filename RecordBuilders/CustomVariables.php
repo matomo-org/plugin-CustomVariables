@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Matomo - free/libre analytics platform
  *
@@ -89,7 +90,7 @@ class CustomVariables extends RecordBuilder
 
         // Before Matomo 4.0.0 ecommerce views were tracked in custom variables
         // So if Matomo was installed before still try to archive it the old way, as old data might be archived
-        if (version_compare(DbHelper::getInstallVersion(),'4.0.0-b2', '<') && in_array($slot, array(3, 4, 5))) {
+        if (version_compare(DbHelper::getInstallVersion(), '4.0.0-b2', '<') && in_array($slot, array(3, 4, 5))) {
             $additionalSelects = array($this->getSelectAveragePrice());
         }
         $query = $logAggregator->queryActionsByDimension($dimensions, $where, $additionalSelects);
@@ -107,9 +108,14 @@ class CustomVariables extends RecordBuilder
         return LogAggregator::getSqlRevenue("AVG(log_link_visit_action." . $field . ")") . " as `" . Metrics::INDEX_ECOMMERCE_ITEM_PRICE_VIEWED . "`";
     }
 
-    protected function aggregateFromVisits(DataTable $record, array &$metadata, array &$metadataFlat, $query,
-                                           string $keyField, string $valueField): void
-    {
+    protected function aggregateFromVisits(
+        DataTable $record,
+        array &$metadata,
+        array &$metadataFlat,
+        $query,
+        string $keyField,
+        string $valueField
+    ): void {
         while ($row = $query->fetch()) {
             $key = $row[$keyField];
             $value = $this->cleanCustomVarValue($row[$valueField]);
@@ -130,7 +136,8 @@ class CustomVariables extends RecordBuilder
             $existingRow = $record->getRowFromLabel($key);
 
             // Edge case fail safe
-            if (!empty($existingRow)
+            if (
+                !empty($existingRow)
                 && !$existingRow->hasColumn(Metrics::INDEX_NB_VISITS)
             ) {
                 continue;
@@ -138,7 +145,8 @@ class CustomVariables extends RecordBuilder
 
             // In case the existing Row had no action metrics (eg. Custom Variable XYZ with "visit" scope)
             // but the new Row has action metrics (eg. same Custom Variable XYZ this time with a "page" scope)
-            if (!empty($existingRow)
+            if (
+                !empty($existingRow)
                 && !$existingRow->hasColumn(Metrics::INDEX_MAX_ACTIONS)
             ) {
                 $toZero = [
@@ -166,9 +174,14 @@ class CustomVariables extends RecordBuilder
         return Archiver::LABEL_CUSTOM_VALUE_NOT_DEFINED;
     }
 
-    protected function aggregateFromActions(DataTable $record, array &$metadata, array &$metadataFlat, $query,
-                                            string $keyField, string $valueField): void
-    {
+    protected function aggregateFromActions(
+        DataTable $record,
+        array &$metadata,
+        array &$metadataFlat,
+        $query,
+        string $keyField,
+        string $valueField
+    ): void {
         while ($row = $query->fetch()) {
             $key = $row[$keyField];
             $value = $this->cleanCustomVarValue($row[$valueField]);
@@ -214,7 +227,8 @@ class CustomVariables extends RecordBuilder
     protected function aggregateEcommerceCategories(DataTable $record, string $key, string $value, array $row): bool
     {
         $ecommerceCategoriesAggregated = false;
-        if ($key == '_pkc'
+        if (
+            $key == '_pkc'
             && $value[0] == '[' && $value[1] == '"'
         ) {
             // In case categories were truncated, try closing the array
@@ -225,7 +239,8 @@ class CustomVariables extends RecordBuilder
             if (is_array($decoded)) {
                 $count = 0;
                 foreach ($decoded as $category) {
-                    if (empty($category)
+                    if (
+                        empty($category)
                         || $count >= GoalManager::MAXIMUM_PRODUCT_CATEGORIES
                     ) {
                         continue;
@@ -252,7 +267,8 @@ class CustomVariables extends RecordBuilder
         // Edge case fail safe
         $subtable = $toplevelRow->getSubtable();
         $existingRow = !empty($subtable) ? $subtable->getRowFromLabel($value) : null;
-        if (!empty($existingRow)
+        if (
+            !empty($existingRow)
             && !$existingRow->hasColumn(Metrics::INDEX_NB_VISITS)
         ) {
             return;
@@ -315,7 +331,8 @@ class CustomVariables extends RecordBuilder
     {
         foreach ($record->getRows() as $row) {
             $label = $row->getColumn('label');
-            if (!self::isReservedKey($label)
+            if (
+                !self::isReservedKey($label)
                 && $this->isActionsRow($row)
             ) {
                 $row->deleteColumn(Metrics::INDEX_NB_UNIQ_VISITORS);

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Matomo - free/libre analytics platform
  *
@@ -6,6 +7,7 @@
  * @license http://www.gnu.org/licenses/gpl-3.0.html GPL v3 or later
  *
  */
+
 namespace Piwik\Plugins\CustomVariables\Reports;
 
 use Piwik\DataTable;
@@ -20,8 +22,10 @@ class GetCustomVariables extends Base
         parent::init();
         $this->dimension     = new CustomVariableName();
         $this->name          = Piwik::translate('CustomVariables_CustomVariables');
-        $this->documentation = Piwik::translate('CustomVariables_CustomVariablesReportDocumentation',
-                               array('<br />', '<a href="https://matomo.org/docs/custom-variables/" rel="noreferrer noopener" target="_blank">', '</a>'));
+        $this->documentation = Piwik::translate(
+            'CustomVariables_CustomVariablesReportDocumentation',
+            array('<br />', '<a href="https://matomo.org/docs/custom-variables/" rel="noreferrer noopener" target="_blank">', '</a>')
+        );
         $this->actionToLoadSubTables = 'getCustomVariablesValuesFromNameId';
         $this->order = 10;
 
@@ -38,7 +42,7 @@ class GetCustomVariables extends Base
 
         $that = $this;
         $view->config->filters[] = function (DataTable $table) use ($view, $that) {
-            if($that->isReportContainsUnsetVisitsColumns($table)) {
+            if ($that->isReportContainsUnsetVisitsColumns($table)) {
                 $message = $that->getFooterMessageExplanationMissingMetrics();
                 $view->config->show_footer_message = $message;
             }
@@ -50,7 +54,8 @@ class GetCustomVariables extends Base
      */
     public function getFooterMessageExplanationMissingMetrics()
     {
-        $metrics = sprintf("'%s', '%s' %s '%s'",
+        $metrics = sprintf(
+            "'%s', '%s' %s '%s'",
             Piwik::translate('General_ColumnNbVisits'),
             Piwik::translate('General_ColumnNbUniqVisitors'),
             Piwik::translate('General_And'),
