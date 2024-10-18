@@ -21,6 +21,7 @@ use Piwik\Plugins\CustomVariables\API;
 use Piwik\Plugins\CustomVariables\Archiver;
 use Piwik\Plugins\CustomVariables\Model;
 use Piwik\Tracker\GoalManager;
+use Piwik\Version;
 
 class CustomVariables extends RecordBuilder
 {
