@@ -22,6 +22,7 @@ use Piwik\Plugins\CustomVariables\API;
 use Piwik\Plugins\CustomVariables\Archiver;
 use Piwik\Plugins\CustomVariables\Model;
 use Piwik\Tracker\GoalManager;
+use Piwik\Version;
 
 class CustomVariables extends RecordBuilder
 {
@@ -95,7 +96,9 @@ class CustomVariables extends RecordBuilder
         $query = $logAggregator->queryActionsByDimension($dimensions, $where, $additionalSelects);
         $this->aggregateFromActions($record, $metadata, $metadataFlat, $query, $keyField, $valueField);
 
-        $query = $logAggregator->queryConversionsByDimension($dimensions, $where);
+        $query = version_compare(Version::VERSION, '5.2.0-b6', '>=')
+            ? $logAggregator->queryConversionsByDimension($dimensions, $where, [], [], false, false, true)
+            : $logAggregator->queryConversionsByDimension($dimensions, $where);
         $this->aggregateFromConversions($record, $query, $keyField, $valueField);
     }
 
