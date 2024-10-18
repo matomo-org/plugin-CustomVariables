@@ -95,7 +95,7 @@ class CustomVariables extends RecordBuilder
         $query = $logAggregator->queryActionsByDimension($dimensions, $where, $additionalSelects);
         $this->aggregateFromActions($record, $metadata, $metadataFlat, $query, $keyField, $valueField);
 
-        $query = version_compare(Version::VERSION, '5.2.0-b1', '>=')
+        $query = version_compare(Version::VERSION, '5.2.0-b6', '>=')
             ? $logAggregator->queryConversionsByDimension($dimensions, $where, [], [], false, false, true)
             : $logAggregator->queryConversionsByDimension($dimensions, $where);
         $this->aggregateFromConversions($record, $query, $keyField, $valueField);
