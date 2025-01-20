@@ -87,24 +87,6 @@
 		<nb_visits>7</nb_visits>
 		<nb_actions>24</nb_actions>
 		<nb_users>0</nb_users>
-		<max_actions>13</max_actions>
-		<sum_visit_length>1805</sum_visit_length>
-		<bounce_count>4</bounce_count>
-		<nb_visits_converted>5</nb_visits_converted>
-		<goals>
-			<row idgoal="1">
-				<nb_conversions>5</nb_conversions>
-				<nb_visits_converted>5</nb_visits_converted>
-				<revenue>2000</revenue>
-			</row>
-			<row idgoal="2">
-				<nb_conversions>1</nb_conversions>
-				<nb_visits_converted>1</nb_visits_converted>
-				<revenue>0</revenue>
-			</row>
-		</goals>
-		<nb_conversions>6</nb_conversions>
-		<revenue>2000</revenue>
-		<nb_actions_per_visit>11</nb_actions_per_visit>
+		<nb_actions_per_visit>3.4</nb_actions_per_visit>
 	</reportTotal>
 </result>
