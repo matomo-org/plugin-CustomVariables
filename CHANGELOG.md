@@ -1,5 +1,8 @@
 # CHANGELOG
 
+5.0.4 - 2025-01-20
+- Added missing license file
+
 5.0.3 - 2024-11-05
 - Updated the conversion query to force index
 
