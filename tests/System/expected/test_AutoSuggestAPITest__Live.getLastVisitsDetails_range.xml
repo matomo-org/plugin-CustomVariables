@@ -114,8 +114,8 @@
 		<regionCode>CA</regionCode>
 		<city>not a city</city>
 		<location>not a city, California, United States</location>
-		<latitude>1</latitude>
-		<longitude>2</longitude>
+		
+		
 		<visitLocalTime>12:34:06</visitLocalTime>
 		<visitLocalHour>12</visitLocalHour>
 		<daysSinceLastVisit>0</daysSinceLastVisit>
@@ -344,8 +344,8 @@
 		<regionCode />
 		<city />
 		<location>Unknown</location>
-		<latitude />
-		<longitude />
+		
+		
 		<visitLocalTime>12:34:06</visitLocalTime>
 		<visitLocalHour>12</visitLocalHour>
 		<daysSinceLastVisit>0</daysSinceLastVisit>
@@ -501,8 +501,8 @@
 		<regionCode />
 		<city />
 		<location>Unknown</location>
-		<latitude />
-		<longitude />
+		
+		
 		<visitLocalTime>12:34:06</visitLocalTime>
 		<visitLocalHour>12</visitLocalHour>
 		<daysSinceLastVisit>0</daysSinceLastVisit>
@@ -720,8 +720,8 @@
 		<regionCode>18</regionCode>
 		<city>Stratford-upon-Avon</city>
 		<location>Stratford-upon-Avon, Gevgelija, North Macedonia</location>
-		<latitude />
-		<longitude />
+		
+		
 		<visitLocalTime>12:34:06</visitLocalTime>
 		<visitLocalHour>12</visitLocalHour>
 		<daysSinceLastVisit>0</daysSinceLastVisit>
@@ -886,8 +886,8 @@
 		<regionCode>18</regionCode>
 		<city>Stratford-upon-Avon</city>
 		<location>Stratford-upon-Avon, Gevgelija, North Macedonia</location>
-		<latitude />
-		<longitude />
+		
+		
 		<visitLocalTime>12:34:06</visitLocalTime>
 		<visitLocalHour>12</visitLocalHour>
 		<daysSinceLastVisit>0</daysSinceLastVisit>
@@ -1156,8 +1156,8 @@
 		<regionCode>SPE</regionCode>
 		<city>Hluboká nad Vltavou</city>
 		<location>Hluboká nad Vltavou, Sankt-Peterburg, Russia</location>
-		<latitude />
-		<longitude />
+		
+		
 		<visitLocalTime>12:34:06</visitLocalTime>
 		<visitLocalHour>12</visitLocalHour>
 		<daysSinceLastVisit>0</daysSinceLastVisit>
@@ -1313,8 +1313,8 @@
 		<regionCode>SPE</regionCode>
 		<city>Hluboká nad Vltavou</city>
 		<location>Hluboká nad Vltavou, Sankt-Peterburg, Russia</location>
-		<latitude />
-		<longitude />
+		
+		
 		<visitLocalTime>12:34:06</visitLocalTime>
 		<visitLocalHour>12</visitLocalHour>
 		<daysSinceLastVisit>0</daysSinceLastVisit>
@@ -1532,8 +1532,8 @@
 		<regionCode>SPE</regionCode>
 		<city>Stratford-upon-Avon</city>
 		<location>Stratford-upon-Avon, Sankt-Peterburg, Russia</location>
-		<latitude />
-		<longitude />
+		
+		
 		<visitLocalTime>12:34:06</visitLocalTime>
 		<visitLocalHour>12</visitLocalHour>
 		<daysSinceLastVisit>0</daysSinceLastVisit>
@@ -1689,8 +1689,8 @@
 		<regionCode>SPE</regionCode>
 		<city>Stratford-upon-Avon</city>
 		<location>Stratford-upon-Avon, Sankt-Peterburg, Russia</location>
-		<latitude />
-		<longitude />
+		
+		
 		<visitLocalTime>12:34:06</visitLocalTime>
 		<visitLocalHour>12</visitLocalHour>
 		<daysSinceLastVisit>0</daysSinceLastVisit>
@@ -1927,8 +1927,8 @@
 		<regionCode>KEN</regionCode>
 		<city>Stratford-upon-Avon</city>
 		<location>Stratford-upon-Avon, Kent, United Kingdom</location>
-		<latitude />
-		<longitude />
+		
+		
 		<visitLocalTime>12:34:06</visitLocalTime>
 		<visitLocalHour>12</visitLocalHour>
 		<daysSinceLastVisit>0</daysSinceLastVisit>
@@ -2093,8 +2093,8 @@
 		<regionCode>KEN</regionCode>
 		<city>Stratford-upon-Avon</city>
 		<location>Stratford-upon-Avon, Kent, United Kingdom</location>
-		<latitude />
-		<longitude />
+		
+		
 		<visitLocalTime>12:34:06</visitLocalTime>
 		<visitLocalHour>12</visitLocalHour>
 		<daysSinceLastVisit>0</daysSinceLastVisit>
@@ -2344,8 +2344,8 @@
 		<regionCode>XZ</regionCode>
 		<city>Lhasa</city>
 		<location>Lhasa, Xizang Zizhiqu, China</location>
-		<latitude>29.650000</latitude>
-		<longitude>91.100000</longitude>
+		
+		
 		<visitLocalTime>12:34:06</visitLocalTime>
 		<visitLocalHour>12</visitLocalHour>
 		<daysSinceLastVisit>0</daysSinceLastVisit>
@@ -2587,8 +2587,8 @@
 		<regionCode>LND</regionCode>
 		<city>London</city>
 		<location>London, London, City of, United Kingdom</location>
-		<latitude />
-		<longitude />
+		
+		
 		<visitLocalTime>12:34:06</visitLocalTime>
 		<visitLocalHour>12</visitLocalHour>
 		<daysSinceLastVisit>0</daysSinceLastVisit>
@@ -2744,8 +2744,8 @@
 		<regionCode>XZ</regionCode>
 		<city>Lhasa</city>
 		<location>Lhasa, Xizang Zizhiqu, China</location>
-		<latitude>29.650000</latitude>
-		<longitude>91.100000</longitude>
+		
+		
 		<visitLocalTime>12:34:06</visitLocalTime>
 		<visitLocalHour>12</visitLocalHour>
 		<daysSinceLastVisit>0</daysSinceLastVisit>
@@ -2901,8 +2901,8 @@
 		<regionCode>LND</regionCode>
 		<city>London</city>
 		<location>London, London, City of, United Kingdom</location>
-		<latitude />
-		<longitude />
+		
+		
 		<visitLocalTime>12:34:06</visitLocalTime>
 		<visitLocalHour>12</visitLocalHour>
 		<daysSinceLastVisit>0</daysSinceLastVisit>
@@ -3139,8 +3139,8 @@
 		<regionCode />
 		<city />
 		<location>United States</location>
-		<latitude>38</latitude>
-		<longitude>-97</longitude>
+		
+		
 		<visitLocalTime>12:34:06</visitLocalTime>
 		<visitLocalHour>12</visitLocalHour>
 		<daysSinceLastVisit>0</daysSinceLastVisit>
@@ -3369,8 +3369,8 @@
 		<regionCode>WAR</regionCode>
 		<city>Stratford-upon-Avon</city>
 		<location>Stratford-upon-Avon, Warwickshire, United Kingdom</location>
-		<latitude>124.456000</latitude>
-		<longitude>22.231000</longitude>
+		
+		
 		<visitLocalTime>12:34:06</visitLocalTime>
 		<visitLocalHour>12</visitLocalHour>
 		<daysSinceLastVisit>0</daysSinceLastVisit>
@@ -3526,8 +3526,8 @@
 		<regionCode />
 		<city />
 		<location>United States</location>
-		<latitude>38</latitude>
-		<longitude>-97</longitude>
+		
+		
 		<visitLocalTime>12:34:06</visitLocalTime>
 		<visitLocalHour>12</visitLocalHour>
 		<daysSinceLastVisit>0</daysSinceLastVisit>
@@ -3683,8 +3683,8 @@
 		<regionCode>WAR</regionCode>
 		<city>Stratford-upon-Avon</city>
 		<location>Stratford-upon-Avon, Warwickshire, United Kingdom</location>
-		<latitude>124.456000</latitude>
-		<longitude>22.231000</longitude>
+		
+		
 		<visitLocalTime>12:34:06</visitLocalTime>
 		<visitLocalHour>12</visitLocalHour>
 		<daysSinceLastVisit>0</daysSinceLastVisit>
@@ -3902,8 +3902,8 @@
 		<regionCode />
 		<city />
 		<location>Indonesia</location>
-		<latitude />
-		<longitude />
+		
+		
 		<visitLocalTime>12:34:06</visitLocalTime>
 		<visitLocalHour>12</visitLocalHour>
 		<daysSinceLastVisit>0</daysSinceLastVisit>
@@ -4121,8 +4121,8 @@
 		<regionCode>BC</regionCode>
 		<city>Vancouver</city>
 		<location>Vancouver, British Columbia, Canada</location>
-		<latitude>49.250000</latitude>
-		<longitude>-123.133000</longitude>
+		
+		
 		<visitLocalTime>12:34:06</visitLocalTime>
 		<visitLocalHour>12</visitLocalHour>
 		<daysSinceLastVisit>0</daysSinceLastVisit>
@@ -4332,8 +4332,8 @@
 		<regionCode>BC</regionCode>
 		<city>Vancouver</city>
 		<location>Vancouver, British Columbia, Canada</location>
-		<latitude>49.250000</latitude>
-		<longitude>-123.133000</longitude>
+		
+		
 		<visitLocalTime>12:34:06</visitLocalTime>
 		<visitLocalHour>12</visitLocalHour>
 		<daysSinceLastVisit>0</daysSinceLastVisit>
@@ -4551,8 +4551,8 @@
 		<regionCode>WAR</regionCode>
 		<city>Nuneaton and Bedworth</city>
 		<location>Nuneaton and Bedworth, Warwickshire, United Kingdom</location>
-		<latitude />
-		<longitude />
+		
+		
 		<visitLocalTime>12:34:06</visitLocalTime>
 		<visitLocalHour>12</visitLocalHour>
 		<daysSinceLastVisit>0</daysSinceLastVisit>
@@ -4717,8 +4717,8 @@
 		<regionCode />
 		<city />
 		<location>Indonesia</location>
-		<latitude />
-		<longitude />
+		
+		
 		<visitLocalTime>12:34:06</visitLocalTime>
 		<visitLocalHour>12</visitLocalHour>
 		<daysSinceLastVisit>0</daysSinceLastVisit>
@@ -4883,8 +4883,8 @@
 		<regionCode>BC</regionCode>
 		<city>Vancouver</city>
 		<location>Vancouver, British Columbia, Canada</location>
-		<latitude>49.250000</latitude>
-		<longitude>-123.133000</longitude>
+		
+		
 		<visitLocalTime>12:34:06</visitLocalTime>
 		<visitLocalHour>12</visitLocalHour>
 		<daysSinceLastVisit>0</daysSinceLastVisit>
@@ -5049,8 +5049,8 @@
 		<regionCode>BC</regionCode>
 		<city>Vancouver</city>
 		<location>Vancouver, British Columbia, Canada</location>
-		<latitude>49.250000</latitude>
-		<longitude>-123.133000</longitude>
+		
+		
 		<visitLocalTime>12:34:06</visitLocalTime>
 		<visitLocalHour>12</visitLocalHour>
 		<daysSinceLastVisit>0</daysSinceLastVisit>
@@ -5215,8 +5215,8 @@
 		<regionCode>WAR</regionCode>
 		<city>Nuneaton and Bedworth</city>
 		<location>Nuneaton and Bedworth, Warwickshire, United Kingdom</location>
-		<latitude />
-		<longitude />
+		
+		
 		<visitLocalTime>12:34:06</visitLocalTime>
 		<visitLocalHour>12</visitLocalHour>
 		<daysSinceLastVisit>0</daysSinceLastVisit>
@@ -5485,8 +5485,8 @@
 		<regionCode />
 		<city />
 		<location>Italy</location>
-		<latitude />
-		<longitude />
+		
+		
 		<visitLocalTime>12:34:06</visitLocalTime>
 		<visitLocalHour>12</visitLocalHour>
 		<daysSinceLastVisit>0</daysSinceLastVisit>
@@ -5755,8 +5755,8 @@
 		<regionCode>BC</regionCode>
 		<city>Vancouver</city>
 		<location>Vancouver, British Columbia, Canada</location>
-		<latitude>49.250000</latitude>
-		<longitude>-123.133000</longitude>
+		
+		
 		<visitLocalTime>12:34:06</visitLocalTime>
 		<visitLocalHour>12</visitLocalHour>
 		<daysSinceLastVisit>0</daysSinceLastVisit>
@@ -6017,8 +6017,8 @@
 		<regionCode>BFC</regionCode>
 		<city>Besançon</city>
 		<location>Besançon, Bourgogne-Franche-Comté, France</location>
-		<latitude>47.249000</latitude>
-		<longitude>6.018000</longitude>
+		
+		
 		<visitLocalTime>12:34:06</visitLocalTime>
 		<visitLocalHour>12</visitLocalHour>
 		<daysSinceLastVisit>0</daysSinceLastVisit>
@@ -6287,8 +6287,8 @@
 		<regionCode>WAR</regionCode>
 		<city>Stratford-upon-Avon</city>
 		<location>Stratford-upon-Avon, Warwickshire, United Kingdom</location>
-		<latitude>123.456000</latitude>
-		<longitude>21.321000</longitude>
+		
+		
 		<visitLocalTime>12:34:06</visitLocalTime>
 		<visitLocalHour>12</visitLocalHour>
 		<daysSinceLastVisit>0</daysSinceLastVisit>
@@ -6444,8 +6444,8 @@
 		<regionCode />
 		<city />
 		<location>Italy</location>
-		<latitude />
-		<longitude />
+		
+		
 		<visitLocalTime>12:34:06</visitLocalTime>
 		<visitLocalHour>12</visitLocalHour>
 		<daysSinceLastVisit>0</daysSinceLastVisit>
@@ -6601,8 +6601,8 @@
 		<regionCode>BC</regionCode>
 		<city>Vancouver</city>
 		<location>Vancouver, British Columbia, Canada</location>
-		<latitude>49.250000</latitude>
-		<longitude>-123.133000</longitude>
+		
+		
 		<visitLocalTime>12:34:06</visitLocalTime>
 		<visitLocalHour>12</visitLocalHour>
 		<daysSinceLastVisit>0</daysSinceLastVisit>
@@ -6758,8 +6758,8 @@
 		<regionCode>BFC</regionCode>
 		<city>Besançon</city>
 		<location>Besançon, Bourgogne-Franche-Comté, France</location>
-		<latitude>47.249000</latitude>
-		<longitude>6.018000</longitude>
+		
+		
 		<visitLocalTime>12:34:06</visitLocalTime>
 		<visitLocalHour>12</visitLocalHour>
 		<daysSinceLastVisit>0</daysSinceLastVisit>
@@ -6915,8 +6915,8 @@
 		<regionCode>WAR</regionCode>
 		<city>Stratford-upon-Avon</city>
 		<location>Stratford-upon-Avon, Warwickshire, United Kingdom</location>
-		<latitude>123.456000</latitude>
-		<longitude>21.321000</longitude>
+		
+		
 		<visitLocalTime>12:34:06</visitLocalTime>
 		<visitLocalHour>12</visitLocalHour>
 		<daysSinceLastVisit>0</daysSinceLastVisit>

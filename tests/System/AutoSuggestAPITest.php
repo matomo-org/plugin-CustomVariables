@@ -55,7 +55,7 @@ class AutoSuggestAPITest extends SystemTestCase
             $apiForTesting[] = $this->getApiForTestingForSegment($idSite, $segment);
         }
 
-        $xmlFieldsToRemove = [];
+        $xmlFieldsToRemove = ['latitude', 'longitude'];
 
         $apiForTesting[] = [
             'Live.getLastVisitsDetails',
