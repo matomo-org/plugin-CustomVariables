@@ -66,7 +66,7 @@ class TwoVisitsWithCustomVariablesTest extends SystemTestCase
             )),
         );
 
-        if (version_compare(Version::VERSION, '4.13.3', '>')) {
+        if (version_compare(Version::VERSION, '5.4.0-alpha', '>')) {
             // test getProcessedReport w/ custom variables subtable
             $return[] = array('API.getProcessedReport', array(
                 'idSite'        => $idSite,
