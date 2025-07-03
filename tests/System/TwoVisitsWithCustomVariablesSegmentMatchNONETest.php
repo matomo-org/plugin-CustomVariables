@@ -12,6 +12,7 @@ namespace Piwik\Plugins\CustomVariables\tests\System;
 use Piwik\Plugins\API\tests\System\AutoSuggestAPITest;
 use Piwik\Tests\Framework\TestCase\SystemTestCase;
 use Piwik\Plugins\CustomVariables\tests\Fixtures\TwoVisitsWithCustomVariables;
+use Piwik\Version;
 
 /**
  * testing a segment containing all supported fields
@@ -40,6 +41,11 @@ class TwoVisitsWithCustomVariablesSegmentMatchNONETest extends SystemTestCase
     {
         // we will test all segments from all plugins
         $apiToCall = array('VisitsSummary.get', 'CustomVariables.getCustomVariables');
+
+        if (version_compare(Version::VERSION, '5.4.0-b3', '<')) {
+            // archive numbers changed, so we ignore VisitsSummary
+            $apiToCall = ['CustomVariables.getCustomVariables'];
+        }
 
         return array(
             array($apiToCall, array('idSite'       => 'all',

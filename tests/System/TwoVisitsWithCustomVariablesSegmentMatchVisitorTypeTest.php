@@ -17,6 +17,7 @@ use Piwik\Date;
 use Piwik\Db;
 use Piwik\Tests\Framework\TestCase\SystemTestCase;
 use Piwik\Plugins\CustomVariables\tests\Fixtures\TwoVisitsWithCustomVariables;
+use Piwik\Version;
 
 /**
  * Tests use of custom variable segments.
@@ -77,6 +78,10 @@ class TwoVisitsWithCustomVariablesSegmentMatchVisitorTypeTest extends SystemTest
      */
     public function testCheck()
     {
+        if (version_compare(Version::VERSION, '5.4.0-b3', '<')) {
+            self::markTestSkipped('archive numbers have changed');
+        }
+
         // TODO: if we do this in archivewriter, we don't need this code
         $archivePurger = StaticContainer::get(ArchivePurger::class);
         $archivePurger->purgeInvalidatedArchivesFrom(Date::factory(self::$fixture->dateTime));
@@ -128,6 +133,10 @@ class TwoVisitsWithCustomVariablesSegmentMatchVisitorTypeTest extends SystemTest
      */
     public function test_checkArchiveRecords_shouldMergeSubtablesIntoOneRow()
     {
+        if (version_compare(Version::VERSION, '5.4.0-b3', '<')) {
+            self::markTestSkipped('archive numbers have changed');
+        }
+
         $chunk = new Chunk();
 
         $tests = array(
