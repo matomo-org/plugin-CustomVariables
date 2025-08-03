@@ -17,6 +17,7 @@ use Piwik\Date;
 use Piwik\Db;
 use Piwik\Tests\Framework\TestCase\SystemTestCase;
 use Piwik\Plugins\CustomVariables\tests\Fixtures\TwoVisitsWithCustomVariables;
+use Piwik\Version;
 
 /**
  * Tests use of custom variable segments.
@@ -77,6 +78,10 @@ class TwoVisitsWithCustomVariablesSegmentMatchVisitorTypeTest extends SystemTest
      */
     public function testCheck()
     {
+        if (version_compare(Version::VERSION, '5.4.0-b3', '<')) {
+            self::markTestSkipped('archive numbers have changed');
+        }
+
         // TODO: if we do this in archivewriter, we don't need this code
         $archivePurger = StaticContainer::get(ArchivePurger::class);
         $archivePurger->purgeInvalidatedArchivesFrom(Date::factory(self::$fixture->dateTime));
@@ -96,37 +101,27 @@ class TwoVisitsWithCustomVariablesSegmentMatchVisitorTypeTest extends SystemTest
             //   )
             'archive_blob_2010_01'    => 20,
             // This contains all 'last N' weeks & days,
-            // (6 metrics
-            //  + 2 referrer metrics
+            // (8 metrics
+            //  + 6 referrer metrics
             //  + 3 done flag )
             //  * 2 segments
             // for each "Last N" date that has data (just one date)
-            'archive_numeric_2010_01' => 22,
+            'archive_numeric_2010_01' => 34,
 
             // 2) CHECK 'week' archive stored in December (week starts the month before)
             // We expect 2 segments * (2 custom variable name + 2 ref metrics + 1 subtable chunk for the values of the name + 6 referrers blob (2 of them subtables))
             'archive_blob_2009_12'    => 20,
-            // 6 metrics,
-            // 2 Referrer metrics (Referrers_distinctSearchEngines/Referrers_distinctKeywords),
+            // 8 metrics,
+            // 6 Referrer metrics,
             // 3 done flag (referrers, CustomVar, VisitsSummary), all for period = 2, day w/ visits is in new year, other days have no data
             // X * 2 segments
-            'archive_numeric_2009_12' => (6 + 2 + 3) * 2,
+            'archive_numeric_2009_12' => (8 + 6 + 3) * 2,
         );
+
         foreach ($tests as $table => $expectedRows) {
             $sql = "SELECT count(*) FROM " . Common::prefixTable($table);
             $countBlobs = Db::get()->fetchOne($sql);
 
-            if ($expectedRows != $countBlobs) {
-                $output = Db::get()->fetchAll("SELECT * FROM " . Common::prefixTable($table) . " ORDER BY name, idarchive ASC");
-                if (strpos($table, 'blob') !== false) {
-                    $output = array_map(function ($r) {
-                        unset($r['value']);
-                        return $r;
-                    }, $output);
-                }
-                var_export('This is debug output from ' . __CLASS__ . ' in case of an error: ');
-                var_export($output);
-            }
             $this->assertEquals($expectedRows, $countBlobs, "$table: %s");
         }
     }
@@ -138,6 +133,10 @@ class TwoVisitsWithCustomVariablesSegmentMatchVisitorTypeTest extends SystemTest
      */
     public function test_checkArchiveRecords_shouldMergeSubtablesIntoOneRow()
     {
+        if (version_compare(Version::VERSION, '5.4.0-b3', '<')) {
+            self::markTestSkipped('archive numbers have changed');
+        }
+
         $chunk = new Chunk();
 
         $tests = array(
