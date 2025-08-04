@@ -32,12 +32,20 @@ class TwoVisitsWithCustomVariablesTest extends SystemTestCase
         $idSite = self::$fixture->idSite;
         $dateTime = self::$fixture->dateTime;
 
+        $xmlFieldsToRemove = [];
+
+        if (version_compare(Version::VERSION, '5.4.0-b4', '<')) {
+            // the fixture used from core changed, so this metric might differ for older versions
+            $xmlFieldsToRemove = ['sum_visit_length'];
+        }
+
         $apiToCall = array('VisitsSummary.get', 'CustomVariables.getCustomVariables');
 
         $return = array(
             array($apiToCall, array('idSite'       => 'all',
                                     'date'         => $dateTime,
                                     'periods'      => array('day', 'week'),
+                                    'xmlFieldsToRemove' => $xmlFieldsToRemove,
                                     'setDateLastN' => true)),
 
             // test w/ custom variable segments
@@ -45,6 +53,7 @@ class TwoVisitsWithCustomVariablesTest extends SystemTestCase
                 'idSite' => self::$fixture->idSite,
                 'date' => self::$fixture->dateTime,
                 'periods' => array('day'),
+                'xmlFieldsToRemove' => $xmlFieldsToRemove,
                 'testSuffix' => '_segmentCustomVarName',
                 'segment' => 'customVariablePageName=@SET WITH',
             )),
@@ -53,6 +62,7 @@ class TwoVisitsWithCustomVariablesTest extends SystemTestCase
                 'idSite' => self::$fixture->idSite,
                 'date' => self::$fixture->dateTime,
                 'periods' => array('day'),
+                'xmlFieldsToRemove' => $xmlFieldsToRemove,
                 'testSuffix' => '_segmentCustomVarValue',
                 'segment' => 'customVariableValue=@LoggedIn',
             )),
@@ -61,6 +71,7 @@ class TwoVisitsWithCustomVariablesTest extends SystemTestCase
                 'idSite' => self::$fixture->idSite,
                 'date' => self::$fixture->dateTime,
                 'periods' => array('day'),
+                'xmlFieldsToRemove' => $xmlFieldsToRemove,
                 'testSuffix' => '_segmentAll',
                 'segment' => 'customVariableName=@Othercustom,customVariablePageValue=@abcdefghi',
             )),
