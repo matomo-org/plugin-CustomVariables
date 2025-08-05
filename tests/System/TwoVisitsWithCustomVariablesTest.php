@@ -36,7 +36,7 @@ class TwoVisitsWithCustomVariablesTest extends SystemTestCase
 
         if (version_compare(Version::VERSION, '5.4.0-b4', '<')) {
             // the fixture used from core changed, so this metric might differ for older versions
-            $xmlFieldsToRemove = ['sum_visit_length'];
+            $xmlFieldsToRemove = ['sum_visit_length', 'avg_time_on_site'];
         }
 
         $apiToCall = array('VisitsSummary.get', 'CustomVariables.getCustomVariables');
