@@ -66,7 +66,7 @@
 			<nb_users>0</nb_users>
 			<conversion_rate>100%</conversion_rate>
 			<nb_actions_per_visit>4</nb_actions_per_visit>
-			<avg_time_on_site>00:06:01</avg_time_on_site>
+			<avg_time_on_site>00:06:04</avg_time_on_site>
 			<bounce_rate>0%</bounce_rate>
 			<nb_uniq_visitors>0</nb_uniq_visitors>
 		</row>
@@ -88,7 +88,7 @@
 		<nb_actions>24</nb_actions>
 		<nb_users>0</nb_users>
 		<max_actions>13</max_actions>
-		<sum_visit_length>1805</sum_visit_length>
+		<sum_visit_length>1814</sum_visit_length>
 		<bounce_count>4</bounce_count>
 		<nb_visits_converted>5</nb_visits_converted>
 		<goals>
