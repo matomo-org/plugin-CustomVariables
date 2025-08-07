@@ -99,23 +99,23 @@ class TwoVisitsWithCustomVariablesSegmentMatchVisitorTypeTest extends SystemTest
             //   * (1 custom variable name + 2 ref metrics
             //      + 1 subtable chunk for the custom var values + 7 Referrers blob (2 of them subtables)
             //   )
-            'archive_blob_2010_01' => 22,
+            'archive_blob_2010_01'    => 22,
             // This contains all 'last N' weeks & days,
             // (8 metrics
-            //  + 6 referrer metrics
+            //  + 7 referrer metrics
             //  + 3 done flag )
             //  * 2 segments
             // for each "Last N" date that has data (just one date)
-            'archive_numeric_2010_01' => 34,
+            'archive_numeric_2010_01' => 36,
 
             // 2) CHECK 'week' archive stored in December (week starts the month before)
             // We expect 2 segments * (2 custom variable name + 2 ref metrics + 1 subtable chunk for the values of the name + 7 referrers blob (2 of them subtables))
-            'archive_blob_2009_12' => 22,
+            'archive_blob_2009_12'    => 22,
             // 8 metrics,
-            // 6 Referrer metrics,
+            // 7 Referrer metrics,
             // 3 done flag (referrers, CustomVar, VisitsSummary), all for period = 2, day w/ visits is in new year, other days have no data
             // X * 2 segments
-            'archive_numeric_2009_12' => (8 + 6 + 3) * 2,
+            'archive_numeric_2009_12' => (8 + 7 + 3) * 2,
         );
 
         foreach ($tests as $table => $expectedRows) {
