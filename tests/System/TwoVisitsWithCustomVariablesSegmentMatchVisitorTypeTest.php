@@ -78,7 +78,7 @@ class TwoVisitsWithCustomVariablesSegmentMatchVisitorTypeTest extends SystemTest
      */
     public function testCheck()
     {
-        if (version_compare(Version::VERSION, '5.4.0-b3', '<')) {
+        if (version_compare(Version::VERSION, '5.5.0-b1', '<')) {
             self::markTestSkipped('archive numbers have changed');
         }
 

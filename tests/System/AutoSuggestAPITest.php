@@ -57,8 +57,8 @@ class AutoSuggestAPITest extends SystemTestCase
 
         $xmlFieldsToRemove = ['latitude', 'longitude'];
 
-        if (version_compare(Version::VERSION, '5.4.0-b5', '<')) {
-            // In Matomo 5.4 ai referrer had been added
+        if (version_compare(Version::VERSION, '5.5.0-b1', '<')) {
+            // In Matomo 5.5 ai referrer had been added
             $xmlFieldsToRemove = array_merge($xmlFieldsToRemove, ['referrerAIAssistantUrl', 'referrerAIAssistantIcon']);
         }
 
