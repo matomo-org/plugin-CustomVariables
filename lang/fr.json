@@ -11,7 +11,7 @@
         "CustomVariablesSubcategoryHelp2": "Lisez plus sur ce sujet dans le guide en ligne.",
         "Index": "Index",
         "ManageDescription": "Cette vue d'ensemble affiche tous les emplacements de variables personnalisées et leur utilisation pour le site web \"%s\". Les noms dans chacun des emplacements sont ordonnés par le nombre de fois qu'elles ont été utilisées au total.",
-        "MetricsAreOnlyAvailableForVisitScope": "Note : %1$s les métriques sont disponibles pour les variables personnalisées de la portée %2$s uniquement.",
+        "MetricsAreOnlyAvailableForVisitScope": "Note : %1$s les métriques sont disponibles pour les variables personnalisées de la portée %2$s uniquement.",
         "MetricsNotAvailableForPageScope": "Pour les variables personnalisées de la portée %1$s, la valeur de colonne pour ces métriques est %2$s",
         "PluginDescription": "Les Variables Personnalisées sont des paires (nom, valeur) que vous pouvez assigner aux visiteurs, n'importe quelle de leurs actions en utilisant l'API JavaScript. Matomo rapportera ensuite combien de visites, pages, conversions pour chacun des ces noms et valeurs personnalisés. Consultez le détail des variables personnalisées pour chaque utilisateur et action dans le journal des visiteurs. Ce composant est requis afin d'utilise les fonctionnalités d'analyse e-commerce !",
         "ScopeConversion": "conversion de portée",
