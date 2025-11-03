@@ -14,6 +14,7 @@ use Piwik\DataTable;
 use Piwik\Piwik;
 use Piwik\Plugin\ViewDataTable;
 use Piwik\Plugins\CustomVariables\Columns\CustomVariableName;
+use Piwik\Url;
 
 class GetCustomVariables extends Base
 {
@@ -24,7 +25,7 @@ class GetCustomVariables extends Base
         $this->name          = Piwik::translate('CustomVariables_CustomVariables');
         $this->documentation = Piwik::translate(
             'CustomVariables_CustomVariablesReportDocumentation',
-            array('<br />', '<a href="https://matomo.org/docs/custom-variables/" rel="noreferrer noopener" target="_blank">', '</a>')
+            ['<br />', Url::getExternalLinkTag('https://matomo.org/docs/custom-variables/'), '</a>']
         );
         $this->actionToLoadSubTables = 'getCustomVariablesValuesFromNameId';
         $this->order = 10;
