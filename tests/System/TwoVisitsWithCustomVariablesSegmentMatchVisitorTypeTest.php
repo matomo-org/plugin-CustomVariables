@@ -78,7 +78,7 @@ class TwoVisitsWithCustomVariablesSegmentMatchVisitorTypeTest extends SystemTest
      */
     public function testCheck()
     {
-        if (version_compare(Version::VERSION, '5.5.0-b1', '<')) {
+        if (version_compare(Version::VERSION, '5.6.0-b1', '<')) {
             self::markTestSkipped('archive numbers have changed');
         }
 
@@ -97,9 +97,9 @@ class TwoVisitsWithCustomVariablesSegmentMatchVisitorTypeTest extends SystemTest
             // 1) CHECK 'day' archive stored in January
             // We expect 2 segments
             //   * (1 custom variable name + 2 ref metrics
-            //      + 1 subtable chunk for the custom var values + 7 Referrers blob (2 of them subtables)
+            //      + 1 subtable chunk for the custom var values + 8 Referrers blob (2 of them subtables)
             //   )
-            'archive_blob_2010_01'    => 22,
+            'archive_blob_2010_01' => 24,
             // This contains all 'last N' weeks & days,
             // (8 metrics
             //  + 7 referrer metrics
@@ -109,8 +109,8 @@ class TwoVisitsWithCustomVariablesSegmentMatchVisitorTypeTest extends SystemTest
             'archive_numeric_2010_01' => 36,
 
             // 2) CHECK 'week' archive stored in December (week starts the month before)
-            // We expect 2 segments * (2 custom variable name + 2 ref metrics + 1 subtable chunk for the values of the name + 7 referrers blob (2 of them subtables))
-            'archive_blob_2009_12'    => 22,
+            // We expect 2 segments * (2 custom variable name + 2 ref metrics + 1 subtable chunk for the values of the name + 8 referrers blob (2 of them subtables))
+            'archive_blob_2009_12' => 24,
             // 8 metrics,
             // 7 Referrer metrics,
             // 3 done flag (referrers, CustomVar, VisitsSummary), all for period = 2, day w/ visits is in new year, other days have no data
