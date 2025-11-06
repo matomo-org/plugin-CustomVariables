@@ -1,1 +1,22 @@
-{}
+{
+    "CustomVariables": {
+        "ColumnCustomVariableName": "Ime prilagođene varijable",
+        "ColumnCustomVariableValue": "Vrijednost prilagođene varijable",
+        "CurrentAvailableCustomVariables": "Trenutačno možeš koristiti do %s prilagođene varijable po web-stranici.",
+        "CustomVariables": "Prilagođene varijable",
+        "CustomVariablesReportDocumentation": "Ovaj izvještaj sadrži informacije o tvojim prilagođenim varijablama. Klikni na ime varijable za prikaz distribucije vrijednosti. %1$s Za više informacija o prilagođenim varijablama općenito, pročitaj %2$sdokumentaciju o prilagođenim varijablama na matomo.org%3$s",
+        "CustomVariablesSubcategoryHelp1": "Ovaj izvještaj sadrži informacije o tvojim prilagođenim varijablama. Klikni na ime varijable za prikaz distribucije vrijednosti.",
+        "CustomVariablesSubcategoryHelp2": "Saznaj više o ovoj temi u online vodiču.",
+        "Index": "Indeks",
+        "MetricsAreOnlyAvailableForVisitScope": "Napomena: Mjerni podaci za %1$s su dostupni samo za prilagođene varijable opsega %2$s.",
+        "MetricsNotAvailableForPageScope": "Za prilagođene varijable opsega %1$s, vrijednost stupca za ove mjerne podatke je %2$s",
+        "ScopeConversion": "konverzija opsega",
+        "ScopePage": "stranica opsega",
+        "ScopeVisit": "posjet opsega",
+        "ScopeX": "Opseg %s",
+        "SlotsReportIsGeneratedOverTime": "Podaci za ovaj izvještaj se popunjavaju tijekom vremenom. Može proći dan ili dva prije nego što se pojave bilo koji podaci, a nekoliko tjedana za potpuno točan izvještaj.",
+        "Unused": "Nekorišteno",
+        "UsageDetails": "%1$s posjeta i %2$s radnji od vremena stvaranja ove web-stranice.",
+        "Usages": "Korištenja"
+    }
+}
