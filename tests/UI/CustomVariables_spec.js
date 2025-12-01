@@ -8,8 +8,6 @@
  */
 
 describe("CustomVariables", function () {
-    this.timeout(0);
-
     this.fixture = "Piwik\\Plugins\\CustomVariables\\tests\\Fixtures\\VisitWithManyCustomVariables";
 
     it('should show an overview of all used custom variables', async function() {
