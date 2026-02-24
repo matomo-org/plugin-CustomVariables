@@ -1,5 +1,8 @@
 # CHANGELOG
 
+5.0.5 - 2026-02-03
+- Updated API documentation
+
 5.0.4 - 2025-01-20
 - Added missing license file
 
