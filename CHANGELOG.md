@@ -1,6 +1,6 @@
 # CHANGELOG
 
-5.0.5 - 2026-02-03
+5.0.5 - 2026-03-02
 - Updated API documentation
 
 5.0.4 - 2025-01-20
