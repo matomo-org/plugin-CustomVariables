@@ -169,9 +169,9 @@ class API extends \Piwik\Plugin\API
             'page'  => array_fill(1, $numVars, array()),
         );
 
-        /** @var DataTable $customVarUsages */
         $today = StaticContainer::get('CustomVariables.today');
         $date = '2008-12-12,' . $today;
+        /** @var DataTable $customVarUsages */
         $customVarUsages = Request::processRequest(
             'CustomVariables.getCustomVariables',
             array('idSite' => $idSite, 'period' => 'range', 'date' => $date,

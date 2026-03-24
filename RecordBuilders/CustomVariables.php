@@ -96,6 +96,7 @@ class CustomVariables extends RecordBuilder
         $query = $logAggregator->queryActionsByDimension($dimensions, $where, $additionalSelects);
         $this->aggregateFromActions($record, $metadata, $metadataFlat, $query, $keyField, $valueField);
 
+        // @phpstan-ignore-next-line Ternary operator condition is always true.
         $query = version_compare(Version::VERSION, '5.2.0-b6', '>=')
             ? $logAggregator->queryConversionsByDimension($dimensions, $where, [], [], false, false, true)
             : $logAggregator->queryConversionsByDimension($dimensions, $where);

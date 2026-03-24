@@ -20,8 +20,8 @@ class GetCustomVariables extends Base
     protected function init()
     {
         parent::init();
-        $this->dimension     = new CustomVariableName();
-        $this->name          = Piwik::translate('CustomVariables_CustomVariables');
+        $this->dimension = new CustomVariableName();
+        $this->name = Piwik::translate('CustomVariables_CustomVariables');
         $this->documentation = Piwik::translate(
             'CustomVariables_CustomVariablesReportDocumentation',
             array('<br />', '<a href="https://matomo.org/docs/custom-variables/" rel="noreferrer noopener" target="_blank">', '</a>')
@@ -29,7 +29,7 @@ class GetCustomVariables extends Base
         $this->actionToLoadSubTables = 'getCustomVariablesValuesFromNameId';
         $this->order = 10;
 
-        $this->subcategoryId    = 'CustomVariables_CustomVariables';
+        $this->subcategoryId = 'CustomVariables_CustomVariables';
         $this->hasGoalMetrics = true;
     }
 
@@ -38,7 +38,7 @@ class GetCustomVariables extends Base
         $view->config->columns_to_display = array('label', 'nb_actions', 'nb_visits');
         $view->config->addTranslation('label', Piwik::translate('CustomVariables_ColumnCustomVariableName'));
         $view->requestConfig->filter_sort_column = 'nb_actions';
-        $view->requestConfig->filter_sort_order  = 'desc';
+        $view->requestConfig->filter_sort_order = 'desc';
 
         $that = $this;
         $view->config->filters[] = function (DataTable $table) use ($view, $that) {
@@ -71,9 +71,7 @@ class GetCustomVariables extends Base
             // no footer message for subtables
             $out = '';
             Piwik::postEvent('Template.afterCustomVariablesReport', array(&$out));
-            if (!empty($message)) {
-                $message .= $out;
-            }
+            $message .= $out;
         }
 
         return $message;
