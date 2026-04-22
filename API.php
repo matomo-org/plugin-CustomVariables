@@ -19,9 +19,7 @@ use Piwik\Metrics;
 use Piwik\Piwik;
 
 /**
- * The Custom Variables API lets you access reports for your
- * <a href='http://matomo.org/docs/custom-variables/' rel='noreferrer' target='_blank'>Custom Variables</a>
- * names and values.
+ * Exposes reporting API endpoints for Custom Variables names, values, and slot usage.
  *
  * @method static \Piwik\Plugins\CustomVariables\API getInstance()
  */
@@ -57,19 +55,18 @@ class API extends \Piwik\Plugin\API
      *                         - Single site ID (e.g. 1)
      *                         - Multiple site IDs (e.g. [1, 4, 5])
      *                         - Comma-separated list ("1,4,5") or "all"
-     * @param string $period The period to process, processes data for the period containing the specified date.
-     *                       Allowed values: "day", "week", "month", "year", "range".
-     * @param string|Date $date The date or date range to process.
-     *                          'YYYY-MM-DD', magic keywords (today, yesterday, lastWeek, lastMonth, lastYear),
-     *                          or date range (ie, 'YYYY-MM-DD,YYYY-MM-DD', lastX, previousX).
-     * @param string|false $segment (Optional) Custom segment to filter the report.
-     *                              Example: "referrerName==twitter.com"
-     *                              Supports AND (;) and OR (,) operators.
-     *                              [See documentation:](https://developer.matomo.org/api-reference/reporting-api-segmentation)
+     * @param 'day'|'week'|'month'|'year'|'range' $period The period to process, processes data for the period
+     *                                                    containing the specified date.
+     * @param string $date The date or date range to process.
+     *                     'YYYY-MM-DD', magic keywords (today, yesterday, lastWeek, lastMonth, lastYear),
+     *                     or date range (ie, 'YYYY-MM-DD,YYYY-MM-DD', lastX, previousX).
+     * @param string|false|null $segment Custom segment to filter the report.
+     *                                   Example: "referrerName==example.com"
+     *                                   Supports AND (;) and OR (,) operators.
      * @param bool $expanded Whether to return subtables as nested data.
      * @param bool $_leavePiwikCoreVariables Whether to keep Matomo reserved custom variable rows.
      * @param bool $flat Whether to flatten subtables into a single table.
-     * @return DataTable|DataTable\Map Custom variable names report.
+     * @return DataTable|DataTable\Map Custom variable names report for the requested site selection and period.
      */
     public function getCustomVariables($idSite, $period, $date, $segment = false, $expanded = false, $_leavePiwikCoreVariables = false, $flat = false)
     {
@@ -117,18 +114,17 @@ class API extends \Piwik\Plugin\API
      *                         - Single site ID (e.g. 1)
      *                         - Multiple site IDs (e.g. [1, 4, 5])
      *                         - Comma-separated list ("1,4,5") or "all"
-     * @param string $period The period to process, processes data for the period containing the specified date.
-     *                       Allowed values: "day", "week", "month", "year", "range".
-     * @param string|Date $date The date or date range to process.
-     *                          'YYYY-MM-DD', magic keywords (today, yesterday, lastWeek, lastMonth, lastYear),
-     *                          or date range (ie, 'YYYY-MM-DD,YYYY-MM-DD', lastX, previousX).
+     * @param 'day'|'week'|'month'|'year'|'range' $period The period to process, processes data for the period
+     *                                                    containing the specified date.
+     * @param string $date The date or date range to process.
+     *                     'YYYY-MM-DD', magic keywords (today, yesterday, lastWeek, lastMonth, lastYear),
+     *                     or date range (ie, 'YYYY-MM-DD,YYYY-MM-DD', lastX, previousX).
      * @param int|string|false $idSubtable Subtable ID to load, 'all' to load all subtables, or false for root.
-     * @param string|false $segment (Optional) Custom segment to filter the report.
-     *                              Example: "referrerName==twitter.com"
-     *                              Supports AND (;) and OR (,) operators.
-     *                              [See documentation:](https://developer.matomo.org/api-reference/reporting-api-segmentation)
+     * @param string|false|null $segment Custom segment to filter the report.
+     *                                   Example: "referrerName==example.com"
+     *                                   Supports AND (;) and OR (,) operators.
      * @param bool $_leavePriceViewedColumn Whether to keep the `price_viewed` column instead of renaming it to `price`.
-     * @return DataTable|DataTable\Map Custom variable values report.
+     * @return DataTable|DataTable\Map Custom variable values report for the requested custom variable name row.
      */
     public function getCustomVariablesValuesFromNameId($idSite, $period, $date, $idSubtable, $segment = false, $_leavePriceViewedColumn = false)
     {
@@ -152,6 +148,7 @@ class API extends \Piwik\Plugin\API
      * Returns all custom variable slots and the names used in each slot since the beginning of the website.
      *
      * @param int $idSite The numeric ID of the website to query.
+     *
      * @return array<int, array{
      *     scope: string,
      *     index: int,
