@@ -51,14 +51,24 @@ class TwoVisitsWithCustomVariablesSegmentContainsTest extends SystemTestCase
             $api[] = 'Actions.getPageTitles';
         }
 
+        $olderThanMatomo5110b1 = version_compare(Version::VERSION, '5.11.0-b1', '<');
+
         $segmentsToTest = [
             // array( SegmentString , TestSuffix , Array of API to test)
             ["pageTitle=@*_)%", '_SegmentPageTitleContainsStrangeCharacters', ['VisitsSummary.get']],
-            ["pageUrl=@user/profile", '_SegmentPageUrlContains', $api],
-            ["pageTitle=@Profile pa", '_SegmentPageTitleContains', $api],
             ["pageUrl!@user/profile", '_SegmentPageUrlExcludes', $api],
             ["pageTitle!@Profile pa", '_SegmentPageTitleExcludes', $api],
         ];
+
+        if (version_compare(Version::VERSION, '4.13.1-rc1', '>=')) {
+            $segmentsToTest[] = ["pageUrl=@user/profile", '_SegmentPageUrlContains', ['VisitsSummary.get', 'Actions.getPageTitles']];
+            $segmentsToTest[] = ["pageUrl=@user/profile", '_SegmentPageUrlContains' . ($olderThanMatomo5110b1 ? '_old' : ''), ['Actions.getPageUrls']];
+            $segmentsToTest[] = ["pageTitle=@Profile pa", '_SegmentPageTitleContains', ['VisitsSummary.get', 'Actions.getPageTitles']];
+            $segmentsToTest[] = ["pageTitle=@Profile pa", '_SegmentPageTitleContains' . ($olderThanMatomo5110b1 ? '_old' : ''), ['Actions.getPageUrls']];
+        } else {
+            $segmentsToTest[] = ["pageUrl=@user/profile", '_SegmentPageUrlContains', $api];
+            $segmentsToTest[] = ["pageTitle=@Profile pa", '_SegmentPageTitleContains', $api];
+        }
 
         if (version_compare(Version::VERSION, '4.13.1-rc1', '>=')) {
             // goals for pages reports had been changed in 4.13.1, so we don't perform this tests before
@@ -66,11 +76,11 @@ class TwoVisitsWithCustomVariablesSegmentContainsTest extends SystemTestCase
             $segmentsToTest[] = ["pageTitle=@*_)%", '_SegmentPageTitleContainsStrangeCharacters', ['Actions.getPageTitles']];
 
             // starts with
-            $segmentsToTest[] = ['pageUrl=^example.org/home', '_SegmentPageUrlStartsWith', ['Actions.getPageUrls']];
+            $segmentsToTest[] = ['pageUrl=^example.org/home', '_SegmentPageUrlStartsWith' . ($olderThanMatomo5110b1 ? '_old' : ''), ['Actions.getPageUrls']];
             $segmentsToTest[] = ['pageTitle=^Profile pa', '_SegmentPageTitleStartsWith', ['Actions.getPageTitles']];
 
             // ends with
-            $segmentsToTest[] = ['pageUrl=$er/profile', '_SegmentPageUrlEndsWith', ['Actions.getPageUrls']];
+            $segmentsToTest[] = ['pageUrl=$er/profile', '_SegmentPageUrlEndsWith' . ($olderThanMatomo5110b1 ? '_old' : ''), ['Actions.getPageUrls']];
             $segmentsToTest[] = ['pageTitle=$page', '_SegmentPageTitleEndsWith', ['Actions.getPageTitles']];
         }
 
