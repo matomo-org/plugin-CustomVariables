@@ -142,13 +142,8 @@ var __publicField = (obj, key, value) => __defNormalProp(obj, typeof key !== "sy
   const _hoisted_3 = { class: "index" };
   const _hoisted_4 = ["title"];
   const _hoisted_5 = { key: 0 };
-  const _hoisted_6 = /* @__PURE__ */ vue.createElementVNode("br", null, null, -1);
-  const _hoisted_7 = /* @__PURE__ */ vue.createElementVNode("br", null, null, -1);
-  const _hoisted_8 = ["innerHTML"];
-  const _hoisted_9 = /* @__PURE__ */ vue.createElementVNode("br", null, null, -1);
-  const _hoisted_10 = /* @__PURE__ */ vue.createElementVNode("br", null, null, -1);
-  const _hoisted_11 = /* @__PURE__ */ vue.createElementVNode("br", null, null, -1);
-  const _hoisted_12 = ["textContent"];
+  const _hoisted_6 = ["innerHTML"];
+  const _hoisted_7 = ["textContent"];
   function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_EnrichedHeadline = vue.resolveComponent("EnrichedHeadline");
     const _component_ContentBlock = vue.resolveComponent("ContentBlock");
@@ -238,20 +233,20 @@ var __publicField = (obj, key, value) => __defNormalProp(obj, typeof key !== "sy
           vue.withDirectives(vue.createElementVNode("div", null, [
             vue.createElementVNode("p", null, [
               vue.createTextVNode(vue.toDisplayString(_ctx.translate("CustomVariables_CreatingCustomVariableTakesTime")) + " ", 1),
-              _hoisted_6,
-              _hoisted_7,
+              _cache[0] || (_cache[0] = vue.createElementVNode("br", null, null, -1)),
+              _cache[1] || (_cache[1] = vue.createElementVNode("br", null, null, -1)),
               vue.createElementVNode("span", {
                 innerHTML: _ctx.$sanitize(_ctx.currentAvailableCustomVariablesText)
-              }, null, 8, _hoisted_8),
-              _hoisted_9,
-              _hoisted_10,
+              }, null, 8, _hoisted_6),
+              _cache[2] || (_cache[2] = vue.createElementVNode("br", null, null, -1)),
+              _cache[3] || (_cache[3] = vue.createElementVNode("br", null, null, -1)),
               vue.createTextVNode(" " + vue.toDisplayString(_ctx.translate("CustomVariables_ToCreateCustomVarExecute")) + " ", 1),
-              _hoisted_11
+              _cache[4] || (_cache[4] = vue.createElementVNode("br", null, null, -1))
             ]),
             vue.withDirectives((vue.openBlock(), vue.createElementBlock("pre", null, [
               vue.createElementVNode("code", {
                 textContent: vue.toDisplayString(_ctx.setMaxCustomVariablesCmd)
-              }, null, 8, _hoisted_12)
+              }, null, 8, _hoisted_7)
             ])), [
               [_directive_select_on_focus, {}]
             ])
