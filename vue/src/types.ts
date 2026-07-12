@@ -5,7 +5,7 @@
  * @license http://www.gnu.org/licenses/gpl-3.0.html GPL v3 or later
  */
 
-interface CustomVariableUsageRow {
+export interface CustomVariableUsageRow {
   name: string;
   nb_actions: number|string;
   nb_visits: number|string;

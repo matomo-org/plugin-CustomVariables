@@ -204,8 +204,8 @@ var __publicField = (obj, key, value) => __defNormalProp(obj, typeof key !== "sy
                             vue.createElementVNode("span", {
                               title: _ctx.translate(
                                 "CustomVariables_UsageDetails",
-                                cvar.nb_visits ? cvar.nb_visits : 0,
-                                cvar.nb_actions ? cvar.nb_actions : 0
+                                String(cvar.nb_visits || 0),
+                                String(cvar.nb_actions || 0)
                               )
                             }, vue.toDisplayString(cvar.name), 9, _hoisted_4),
                             cvarIndex < customVariables.usages.length - 1 ? (vue.openBlock(), vue.createElementBlock("span", _hoisted_5, ", ")) : vue.createCommentVNode("", true)
