@@ -17,4 +17,4 @@ interface CustomVariableUsage {
   usages: CustomVariableUsageRow[];
 }
 
-export { CustomVariableUsage };
+export type { CustomVariableUsage };
