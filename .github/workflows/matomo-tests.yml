@@ -74,7 +74,7 @@ jobs:
           matomo-test-branch: 'maximum_supported_matomo'
           test-type: 'UI'
           php-version: '8.1'
-          node-version: '16'
+          node-version: '24'
           mysql-engine: 'Mysql'
           mysql-version: '8.0'
           artifacts-pass: ${{ secrets.ARTIFACTS_PASS }}
