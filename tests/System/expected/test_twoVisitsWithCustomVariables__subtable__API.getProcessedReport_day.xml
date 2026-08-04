@@ -50,8 +50,10 @@
 	<columns>
 		<label>Custom Variable value</label>
 		<nb_visits>Visits</nb_visits>
+		<nb_visits_report_ratio>Visits (%)</nb_visits_report_ratio>
 		<nb_uniq_visitors>Unique visitors</nb_uniq_visitors>
 		<nb_actions>Actions</nb_actions>
+		<nb_actions_report_ratio>Actions (%)</nb_actions_report_ratio>
 		<nb_users>Users</nb_users>
 		<nb_actions_per_visit>Actions per Visit</nb_actions_per_visit>
 		<avg_time_on_site>Avg. Time on Website</avg_time_on_site>
@@ -62,7 +64,9 @@
 		<row>
 			<label>LoggedIn</label>
 			<nb_visits>1</nb_visits>
+			<nb_visits_report_ratio>14.3%</nb_visits_report_ratio>
 			<nb_actions>4</nb_actions>
+			<nb_actions_report_ratio>16.7%</nb_actions_report_ratio>
 			<nb_users>0</nb_users>
 			<conversion_rate>100%</conversion_rate>
 			<nb_actions_per_visit>4</nb_actions_per_visit>
@@ -73,7 +77,9 @@
 		<row>
 			<label>LoggedOut</label>
 			<nb_visits>2</nb_visits>
+			<nb_visits_report_ratio>28.6%</nb_visits_report_ratio>
 			<nb_actions>2</nb_actions>
+			<nb_actions_report_ratio>8.3%</nb_actions_report_ratio>
 			<nb_users>0</nb_users>
 			<conversion_rate>50%</conversion_rate>
 			<nb_actions_per_visit>1</nb_actions_per_visit>
