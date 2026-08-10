@@ -53,13 +53,13 @@
                 >{{ translate('CustomVariables_Unused') }}</span>
                 <span
                   v-show="customVariables.usages.length"
-                  v-for="(cvar, cvarIndex) in sortUsages(customVariables)"
+                  v-for="(cvar, cvarIndex) in sortUsages(customVariables as CustomVariableUsage)"
                   :key="cvarIndex"
                 >
                   <span :title="translate(
                     'CustomVariables_UsageDetails',
-                    cvar.nb_visits ? cvar.nb_visits : 0,
-                    cvar.nb_actions ? cvar.nb_actions : 0,
+                    String(cvar.nb_visits || 0),
+                    String(cvar.nb_actions || 0),
                   )">{{ cvar.name }}</span>
                   <span v-if="cvarIndex < customVariables.usages.length - 1">, </span>
                 </span>

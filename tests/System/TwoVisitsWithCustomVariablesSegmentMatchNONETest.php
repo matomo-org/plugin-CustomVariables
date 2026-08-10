@@ -9,6 +9,7 @@
 
 namespace Piwik\Plugins\CustomVariables\tests\System;
 
+use Piwik\Columns\Dimension;
 use Piwik\Plugins\API\tests\System\AutoSuggestAPITest;
 use Piwik\Tests\Framework\TestCase\SystemTestCase;
 use Piwik\Plugins\CustomVariables\tests\Fixtures\TwoVisitsWithCustomVariables;
@@ -63,9 +64,15 @@ class TwoVisitsWithCustomVariablesSegmentMatchNONETest extends SystemTestCase
         $this->assertGreaterThan($minimumExpectedSegmentsCount, count($segments));
         $segmentExpression = array();
 
+        $temporalSegmentValues = self::getTemporalSegmentValues();
+
         $seenVisitorId = false;
         foreach ($segments as $segment) {
-            $value = 'campaign';
+            // Date/time segments can't be compared against an arbitrary string: MySQL 8.0 rejects
+            // e.g. "visitEndServerDate != 'campaign'" as an invalid DATE value (5.7 tolerated it).
+            // Give them a valid, type-appropriate value (a date for DATE() segments, a number for
+            // the HOUR()/MINUTE()/YEAR()/... integer extractions) so they stay covered.
+            $value = $temporalSegmentValues[$segment] ?? 'campaign';
             if ($segment == 'visitorId') {
                 $seenVisitorId = true;
                 $value = '34c31e04394bdc63';
@@ -105,6 +112,42 @@ class TwoVisitsWithCustomVariablesSegmentMatchNONETest extends SystemTestCase
     public static function getOutputPrefix()
     {
         return 'twoVisitsWithCustomVariables_segmentMatchNONE';
+    }
+
+    /**
+     * Returns a valid comparison value for every non-internal segment backed by a date/time typed
+     * dimension, keyed by segment name.
+     *
+     * These segments map to SQL that expects either a date (e.g. DATE(...)) or an integer (the
+     * HOUR()/MINUTE()/YEAR()/... extractions), so an arbitrary string like "campaign" produces an
+     * invalid DATE value error on MySQL 8.0. The returned values are valid for the respective
+     * comparison.
+     */
+    private static function getTemporalSegmentValues(): array
+    {
+        $temporalTypes = [
+            Dimension::TYPE_DATE,
+            Dimension::TYPE_DATETIME,
+            Dimension::TYPE_TIME,
+            Dimension::TYPE_TIMESTAMP,
+        ];
+
+        $values = [];
+        foreach (Dimension::getAllDimensions() as $dimension) {
+            if (!in_array($dimension->getType(), $temporalTypes, true)) {
+                continue;
+            }
+
+            foreach ($dimension->getSegments() as $segment) {
+                $isIntegerExtraction = (bool) preg_match(
+                    '/^\s*(HOUR|MINUTE|SECOND|DAYOFWEEK|DAYOFMONTH|DAYOFYEAR|WEEKOFYEAR|WEEK|MONTH|QUARTER|YEAR)\s*\(/i',
+                    $segment->getSqlSegment()
+                );
+                $values[$segment->getSegment()] = $isIntegerExtraction ? '99' : '2099-12-31';
+            }
+        }
+
+        return $values;
     }
 
     public static function getPathToTestDirectory()
