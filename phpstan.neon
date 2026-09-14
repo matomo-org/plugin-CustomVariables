@@ -12,15 +12,19 @@ parameters:
             - github-action-tests/*
     ignoreErrors:
         # Row::setColumn() and deleteColumn() are untyped and only document `@param string`, while
-        # archiving addresses columns by the integer Metrics::INDEX_* constants throughout.
+        # archiving addresses columns by the integer Metrics::INDEX_* constants throughout. Pinned
+        # to the five call sites that do so, so a sixth has to be looked at rather than absorbed.
         -
-            message: '#expects string, int given#'
+            identifier: argument.type
+            message: '#Row::(setColumn|deleteColumn)\(\) expects string, int given#'
             path: RecordBuilders/CustomVariables.php
+            count: 5
         # This plugin supports Matomo 5 and 6, but the analysis only ever sees one of them, so the
         # version guard reads as decided. It is load-bearing on the other line.
         -
-            message: '#Ternary operator condition is always true#'
+            identifier: ternary.alwaysTrue
             path: RecordBuilders/CustomVariables.php
+            count: 1
     bootstrapFiles:
         - ../../bootstrap-phpstan.php
     universalObjectCratesClasses:
