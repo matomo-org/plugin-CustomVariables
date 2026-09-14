@@ -14,7 +14,6 @@ use Piwik\API\Request;
 use Piwik\Archive;
 use Piwik\Container\StaticContainer;
 use Piwik\DataTable;
-use Piwik\Date;
 use Piwik\Metrics;
 use Piwik\Piwik;
 
@@ -28,10 +27,10 @@ class API extends \Piwik\Plugin\API
     /**
      * @param int $idSite
      * @param string $period
-     * @param Date $date
+     * @param string $date
      * @param string $segment
      * @param bool $expanded
-     * @param int $idSubtable
+     * @param int|null $idSubtable
      *
      * @return DataTable|DataTable\Map
      */
@@ -166,9 +165,9 @@ class API extends \Piwik\Plugin\API
             'page'  => array_fill(1, $numVars, array()),
         );
 
-        /** @var DataTable $customVarUsages */
         $today = StaticContainer::get('CustomVariables.today');
         $date = '2008-12-12,' . $today;
+        /** @var DataTable $customVarUsages */
         $customVarUsages = Request::processRequest(
             'CustomVariables.getCustomVariables',
             array('idSite' => $idSite, 'period' => 'range', 'date' => $date,

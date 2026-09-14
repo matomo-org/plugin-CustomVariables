@@ -71,9 +71,7 @@ class GetCustomVariables extends Base
             // no footer message for subtables
             $out = '';
             Piwik::postEvent('Template.afterCustomVariablesReport', array(&$out));
-            if (!empty($message)) {
-                $message .= $out;
-            }
+            $message .= $out;
         }
 
         return $message;
