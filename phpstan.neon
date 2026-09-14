@@ -11,12 +11,6 @@ parameters:
             # would otherwise analyse it as if it were plugin code.
             - github-action-tests/*
     ignoreErrors:
-        # DataTable::queueFilter() and queueFilterSubtables() document `@param array`, but both
-        # wrap a non-array parameter themselves before storing it, so a bare column name is
-        # supported usage rather than a mistake.
-        -
-            message: '#expects array, string given#'
-            path: API.php
         # Row::setColumn() and deleteColumn() are untyped and only document `@param string`, while
         # archiving addresses columns by the integer Metrics::INDEX_* constants throughout.
         -

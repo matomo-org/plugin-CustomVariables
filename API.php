@@ -37,11 +37,11 @@ class API extends \Piwik\Plugin\API
     protected function getDataTable($idSite, $period, $date, $segment, $expanded, $flat, $idSubtable)
     {
         $dataTable = Archive::createDataTableFromArchive(Archiver::CUSTOM_VARIABLE_RECORD_NAME, $idSite, $period, $date, $segment, $expanded, $flat, $idSubtable);
-        $dataTable->queueFilter('ColumnDelete', 'nb_uniq_visitors');
+        $dataTable->queueFilter('ColumnDelete', ['nb_uniq_visitors']);
 
         if ($flat) {
             $dataTable->filterSubtables('Sort', array(Metrics::INDEX_NB_ACTIONS, 'desc', $naturalSort = false, $expanded));
-            $dataTable->queueFilterSubtables('ColumnDelete', 'nb_uniq_visitors');
+            $dataTable->queueFilterSubtables('ColumnDelete', ['nb_uniq_visitors']);
         }
 
         return $dataTable;
