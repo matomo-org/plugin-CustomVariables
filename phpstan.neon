@@ -1,0 +1,35 @@
+parameters:
+    level: 5
+    phpVersion: 80100
+    tmpDir: /tmp/phpstan/CustomVariables/main
+    paths:
+        - .
+    excludePaths:
+        analyseAndScan:
+            - tests/*
+            # The shared workflow leaves this helper checkout in the workspace, and `paths: .`
+            # would otherwise analyse it as if it were plugin code.
+            - github-action-tests/*
+    ignoreErrors:
+        # Row::setColumn() and deleteColumn() are untyped and only document `@param string`, while
+        # archiving addresses columns by the integer Metrics::INDEX_* constants throughout. Pinned
+        # to the five call sites that do so, so a sixth has to be looked at rather than absorbed.
+        -
+            identifier: argument.type
+            message: '#Row::(setColumn|deleteColumn)\(\) expects string, int given#'
+            path: RecordBuilders/CustomVariables.php
+            count: 5
+        # This plugin supports Matomo 5 and 6, but the analysis only ever sees one of them, so the
+        # version guard reads as decided. It is load-bearing on the other line.
+        -
+            identifier: ternary.alwaysTrue
+            path: RecordBuilders/CustomVariables.php
+            count: 1
+    bootstrapFiles:
+        - ../../bootstrap-phpstan.php
+    universalObjectCratesClasses:
+        - Piwik\Config
+        - Piwik\View
+        - Piwik\ViewDataTable\Config
+    scanDirectories:
+        - ../../

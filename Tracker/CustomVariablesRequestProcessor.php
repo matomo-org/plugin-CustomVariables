@@ -46,6 +46,8 @@ class CustomVariablesRequestProcessor extends RequestProcessor
         }
 
         $request->setMetadata('CustomVariables', 'visitCustomVariables', $visitorCustomVariables);
+
+        return false;
     }
 
     public function onNewVisit(VisitProperties $visitProperties, Request $request)
@@ -71,7 +73,7 @@ class CustomVariablesRequestProcessor extends RequestProcessor
         $action = $request->getMetadata('Actions', 'action');
 
         if (empty($action) || !($action instanceof Action)) {
-            return;
+            return false;
         }
 
         $customVariables = self::getCustomVariablesInPageScope($request);
@@ -84,6 +86,8 @@ class CustomVariablesRequestProcessor extends RequestProcessor
                 $action->setCustomField($field, $value);
             }
         }
+
+        return false;
     }
 
     public static function getCustomVariablesInVisitScope(Request $request)
