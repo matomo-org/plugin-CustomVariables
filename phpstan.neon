@@ -1,0 +1,37 @@
+parameters:
+    level: 5
+    phpVersion: 80100
+    tmpDir: /tmp/phpstan/CustomVariables/main
+    paths:
+        - .
+    excludePaths:
+        analyseAndScan:
+            - tests/*
+            # The shared workflow leaves this helper checkout in the workspace, and `paths: .`
+            # would otherwise analyse it as if it were plugin code.
+            - github-action-tests/*
+    ignoreErrors:
+        # DataTable::queueFilter() and queueFilterSubtables() document `@param array`, but both
+        # wrap a non-array parameter themselves before storing it, so a bare column name is
+        # supported usage rather than a mistake.
+        -
+            message: '#expects array, string given#'
+            path: API.php
+        # Row::setColumn() and deleteColumn() are untyped and only document `@param string`, while
+        # archiving addresses columns by the integer Metrics::INDEX_* constants throughout.
+        -
+            message: '#expects string, int given#'
+            path: RecordBuilders/CustomVariables.php
+        # This plugin supports Matomo 5 and 6, but the analysis only ever sees one of them, so the
+        # version guard reads as decided. It is load-bearing on the other line.
+        -
+            message: '#Ternary operator condition is always true#'
+            path: RecordBuilders/CustomVariables.php
+    bootstrapFiles:
+        - ../../bootstrap-phpstan.php
+    universalObjectCratesClasses:
+        - Piwik\Config
+        - Piwik\View
+        - Piwik\ViewDataTable\Config
+    scanDirectories:
+        - ../../
