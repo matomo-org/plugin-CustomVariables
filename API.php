@@ -14,7 +14,6 @@ use Piwik\API\Request;
 use Piwik\Archive;
 use Piwik\Container\StaticContainer;
 use Piwik\DataTable;
-use Piwik\Date;
 use Piwik\Metrics;
 use Piwik\Piwik;
 
@@ -28,21 +27,21 @@ class API extends \Piwik\Plugin\API
     /**
      * @param int $idSite
      * @param string $period
-     * @param Date $date
+     * @param string $date
      * @param string $segment
      * @param bool $expanded
-     * @param int $idSubtable
+     * @param int|null $idSubtable
      *
      * @return DataTable|DataTable\Map
      */
     protected function getDataTable($idSite, $period, $date, $segment, $expanded, $flat, $idSubtable)
     {
         $dataTable = Archive::createDataTableFromArchive(Archiver::CUSTOM_VARIABLE_RECORD_NAME, $idSite, $period, $date, $segment, $expanded, $flat, $idSubtable);
-        $dataTable->queueFilter('ColumnDelete', 'nb_uniq_visitors');
+        $dataTable->queueFilter('ColumnDelete', ['nb_uniq_visitors']);
 
         if ($flat) {
             $dataTable->filterSubtables('Sort', array(Metrics::INDEX_NB_ACTIONS, 'desc', $naturalSort = false, $expanded));
-            $dataTable->queueFilterSubtables('ColumnDelete', 'nb_uniq_visitors');
+            $dataTable->queueFilterSubtables('ColumnDelete', ['nb_uniq_visitors']);
         }
 
         return $dataTable;
@@ -166,9 +165,9 @@ class API extends \Piwik\Plugin\API
             'page'  => array_fill(1, $numVars, array()),
         );
 
-        /** @var DataTable $customVarUsages */
         $today = StaticContainer::get('CustomVariables.today');
         $date = '2008-12-12,' . $today;
+        /** @var DataTable $customVarUsages */
         $customVarUsages = Request::processRequest(
             'CustomVariables.getCustomVariables',
             array('idSite' => $idSite, 'period' => 'range', 'date' => $date,
