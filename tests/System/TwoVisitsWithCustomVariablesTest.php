@@ -86,7 +86,8 @@ class TwoVisitsWithCustomVariablesTest extends SystemTestCase
                 'apiModule'     => 'CustomVariables',
                 'apiAction'     => 'getCustomVariablesValuesFromNameId',
                 'supertableApi' => 'CustomVariables.getCustomVariables',
-                'testSuffix'    => '__subtable')
+                // the percent of total columns changed in 6.0.0-b3
+                'testSuffix'    => '__subtable' . (version_compare(Version::VERSION, '6.0.0-b3', '<') ? '_old' : ''))
             );
         }
 
