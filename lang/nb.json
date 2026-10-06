@@ -13,7 +13,7 @@
         "ManageDescription": "Dette sammendraget viser alle mulige egendefinerte variabler og deres bruk for nettstedet «%s». Navnene i hver «luke» er sortert etter hvor ofte de blir brukt.",
         "MetricsAreOnlyAvailableForVisitScope": "Merk: %1$s-måltall er kun tilgjengelige for egendefinerte variabler som gjelder %2$s.",
         "MetricsNotAvailableForPageScope": "For egendefinerte variabler som gjelder %1$s, er kolonneverdien for disse måltallene %2$s",
-        "PluginDescription": "Egendefinerte variabler (navn, verdi) er par du kan tilknytte brukere eller deres handlinger ved bruk av JavaScript-API-et. Matomo vil da rapportere hvor mange besøk, sider, konverteringer for hver av disse egendefinerte navnene og verdiene som skjer. Vis detaljerte egedefinerte variabler for hver bruker oh handling i besøksloggen. Programtillegget kreves for å bruke e-handelsanalyse-funksjonen.",
+        "PluginDescription": "Egendefinerte variabler er (navn, verdi)-par du kan knytte til besøkende eller handlingene deres ved hjelp av JavaScript-API-et. Matomo rapporterer da antall besøk, sider og konverteringer for hvert av disse egendefinerte navnene og verdiene. Se de detaljerte egendefinerte variablene for hver bruker og handling i besøksloggen. Tillegget kreves for å bruke e-handelsanalyse!",
         "ScopeConversion": "ramme-konvertering",
         "ScopePage": "gjelder side",
         "ScopeVisit": "gjelder besøk",
