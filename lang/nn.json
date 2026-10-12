@@ -1,1 +1,27 @@
-{}
+{
+    "CustomVariables": {
+        "ColumnCustomVariableName": "Namn på eigendefinert variabel",
+        "ColumnCustomVariableValue": "Verdi for eigendefinert variabel",
+        "CreateNewSlot": "Auk talet på tilgjengelege plassar for eigendefinerte variablar",
+        "CreatingCustomVariableTakesTime": "Det kan ta lang tid å opprette ein ny plass for eigendefinerte variablar, avhengig av storleiken på databasen. Difor er det berre mogleg å gjere dette med ein kommando som må køyrast på kommandolinja.",
+        "CurrentAvailableCustomVariables": "No kan du bruke opptil %s eigendefinerte variablar per nettstad.",
+        "CustomVariables": "Eigendefinerte variablar",
+        "CustomVariablesReportDocumentation": "Denne rapporten inneheld informasjon om dei eigendefinerte variablane dine. Klikk på eit variabelnamn for å sjå fordelinga av verdiane. %1$s For meir informasjon om eigendefinerte variablar generelt, les %2$sdokumentasjonen om eigendefinerte variablar på matomo.org%3$s",
+        "CustomVariablesSubcategoryHelp1": "Denne rapporten inneheld informasjon om dei eigendefinerte variablane dine. Klikk på eit variabelnamn for å sjå fordelinga av verdiane.",
+        "CustomVariablesSubcategoryHelp2": "Les meir om dette emnet i nettrettleiinga.",
+        "Index": "Indeks",
+        "ManageDescription": "Denne oversikta viser alle plassane for eigendefinerte variablar og korleis dei blir brukte for nettstaden «%s». Namna i kvar plass er sorterte etter kor ofte dei har vore brukte totalt.",
+        "MetricsAreOnlyAvailableForVisitScope": "Merk: Måltala %1$s er berre tilgjengelege for eigendefinerte variablar med omfanget %2$s.",
+        "MetricsNotAvailableForPageScope": "For eigendefinerte variablar med omfanget %1$s er kolonneverdien for desse måltala %2$s",
+        "PluginDescription": "Eigendefinerte variablar er par av (namn, verdi) som du kan tilordne til besøkande eller handlingane deira med JavaScript-API-et. Matomo rapporterer då kor mange besøk, sider og konverteringar det er for kvart av desse namna og verdiane. Sjå dei detaljerte eigendefinerte variablane for kvar brukar og handling i besøksloggen. Dette innstikket trengst for å bruke funksjonen for e-handelsanalyse!",
+        "ScopeConversion": "omfang konvertering",
+        "ScopePage": "omfang side",
+        "ScopeVisit": "omfang besøk",
+        "ScopeX": "Omfang %s",
+        "SlotsReportIsGeneratedOverTime": "Data til denne rapporten blir fylte inn over tid. Det kan ta ein dag eller to før du ser data, og nokre veker før rapporten er heilt nøyaktig.",
+        "ToCreateCustomVarExecute": "For å opprette ein ny plass for eigendefinerte variablar køyrer du denne kommandoen i Matomo-installasjonen din:",
+        "Unused": "Ubrukt",
+        "UsageDetails": "%1$s besøk og %2$s handlingar sidan denne nettstaden vart oppretta.",
+        "Usages": "Bruk"
+    }
+}
