@@ -70,7 +70,8 @@ class AutoSuggestAPITest extends SystemTestCase
                 'period'                 => 'range',
                 'otherRequestParameters' => ['filter_limit' => 1000],
                 'xmlFieldsToRemove'      => $xmlFieldsToRemove,
-                'testSuffix'             => version_compare(Version::VERSION, '5.1.0-b4', '<') ? '_old' : '',
+                // time on page is tracked per pageview since 6.0.0-b6
+                'testSuffix'             => version_compare(Version::VERSION, '6.0.0-b6', '<') ? '_old' : '',
             ]
         ];
 
