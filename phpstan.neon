@@ -19,12 +19,14 @@ parameters:
             message: '#Row::(setColumn|deleteColumn)\(\) expects string, int given#'
             path: RecordBuilders/CustomVariables.php
             count: 5
-        # This plugin supports Matomo 5 and 6, but the analysis only ever sees one of them, so the
-        # version guard reads as decided. It is load-bearing on the other line.
+        # The 5.2.0-b6 version guard reads as decided against whichever Matomo 5 is analysed, but
+        # it is load-bearing across the 5.x line. phpstan-min-matomo.neon covers it as always
+        # false, so this entry must not be reported as unmatched on that leg.
         -
             identifier: ternary.alwaysTrue
             path: RecordBuilders/CustomVariables.php
             count: 1
+            reportUnmatched: false
     bootstrapFiles:
         - ../../bootstrap-phpstan.php
     universalObjectCratesClasses:
