@@ -1,0 +1,39 @@
+includes:
+    - phpstan.neon
+
+parameters:
+    tmpDir: /tmp/phpstan/CustomVariables/min-matomo
+    ignoreErrors:
+        # Matomo 5.0 documents these core APIs more narrowly than they behave; later 5.x versions
+        # widen the docblocks. Subcategory::getHelp() is documented as returning null.
+        -
+            identifier: return.type
+            path: Categories/CustomVariablesSubcategory.php
+            count: 1
+        # getDefaultWebsiteId() returns bool|int, and getRequestVar() documents its default as
+        # string|null, though it casts the default to the requested type.
+        -
+            identifier: argument.type
+            path: Menu.php
+            count: 1
+        # $columnToSortByBeforeTruncation and Row::hasColumn() are documented as string, while
+        # archiving addresses columns by the integer Metrics::INDEX_* constants.
+        -
+            identifier: assign.propertyType
+            path: RecordBuilders/CustomVariables.php
+            count: 1
+        -
+            identifier: argument.type
+            message: '#Row::hasColumn\(\) expects string, int given#'
+            path: RecordBuilders/CustomVariables.php
+            count: 4
+        # Before 5.2.0-b6 the version guard is always false, and the branch it skips calls the
+        # newer seven-argument queryConversionsByDimension().
+        -
+            identifier: ternary.alwaysFalse
+            path: RecordBuilders/CustomVariables.php
+            count: 1
+        -
+            identifier: arguments.count
+            path: RecordBuilders/CustomVariables.php
+            count: 1

@@ -74,7 +74,7 @@ class CustomVariables extends RecordBuilder
     }
 
 
-    protected function aggregateCustomVariable(DataTable $record, array &$metadata, array &$metadataFlat, LogAggregator $logAggregator, string $slot): void
+    protected function aggregateCustomVariable(DataTable $record, array &$metadata, array &$metadataFlat, LogAggregator $logAggregator, int $slot): void
     {
         $keyField = "custom_var_k" . $slot;
         $valueField = "custom_var_v" . $slot;
