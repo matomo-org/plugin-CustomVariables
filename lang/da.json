@@ -2,12 +2,26 @@
     "CustomVariables": {
         "ColumnCustomVariableName": "Brugerdefineret variabelnavn",
         "ColumnCustomVariableValue": "Brugerdefineret variabelværdi",
+        "CreateNewSlot": "Forøg antallet af tilgængelige pladser til brugerdefinerede variabler",
+        "CreatingCustomVariableTakesTime": "Det kan tage lang tid at oprette en ny plads til en brugerdefineret variabel, afhængigt af størrelsen på din database. Derfor er det kun muligt at gøre det via en kommando, der skal udføres på kommandolinjen.",
+        "CurrentAvailableCustomVariables": "I øjeblikket kan du bruge op til %s brugerdefinerede variabler pr. hjemmeside.",
         "CustomVariables": "Brugerdefinerede variabler",
         "CustomVariablesReportDocumentation": "Rapporten indeholder oplysninger om brugerdefinerede variabler. Klik på et variabelnavn se fordeling af værdier. %1$s Yderligere oplysninger om brugerdefinerede variabler generelt, læs %2$sBrugerdefinerede variabel dokumentation på matomo.org%3$s",
+        "CustomVariablesSubcategoryHelp1": "Denne rapport indeholder oplysninger om dine brugerdefinerede variabler. Klik på et variabelnavn for at se fordelingen af værdierne.",
+        "CustomVariablesSubcategoryHelp2": "Læs mere om dette emne i guiden online.",
+        "Index": "Indeks",
+        "ManageDescription": "Denne oversigt viser alle pladser til brugerdefinerede variabler og deres anvendelse for hjemmesiden '%s'. Navnene i hver plads er sorteret efter, hvor ofte de er blevet brugt i alt.",
+        "MetricsAreOnlyAvailableForVisitScope": "Bemærk: Målingerne %1$s er kun tilgængelige for brugerdefinerede variabler med virkefeltet %2$s.",
+        "MetricsNotAvailableForPageScope": "For brugerdefinerede variabler med virkefeltet %1$s er kolonneværdien for disse målinger %2$s",
+        "PluginDescription": "Brugerdefinerede variabler er (navn, værdi)-par, som du kan tildele besøgende eller enhver af deres handlinger ved hjælp af JavaScript-API'en. Matomo rapporterer derefter, hvor mange besøg, sider og konverteringer der er for hvert af disse brugerdefinerede navne og værdier. Se de detaljerede brugerdefinerede variabler for hver bruger og handling i besøgsloggen. Dette udvidelsesmodul er påkrævet for at bruge funktionen Ecommerce Analytics!",
+        "ScopeConversion": "virkefelt konvertering",
         "ScopePage": "virkefelt side",
         "ScopeVisit": "virkefelt besøg",
-        "Index": "Indeks",
+        "ScopeX": "Virkefelt %s",
+        "SlotsReportIsGeneratedOverTime": "Data til denne rapport udfyldes over tid. Der kan gå en dag eller to, før du ser data, og et par uger, før rapporten er helt nøjagtig.",
+        "ToCreateCustomVarExecute": "For at oprette en ny plads til en brugerdefineret variabel skal du udføre følgende kommando i din Matomo-installation:",
         "Unused": "Ubrugt",
-        "CustomVariablesSubcategoryHelp2": "Læs mere om dette emne i guiden online."
+        "UsageDetails": "%1$s besøg og %2$s handlinger siden oprettelsen af denne hjemmeside.",
+        "Usages": "Anvendelser"
     }
 }
