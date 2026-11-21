@@ -2,9 +2,26 @@
     "CustomVariables": {
         "ColumnCustomVariableName": "Denumirea variabilei personalizate",
         "ColumnCustomVariableValue": "Valoarea variabilei personalizate",
+        "CreateNewSlot": "Creșterea numărului de sloturi disponibile pentru variabile personalizate",
+        "CreatingCustomVariableTakesTime": "Crearea unui slot nou pentru variabile personalizate poate dura mult, în funcție de dimensiunea bazei de date. Prin urmare, acest lucru este posibil doar printr-o comandă care trebuie executată în linia de comandă.",
+        "CurrentAvailableCustomVariables": "În prezent puteți folosi până la %s variabile personalizate per site.",
         "CustomVariables": "Variabile personalizate",
         "CustomVariablesReportDocumentation": "Acest raport conține informații despre Variabilele Personalizate. Faceți clic pe un nume de variabilă pentru a vedea distribuția valorilor. %1$s Pentru mai multe informații despre variabile personalizate, în general, citiți %2$sdocumentatia Variabilelor Personalizate matomo.org%3$s",
+        "CustomVariablesSubcategoryHelp1": "Acest raport conține informații despre variabilele personalizate. Faceți clic pe numele unei variabile pentru a vedea distribuția valorilor.",
+        "CustomVariablesSubcategoryHelp2": "Citiți mai multe despre acest subiect în ghidul online.",
+        "Index": "Index",
+        "ManageDescription": "Această prezentare arată toate sloturile de variabile personalizate și utilizarea lor pentru site-ul '%s'. Numele din fiecare slot sunt ordonate după frecvența totală de utilizare.",
+        "MetricsAreOnlyAvailableForVisitScope": "Notă: metricile %1$s sunt disponibile doar pentru variabilele personalizate cu domeniul %2$s.",
+        "MetricsNotAvailableForPageScope": "Pentru variabilele personalizate cu domeniul %1$s, valoarea coloanei pentru aceste metrici este %2$s",
+        "PluginDescription": "Variabilele personalizate sunt perechi (nume, valoare) pe care le puteți atribui, cu ajutorul API-ului Javascript, vizitatorilor sau oricărei acțiuni a acestora. Matomo va raporta apoi câte vizite, pagini și conversii există pentru fiecare dintre aceste nume și valori personalizate. Vizualizați variabilele personalizate detaliate pentru fiecare utilizator și acțiune în Jurnalul vizitelor. Acest plugin este necesar pentru a folosi funcționalitatea de analiză a comerțului electronic!",
+        "ScopeConversion": "domeniu conversie",
         "ScopePage": "scop pagină",
-        "ScopeVisit": "scop vizită"
+        "ScopeVisit": "scop vizită",
+        "ScopeX": "Domeniu %s",
+        "SlotsReportIsGeneratedOverTime": "Datele pentru acest raport vor fi completate în timp. Poate dura o zi sau două până să vedeți date și câteva săptămâni până când raportul este complet exact.",
+        "ToCreateCustomVarExecute": "Pentru a crea un slot nou pentru variabile personalizate, executați următoarea comandă în instalarea Matomo:",
+        "Unused": "Neutilizat",
+        "UsageDetails": "%1$s vizite și %2$s acțiuni de la crearea acestui site.",
+        "Usages": "Utilizări"
     }
 }
