@@ -1,5 +1,8 @@
 # CHANGELOG
 
+6.0.2 - 2026-11-23
+- Improved handling of product category values when archiving
+
 6.0.1 - 2026-11-23
 - Updated translations
 

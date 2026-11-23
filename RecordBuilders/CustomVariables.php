@@ -237,17 +237,12 @@ class CustomVariables extends RecordBuilder
             }
             $decoded = json_decode($value);
             if (is_array($decoded)) {
-                $count = 0;
-                foreach ($decoded as $category) {
-                    if (
-                        empty($category)
-                        || $count >= GoalManager::MAXIMUM_PRODUCT_CATEGORIES
-                    ) {
-                        continue;
-                    }
-                    $this->aggregateActionByKeyAndValue($record, $key, $category, $row);
+                $categories = array_filter(array_filter($decoded), 'is_scalar');
+                $categories = array_slice($categories, 0, GoalManager::MAXIMUM_PRODUCT_CATEGORIES);
+
+                foreach ($categories as $category) {
+                    $this->aggregateActionByKeyAndValue($record, $key, (string) $category, $row);
                     $ecommerceCategoriesAggregated = true;
-                    $count++;
                 }
             }
         }
