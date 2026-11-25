@@ -33,10 +33,15 @@ class RecordBuilderTest extends IntegrationTestCase
         Fixture::createWebsite('2026-01-01 00:00:00');
     }
 
-    public function test_aggregate_archivesEcommerceCategoryListValuesAsStrings(): void
+    /**
+     * @dataProvider getCategoryLists
+     *
+     * @param list<string> $expectedLabels
+     */
+    public function test_aggregate_archivesEcommerceCategoryListValuesAsStrings(string $categoryList, array $expectedLabels): void
     {
         $tracker = Fixture::getTracker(1, self::DATE . ' 10:00:00');
-        $tracker->setCustomVariable(5, '_pkc', '["books",2026,"sale"]', 'page');
+        $tracker->setCustomVariable(5, '_pkc', $categoryList, 'page');
         Fixture::checkResponse($tracker->doTrackPageView('Category page'));
 
         $report = Request::processRequest('CustomVariables.getCustomVariables', [
@@ -52,6 +57,12 @@ class RecordBuilderTest extends IntegrationTestCase
         $this->assertInstanceOf(DataTable::class, $categories);
         $labels = $categories->getColumn('label');
         sort($labels);
-        $this->assertSame(['2026', 'books', 'sale'], $labels);
+        $this->assertSame($expectedLabels, $labels);
+    }
+
+    public function getCategoryLists(): iterable
+    {
+        yield 'mixed values' => ['["books",2026,"sale"]', ['2026', 'books', 'sale']];
+        yield 'empty values do not count towards the limit' => ['["","a","b","c","d","e","f"]', ['a', 'b', 'c', 'd', 'e']];
     }
 }
